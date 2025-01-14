@@ -46,7 +46,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Estilo do conteúdo principal */
+/* Estilo do conteúdo principal - Sobre Mim */
 main .container {
     width: 80%;
     margin: auto;
@@ -60,6 +60,7 @@ main section {
 main h2 {
     font-size: 1.5em;
     color: #333;
+    margin-bottom: 1.3em;
 }
 
 main p {
