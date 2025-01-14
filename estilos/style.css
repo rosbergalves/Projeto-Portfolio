@@ -68,7 +68,7 @@ main p {
     line-height: 1.5; /* Espaçamento entre linhas dentro dos parágrafos */
 }
 
-main article {
+main article h3 {
     margin-bottom: 1em;
 }
 
