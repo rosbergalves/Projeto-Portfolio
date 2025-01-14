@@ -63,7 +63,7 @@ main h2 {
 }
 
 main p {
-    margin-bottom: 1.5em; /* Espaçamento entre parágrafos */
+    margin-bottom: 1.3em; /* Espaçamento entre parágrafos */
     line-height: 1.5; /* Espaçamento entre linhas dentro dos parágrafos */
 }
 
