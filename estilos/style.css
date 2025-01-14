@@ -59,7 +59,7 @@ main section {
 main h2 {
     font-size: 1.5em;
     color: #333;
-    margin-top: 1em; /* Espaço acima dos parágrafos */
+    margin-top: 1.5em; /* Espaço acima dos parágrafos */
     p {
         margin-bottom: 1.5em; /* Espaçamento entre os parágrafos */
     }
