@@ -59,8 +59,8 @@ main section {
 main h2 {
     font-size: 1.5em;
     color: #333;
-    margin-top: 1.5em; /* Espaço acima dos parágrafos */
-    margin-bottom: 1.5em; /* Espaço abaixo dos parágrafos */
+    margin-top: 1em; /* Espaço acima dos parágrafos */
+    margin-bottom: 2em; /* Espaço abaixo dos parágrafos */
     line-height: 1.5; /* Espaçamento entre as linhas dentro dos parágrafos */
 }
 
