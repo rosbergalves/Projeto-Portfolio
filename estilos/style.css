@@ -60,7 +60,8 @@ main h2 {
     margin-bottom: 1em;
     font-size: 1.5em;
     color: #333;
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* Espaço entre os parágrafos */
+    line-height: 1.5; /* Espaçamento entre as linhas dentro dos parágrafos */
 }
 
 main article {
