@@ -1,5 +1,5 @@
 /* Reset básico para remover margens e paddings padrão */
-body, h1, h2, h3, p, ul, li, a {
+body, h1, h2, h3, h4, h5, p, ul, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
