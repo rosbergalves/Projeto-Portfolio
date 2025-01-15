@@ -66,8 +66,8 @@ main p {
 main a {
     color: #007BFF;
     text-decoration: none;
-    margin-bottom: 0.6em;
-}
+    margin-top: 20px; /* Adiciona margem superior */
+    display: block; /* Garante que o link seja exibido como bloco para aplicar a margem superior */ }
 
 /* Estilo do rodapé */
 footer {
