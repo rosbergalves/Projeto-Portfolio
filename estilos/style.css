@@ -77,7 +77,7 @@ main article h3 {
 main a {
     color: #007BFF;
     text-decoration: none;
-    margin-bottom: 0.6em;
+    margin-bottom: 10px;
 }
 
 /* Estilo do rodapé */
