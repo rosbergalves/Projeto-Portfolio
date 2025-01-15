@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6; /* Espaçamento entre linhas */
+    line-height: 1.6; 
 }
 
 /* Estilo do cabeçalho */
@@ -18,23 +18,23 @@ header {
     background-color: #29284c;
     color: #fff;
     padding: 1em 0;
-}
-
-header .container {
-    width: 80%;
-    margin: auto;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+/* Contêiner comum */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 1em 0;
 }
 
-/* Estilo da navegação */
+header h1, main h2, main h3, main h4, main h5 {
+    margin-bottom: 0.6em;
+    color: #333;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 nav ul li {
@@ -47,30 +47,14 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Estilo do conteúdo principal - Sobre Mim */
-main .container {
-    width: 80%;
-    margin: auto;
+/* Estilo do conteúdo principal */
+main {
     padding: 1em 0;
 }
 
-main section {
-    margin-bottom: 0em;
-}
-
-main h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 0.6em;
-}
-
 main p {
-    margin-bottom: 1.3em; /* Espaçamento entre parágrafos */
-    line-height: 1.5; /* Espaçamento entre linhas dentro dos parágrafos */
-}
-
-main article h3 {
-    margin-bottom: 0.6em;
+    margin-bottom: 1.3em; 
+    line-height: 1.5; 
 }
 
 /* Estilo dos links */
@@ -78,7 +62,6 @@ main a {
     color: #007BFF;
     text-decoration: none;
     margin-bottom: 0.6em;
-    margin-top: 50px;
 }
 
 /* Estilo do rodapé */
@@ -91,7 +74,7 @@ footer {
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
-    header .container, main .container, footer .container {
+    .container {
         width: 100%;
         padding: 0 1em;
     }
@@ -102,41 +85,18 @@ footer {
     }
 }
 
-/* Estilo comum para containers em header, main e footer */
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 1em 0;
-}
-
-/* Estilo específico para o header */
-header .container {
-    text-align: center;
-}
-
-/* Estilo específico para o footer */
-footer .container {
-    text-align: center;
-}
-
 /* Estilo das listas personalizadas */
 .custom-list {
-    padding-left: 1em; /* Adiciona um pequeno preenchimento à esquerda para alinhar com o texto */
-    margin: 0;        /* Remove a margem para alinhar com o texto */
+    padding-left: 1em; 
+    margin: 0; 
 }
 
 .custom-list li {
-    padding-left: 0.5em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
-    text-indent: 0;   /* Remova qualquer indentação negativa */
-}
-
-/* Estilo dos títulos h4 e h5 */
-main h4, main h5 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
+    padding-left: 0.5em;  
+    text-indent: 0;   
 }
 
 main h5 {
     margin-top: 20px;
 }
+
