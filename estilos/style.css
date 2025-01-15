@@ -34,6 +34,7 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -51,7 +52,7 @@ main .container {
     width: 80%;
     margin: auto;
     padding: 1em 0;
- }
+}
 
 main section {
     margin-bottom: 0em;
@@ -100,6 +101,24 @@ footer {
     }
 }
 
+/* Estilo comum para containers em header, main e footer */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 1em 0;
+}
+
+/* Estilo específico para o header */
+header .container {
+    text-align: center;
+}
+
+/* Estilo específico para o footer */
+footer .container {
+    text-align: center;
+}
+
+/* Estilo das listas personalizadas */
 .custom-list {
     padding-left: 1em; /* Adiciona um pequeno preenchimento à esquerda para alinhar com o texto */
     margin: 0;        /* Remove a margem para alinhar com o texto */
@@ -110,7 +129,8 @@ footer {
     text-indent: 0;   /* Remova qualquer indentação negativa */
 }
 
-main h4 {
+/* Estilo dos títulos h4 e h5 */
+main h4, main h5 {
     font-size: 1.5em;
     color: #333;
     margin-bottom: 10px;
@@ -118,7 +138,4 @@ main h4 {
 
 main h5 {
     margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
 }
