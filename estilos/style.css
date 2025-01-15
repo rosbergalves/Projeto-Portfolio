@@ -100,13 +100,12 @@ footer {
     }
 }
 
-ul, ol {
-    padding-left: 20px; /* Ajuste conforme necessário */
-    margin-left: 0;
+.custom-list {
+    padding-left: 1em; /* Adiciona um pequeno preenchimento à esquerda para alinhar com o texto */
+    margin: 0;        /* Remove a margem para alinhar com o texto */
 }
 
-li {
-    margin-left: 0;
-    padding-left: 0;
-    text-indent: -20px; /* Ajuste este valor conforme necessário */
+.custom-list li {
+    padding-left: 0;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
+    text-indent: 0;   /* Remova qualquer indentação negativa */
 }
