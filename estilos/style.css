@@ -21,6 +21,10 @@ header {
     text-align: center;
 }
 
+header h1 {
+    color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
+}
+
 /* Contêiner comum */
 .container {
     width: 80%;
@@ -28,15 +32,7 @@ header {
     padding: 1em 0;
 }
 
-header h1 {
-    color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
-}
-
-main h2, main h3, main h4, main h5 {
-    margin-bottom: 0.6em;
-    color: #333; /* Cor padrão para h2, h3, h4, h5 */
-}
-
+/* Estilo da navegação */
 nav ul {
     list-style: none;
 }
@@ -51,22 +47,69 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Estilo do conteúdo principal */
-main {
-    padding: 1em 0;
+/* Estilo da seção Sobre */
+#sobre h2 {
+    font-size: 1.8em;
+    color: #333;
 }
 
-main p {
-    margin-bottom: 1.3em; 
-    line-height: 1.5; 
+#sobre p {
+    margin-bottom: 1.3em;
+    line-height: 1.5;
 }
 
-/* Estilo dos links */
-main a {
+/* Estilo da seção Projetos */
+#projetos h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+#projetos h3 {
+    margin-bottom: 0.6em;
+}
+
+#projetos h4 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#projetos h5 {
+    font-size: 2.5em; /* Tamanho específico para o h5 na seção Projetos */
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#projetos a {
     color: #007BFF;
     text-decoration: none;
-    margin-top: 20px; /* Adiciona margem superior */
-    display: block; /* Garante que o link seja exibido como bloco para aplicar a margem superior */ }
+    margin-top: 20px;
+    display: block;
+}
+
+/* Estilo das listas personalizadas */
+.custom-list {
+    padding-left: 1em;
+    margin: 0;
+}
+
+.custom-list li {
+    padding-left: 0.5em;
+    text-indent: 0;
+}
+
+/* Estilo da seção Contato */
+#contato h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+#contato a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 0.6em;
+}
 
 /* Estilo do rodapé */
 footer {
@@ -87,19 +130,4 @@ footer {
         display: block;
         margin: 0;
     }
-}
-
-/* Estilo das listas personalizadas */
-.custom-list {
-    padding-left: 1em; 
-    margin: 0; 
-}
-
-.custom-list li {
-    padding-left: 0.5em;  
-    text-indent: 0;   
-}
-
-main h5 {
-    margin-top: 20px;
 }
