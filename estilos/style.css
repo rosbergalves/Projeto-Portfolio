@@ -106,6 +106,6 @@ footer {
 }
 
 .custom-list li {
-    padding-left: 0em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
+    padding-left: 1em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
     text-indent: 0;   /* Remova qualquer indentação negativa */
 }
