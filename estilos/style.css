@@ -101,11 +101,11 @@ footer {
 }
 
 .custom-list {
-    padding-left: 5em; /* Adiciona um pequeno preenchimento à esquerda para alinhar com o texto */
+    padding-left: 0em; /* Adiciona um pequeno preenchimento à esquerda para alinhar com o texto */
     margin: 0;        /* Remove a margem para alinhar com o texto */
 }
 
 .custom-list li {
-    padding-left: 1em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
+    padding-left: 0em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
     text-indent: 0;   /* Remova qualquer indentação negativa */
 }
