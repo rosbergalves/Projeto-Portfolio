@@ -109,3 +109,9 @@ footer {
     padding-left: 0.5em;  /* Certifique-se de que não há preenchimento extra nos itens da lista */
     text-indent: 0;   /* Remova qualquer indentação negativa */
 }
+
+main h4 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.6em;
+}
