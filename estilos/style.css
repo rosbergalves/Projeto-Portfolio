@@ -48,27 +48,6 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Estilo do contêiner principal */
-.main-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto; width: 80%;
-} 
-
-/* Estilo das barras laterais */
-.sidebar-left, .sidebar-right {
-    width: 20%;
-    background-color: #eaeaea;
-    padding: 1em;
-} 
-
-/* Estilo do conteúdo principal */
-.content {
-    width: 60%;
-    padding: 1em;
-    background-color: #fff;
-}
-
 /* Estilo da seção Sobre */
 #sobre h2 {
     font-size: 1.8em;
