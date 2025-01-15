@@ -52,13 +52,13 @@ nav ul li a {
 #sobre h2 {
     font-size: 1.8em;
     color: #333;
-    margin-bottom: 10px;
-    margin-top: 20px;
 }
 
 #sobre p {
     margin-bottom: 1.3em;
     line-height: 1.5;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 /* Estilo da seção Projetos */
