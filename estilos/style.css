@@ -99,3 +99,15 @@ footer {
         margin: 0;
     }
 }
+
+.custom-list {
+    list-style: none; /* Remove os marcadores padrão */
+    padding-left: 0;  /* Remove o preenchimento esquerdo */
+    margin: 0;        /* Remove a margem para alinhar com o texto */
+}
+
+.custom-list li {
+    padding-left: 0;  /* Ajuste o preenchimento para 0 */
+    text-indent: 0;   /* Remova a indentação negativa */
+    margin-left: 1em; /* Adicione margem à esquerda para alinhamento */
+}
