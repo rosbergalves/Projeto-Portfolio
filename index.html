@@ -19,65 +19,75 @@
             </nav>
         </div>
     </header>
-    <main>
-        <section id="sobre">
-            <div class="container">
-                <h2>Sobre Mim</h2>
-                <p>me chamo Rosberg Alves, sou um entusiasta da área de dados com rica experiência em Logística e Cadeia de Suprimentos. Como operador de empilhadeira, utilizei dados operacionais para otimizar as operações logísticas de centros de distribuição e almoxarifados.</p>
-                <p>Com um perfil analítico e uma mentalidade inovadora, participei ativamente do start e desenvolvimento das operações do centro de distribuição de cargas de uma das maiores montadoras do mundo, contribuindo para a resolução de problemas e melhoria contínua. A graduação em Logística e Gestão da Cadeia de Suprimentos reforçou minhas habilidades analíticas, especialmente na gestão de indicadores de desempenho e na análise de dados de estoque.</p>
-                <p>Minha visão sistêmica dos processos da cadeia de suprimentos permitiu aplicar análise de dados para otimizar operações logísticas, garantindo que os materiais fossem recebidos, armazenados e entregues com eficiência. A experiência com sistemas ERP, como Click Reply e SAP, aprimorou minha capacidade de monitorar e analisar dados críticos, melhorando a tomada de decisão baseada em dados e a eficiência operacional.</p>
-            </div>
-        </section>
-        <section id="projetos">
-            <div class="container">
-                <h2>Meus Projetos</h2>
-                <article>
-                    <h3><a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">db_Faculdade</a></h3>
-                    <p>O Objetivo do projeto consiste na criação de uma base de dados para o controle centralizado de alunos, professores, cursos, disciplinas, históricos e turmas.</p>
-                    <h4>Fases do Projeto</h4>
-                    <ul class="custom-list">
-                         <li>Levantamento de Requisitos.</li>
-                         <li>Identificação de Entidades e Relacionamentos.</li>
-                         <li>Modelo E-R.</li>
-                         <li>Diagrama E-R.</li>
-                         <li>Dicionário de Dados.</li>
-                         <li>Normalização na 1º, 2ª e 3ª forma normal.</li>
-                         <li>Testes Básicos.</li>
-                    </ul>
-                    <h5>Regras de Negócio</h5>
-                    <ul class="custom-list">
-                        <li>Um aluno só pode estar matriculado em um curso por vez.</li>
-                         <li>Alunos possuem um código de identificação (RA).</li>
-                         <li>Cursos são compostos por disciplinas.</li>
-                         <li>Cada disciplina terá no máximo 30 alunos por turma.</li>
-                         <li>As disciplinas podem ser obrigatórias ou optativas, dependendo do curso.</li>
-                         <li>As disciplinas pertencem a departamentos específicos.</li>
-                         <li>Cada disciplina possui um código de identificação.</li>
-                         <li>Alunos podem trancar matrícula, não estando então matriculados em nenhuma disciplina no semestre.</li>
-                         <li>Em cada semestre, cada aluno pode se matricular em no máximo 9 disciplinas.</li>
-                         <li>O aluno só pode ser reprovado no máximo 3 vezes na mesma disciplina.</li>
-                         <li>A faculdade terá no máximo 3.000 alunos matriculados simultaneamente, em 10 cursos distintos.</li>
-                         <li>Entram 300 alunos novos por ano.</li>
-                         <li>Existem 90 disciplinas no total disponíveis.</li>
-                         <li>Um histórico traz todas as disciplinas cursadas por um aluno, incluindo nota final, frequência e período do curso realizado.</li>
-                         <li>Professores podem ser cadastrados mesmo sem lecionar disciplinas.</li>
-                         <li>Existem 40 professores trabalhando na faculdade.</li>
-                         <li>Cada professor irá lecionar no máximo 4 disciplinas diferentes.</li>
-                         <li>Cada professor é vinculado a um departamento.</li>
-                    </ul>
-                    <a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">Ver Projeto</a>
-                </article>
-                <!-- Mais projetos podem ser adicionados aqui -->
-            </div>
-        </section>
-        <section id="contato">
-            <div class="container">
-                <h2>Contato</h2>
-                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank">Acesse meu LinkedIn</a></p>
-                <p><a href="https://github.com/rosbergalves" target="_blank">Acesse meu GitHub</a></p>
-            </div>
-        </section>
-    </main>
+    <div class="main-container">
+        <aside class="sidebar-left">
+            <!-- Conteúdo da barra lateral esquerda -->
+            <p>Barra Lateral Esquerda</p>
+        </aside>
+        <main class="content">
+            <section id="sobre">
+                <div class="container">
+                    <h2>Sobre Mim</h2>
+                    <p>me chamo Rosberg Alves, sou um entusiasta da área de dados com rica experiência em Logística e Cadeia de Suprimentos. Como operador de empilhadeira, utilizei dados operacionais para otimizar as operações logísticas de centros de distribuição e almoxarifados.</p>
+                    <p>Com um perfil analítico e uma mentalidade inovadora, participei ativamente do start e desenvolvimento das operações do centro de distribuição de cargas de uma das maiores montadoras do mundo, contribuindo para a resolução de problemas e melhoria contínua. A graduação em Logística e Gestão da Cadeia de Suprimentos reforçou minhas habilidades analíticas, especialmente na gestão de indicadores de desempenho e na análise de dados de estoque.</p>
+                    <p>Minha visão sistêmica dos processos da cadeia de suprimentos permitiu aplicar análise de dados para otimizar operações logísticas, garantindo que os materiais fossem recebidos, armazenados e entregues com eficiência. A experiência com sistemas ERP, como Click Reply e SAP, aprimorou minha capacidade de monitorar e analisar dados críticos, melhorando a tomada de decisão baseada em dados e a eficiência operacional.</p>
+                </div>
+            </section>
+            <section id="projetos">
+                <div class="container">
+                    <h2>Meus Projetos</h2>
+                    <article>
+                        <h3><a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">db_Faculdade</a></h3>
+                        <p>O Objetivo do projeto consiste na criação de uma base de dados para o controle centralizado de alunos, professores, cursos, disciplinas, históricos e turmas.</p>
+                        <h4>Fases do Projeto</h4>
+                        <ul class="custom-list">
+                             <li>Levantamento de Requisitos.</li>
+                             <li>Identificação de Entidades e Relacionamentos.</li>
+                             <li>Modelo E-R.</li>
+                             <li>Diagrama E-R.</li>
+                             <li>Dicionário de Dados.</li>
+                             <li>Normalização na 1º, 2ª e 3ª forma normal.</li>
+                             <li>Testes Básicos.</li>
+                        </ul>
+                        <h5>Regras de Negócio</h5>
+                        <ul class="custom-list">
+                            <li>Um aluno só pode estar matriculado em um curso por vez.</li>
+                             <li>Alunos possuem um código de identificação (RA).</li>
+                             <li>Cursos são compostos por disciplinas.</li>
+                             <li>Cada disciplina terá no máximo 30 alunos por turma.</li>
+                             <li>As disciplinas podem ser obrigatórias ou optativas, dependendo do curso.</li>
+                             <li>As disciplinas pertencem a departamentos específicos.</li>
+                             <li>Cada disciplina possui um código de identificação.</li>
+                             <li>Alunos podem trancar matrícula, não estando então matriculados em nenhuma disciplina no semestre.</li>
+                             <li>Em cada semestre, cada aluno pode se matricular em no máximo 9 disciplinas.</li>
+                             <li>O aluno só pode ser reprovado no máximo 3 vezes na mesma disciplina.</li>
+                             <li>A faculdade terá no máximo 3.000 alunos matriculados simultaneamente, em 10 cursos distintos.</li>
+                             <li>Entram 300 alunos novos por ano.</li>
+                             <li>Existem 90 disciplinas no total disponíveis.</li>
+                             <li>Um histórico traz todas as disciplinas cursadas por um aluno, incluindo nota final, frequência e período do curso realizado.</li>
+                             <li>Professores podem ser cadastrados mesmo sem lecionar disciplinas.</li>
+                             <li>Existem 40 professores trabalhando na faculdade.</li>
+                             <li>Cada professor irá lecionar no máximo 4 disciplinas diferentes.</li>
+                             <li>Cada professor é vinculado a um departamento.</li>
+                        </ul>
+                        <a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">Ver Projeto</a>
+                    </article>
+                    <!-- Mais projetos podem ser adicionados aqui -->
+                </div>
+            </section>
+            <section id="contato">
+                <div class="container">
+                    <h2>Contato</h2>
+                    <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank">Acesse meu LinkedIn</a></p>
+                    <p><a href="https://github.com/rosbergalves" target="_blank">Acesse meu GitHub</a></p>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar-right">
+            <!-- Conteúdo da barra lateral direita -->
+            <p>Barra Lateral Direita</p>
+        </aside>
+    </div>
     <footer>
         <div class="container">
             <p>&copy; 2025 Rosberg Alves. Todos os direitos reservados.</p>
