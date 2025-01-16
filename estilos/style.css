@@ -36,6 +36,10 @@ header {
     border-radius: 50%; /* Torna a imagem circular */
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    position: absolute;
+    top: 10px; /* Move para baixo */
+    left: 15px; /* Move para a direita */
+    margin: 0;
 }
 
 header h1 {
