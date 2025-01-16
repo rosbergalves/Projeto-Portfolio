@@ -22,12 +22,18 @@ header {
     margin-bottom: 6em;
 }
 
+.foto-container {
+    position: absolute; /* Para posicionar a imagem fora do fluxo normal */
+    top: 50%; /* Ajusta a posição vertical */
+    left: 0; /* Alinha a imagem ao lado esquerdo */
+    transform: translateY(-50%); /* Centraliza verticalmente em relação ao eixo Y */
+    padding-left: 20px; /* Espaçamento interno à esquerda, se necessário */
+}
+
 .foto-circular {
-    display: block;
-    margin: -4em auto 2em; /* Ajuste para posicionamento */
     width: 150px; /* Largura da imagem */
     height: 150px; /* Altura da imagem */
-    border-radius: 50%; /* Faz a imagem ficar circular */
+    border-radius: 50%; /* Torna a imagem circular */
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
