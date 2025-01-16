@@ -38,7 +38,7 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     position: absolute;
     top: 10px; /* Move para baixo */
-    left: 45px; /* Move para a esquerda */
+    left: 145px; /* Move para a direita */
     right: 45px;
     margin: 0;
 }
