@@ -22,6 +22,16 @@ header {
     margin-bottom: 6em;
 }
 
+.foto-circular {
+    display: block;
+    margin: -4em auto 2em; /* Ajuste para posicionamento */
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    border-radius: 50%; /* Faz a imagem ficar circular */
+    border: 5px solid white; /* Borda branca ao redor da imagem */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
 header h1 {
     color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
     font-size: 2.0em;
