@@ -37,7 +37,7 @@ header {
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     position: absolute;
-    top: 150px; /* Move para baixo */
+    top: 130px; /* Move para baixo */
     left: 260px; /* Move para a direita */
     right: 45px;
     margin: 0;
