@@ -17,17 +17,18 @@ body {
 header {
     background-color: #110d55e3;
     color: #fff;
-    padding: 2em 0;
+    padding: 1.5em 0;
     text-align: center;
     margin-bottom: 6em;
-    position: relative;
 }
 
 .foto-container {
-    position: relative; /* Para manter no fluxo normal */
-    padding-left: 20px; /* Espaçamento interno à esquerda */
-    text-align: left; /* Alinha à esquerda */
-
+    position: absolute; /* Para posicionar a imagem fora do fluxo normal */
+    top: 50%; /* Ajusta a posição vertical */
+    left: 0; /* Alinha a imagem ao lado esquerdo */
+    transform: translateY(-50%); /* Centraliza verticalmente em relação ao eixo Y */
+    padding-left: 20px; /* Espaçamento interno à esquerda, se necessário */
+}
 
 .foto-circular {
     width: 170px; /* Largura da imagem */
@@ -35,15 +36,16 @@ header {
     border-radius: 50%; /* Torna a imagem circular */
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    margin-top: -85px; /* Move a imagem para cima */
+    position: absolute;
+    top: 100px; /* Move para baixo */
+    left: 255px; /* Move para a direita */
+    margin: 0;
 }
 
 header h1 {
-    color: #ffffff;
+    color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
     font-size: 2.0em;
     margin-bottom: 1em;
-    position: relative; /* Para manter no fluxo normal */
-    z-index: 1; /* Para garantir que o texto fique acima da imagem */
 }
 
 /* Contêiner comum */
@@ -138,7 +140,7 @@ nav ul li a {
 }
 
 .icone {
-    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    margin-right: 50px; /* Espaçamento entre o ícone e o texto */
     width: 20px; /* Ajuste o tamanho conforme necessário */
     height: 20px;
 }
