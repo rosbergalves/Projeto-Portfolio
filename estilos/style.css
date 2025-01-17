@@ -59,7 +59,7 @@ nav ul li a {
     height: 170px; /* Altura da imagem */
     position: relative; /* Adiciona a propriedade position para permitir movimentação */
     top: -100px; /* Move para baixo */
-    left: -200px; /* Move para a direita */
+    left: -300px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
