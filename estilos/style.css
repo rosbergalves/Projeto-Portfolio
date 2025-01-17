@@ -19,7 +19,7 @@ header {
     color: #fff;
     padding: 1em 0;
     text-align: center;
-    margin-bottom: -8em;
+    margin-bottom: -5em;
 }
 
 header h1 {
@@ -59,7 +59,7 @@ nav ul li a {
     width: 170px; /* Largura da imagem */
     height: 170px; /* Altura da imagem */
     position: relative; /* Adiciona a propriedade position para permitir movimentação */
-    top: -5px; /* Move para baixo */
+    top: -10px; /* Move para baixo */
     left: -405px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
