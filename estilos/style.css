@@ -1,43 +1,49 @@
-/* Estilo Geral */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-/* Reset básico */
+/* Reset básico para remover margens e paddings padrão */
 body, h1, h2, h3, h4, h5, p, ul, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo do Header */
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; 
+}
+
+/* Estilo do cabeçalho */
 header {
     background-color: #110d55e3;
     color: #fff;
     padding: 1em 0;
     text-align: center;
-    margin-bottom: 6em; /* Ajuste este valor para reduzir o espaçamento */
+    margin-bottom: 2em;
 }
 
 header h1 {
+    color: #ffffff;
     font-size: 2.0em;
     margin-bottom: 1em;
-    color: #ffffff;
 }
 
-/* Navegação */
+/* Contêiner comum */
+.container {
+    width: 65%;
+    margin: auto;
+    padding: 1em 0;
+}
+
+/* Estilo da navegação */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -46,69 +52,86 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Imagem Circular */
+/* Estilo da foto circular */
 .foto-circular {
     display: block;
     margin: 0 auto 20px;
-    width: 170px;
-    height: 170px;
+    width: 170px; /* Largura da imagem */
+    height: 170px; /* Altura da imagem */
+    position: relative; /* Adiciona a propriedade position para permitir movimentação */
+    top: -185px; /* Move para baixo */
+    left: -405px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo das Seções */
-#sobre, #projetos, #contato {
-    margin: 2em 0;
-}
-
-/* Estilo para o título da seção "Sobre" */
-#sobre h2 {
+/* Estilo das seções */
+#sobre h2, #projetos h2, #contato h2 {
     font-size: 1.8em;
     color: #333;
-    text-align: left;
-    margin-bottom: 1em;
+    text-align: left; /* Alinha os títulos à esquerda */
+    margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
+    padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
+    margin-bottom: 1em; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
-/* Estilo para o título da seção "Projetos" */
-#projetos h2 {
-    font-size: 1.8em;
+#sobre p, #projetos p, #contato p {
+    margin-bottom: 1.3em;
+    line-height: 1.5;
+    margin-top: 1em;
+}
+
+/* Estilo da seção Projetos */
+#projetos h3, #projetos h4, #projetos h5 {
+    margin-bottom: 10px;
     color: #333;
-    text-align: left;
-    margin-bottom: 1em;
 }
 
-/* Estilo para o título da seção "Contato" */
-#contato h2 {
-    font-size: 1.8em;
-    color: #333;
-    text-align: left;
-    margin-bottom: 1em;
+#projetos h4, #projetos h5 {
+    font-size: 1.5em;
+    margin-top: 20px;
 }
 
-/* Contêiner */
-.container {
-    width: 65%;
-    margin: auto;
-    padding: 1em 0;
+#projetos a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
 }
 
-/* Listas Personalizadas */
+/* Estilo das listas personalizadas */
 .custom-list {
     padding-left: 1em;
+    margin: 0;
 }
 
 .custom-list li {
-    margin-bottom: 0.5em;
+    padding-left: 0.5em;
 }
 
-/* Links */
-#projetos a, #contato a {
+/* Estilo do contato */
+.container a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.icone {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+#contato a {
     color: #007BFF;
     text-decoration: none;
+    margin-bottom: 0.6em;
 }
 
-/* Rodapé */
+/* Estilo do rodapé */
 footer {
     background-color: #333;
     color: #fff;
@@ -116,15 +139,21 @@ footer {
     padding: 1em 0;
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
     .container {
         width: 100%;
         padding: 0 1em;
     }
 
-    nav ul li {
-        display: block;
-        margin: 0;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foto-circular {
+        width: 140px;
+        height: 140px;
     }
 }
+
