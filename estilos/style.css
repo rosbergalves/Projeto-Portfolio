@@ -20,14 +20,13 @@ header {
     padding: 2em 0;
     text-align: center;
     margin-bottom: 6em;
+    position: relative;
 }
 
 .foto-container {
-    position: absolute; /* Para posicionar a imagem fora do fluxo normal */
-    top: 50%; /* Ajusta a posição vertical */
-    left: 0; /* Alinha a imagem ao lado esquerdo */
-    transform: translateY(-50%); /* Centraliza verticalmente em relação ao eixo Y */
-    padding-left: 20px; /* Espaçamento interno à esquerda, se necessário */
+    position: relative; /* Para manter no fluxo normal */
+    padding-left: 20px; /* Espaçamento interno à esquerda */
+    text-align: left; /* Alinha à esquerda */
 }
 
 .foto-circular {
@@ -36,16 +35,15 @@ header {
     border-radius: 50%; /* Torna a imagem circular */
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    position: absolute;
-    top: 100px; /* Move para baixo */
-    left: 255px; /* Move para a direita */
-    margin: 0;
+    margin-top: -85px; /* Move a imagem para cima */
 }
 
 header h1 {
-    color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
+    color: #ffffff;
     font-size: 2.0em;
     margin-bottom: 1em;
+    position: relative; /* Para manter no fluxo normal */
+    z-index: 1; /* Para garantir que o texto fique acima da imagem */
 }
 
 /* Contêiner comum */
