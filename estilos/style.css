@@ -19,13 +19,13 @@ header {
     color: #fff;
     padding: 1em 0;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 0;
 }
 
 header h1 {
     color: #ffffff;
     font-size: 2.0em;
-    margin-bottom: 1em;
+    margin-bottom: 0em;
 }
 
 /* Contêiner comum */
@@ -72,12 +72,12 @@ nav ul li a {
     text-align: left; /* Alinha os títulos à esquerda */
     margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
     padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
-}
+ }
 
 #sobre p, #projetos p, #contato p {
     margin-bottom: 1.3em;
     line-height: 1.5;
-    margin-top: 1em;
+    margin-top: 0;
 }
 
 /* Estilo da seção Projetos */
