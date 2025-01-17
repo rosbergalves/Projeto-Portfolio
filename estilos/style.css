@@ -83,7 +83,7 @@ nav ul li a {
 /* Estilo da seção Projetos */
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #333;
 }
 
 #projetos h4, #projetos h5 {
@@ -111,7 +111,7 @@ nav ul li a {
 /* Estilo do contato */
 .container a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
     font-size: 16px;
     display: flex;
     align-items: center;
