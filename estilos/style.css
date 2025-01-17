@@ -22,28 +22,8 @@ header {
     margin-bottom: 6em;
 }
 
-.foto-container {
-    position: absolute; /* Para posicionar a imagem fora do fluxo normal */
-    top: 50%; /* Ajusta a posição vertical */
-    left: 0; /* Alinha a imagem ao lado esquerdo */
-    transform: translateY(-50%); /* Centraliza verticalmente em relação ao eixo Y */
-    padding-left: 20px; /* Espaçamento interno à esquerda, se necessário */
-}
-
-.foto-circular {
-    width: 170px; /* Largura da imagem */
-    height: 170px; /* Altura da imagem */
-    border-radius: 50%; /* Torna a imagem circular */
-    border: 5px solid white; /* Borda branca ao redor da imagem */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    position: absolute;
-    top: 250px; /* Move para baixo */
-    left: 250px; /* Move para a direita */
-    margin: 0;
-}
-
 header h1 {
-    color: #ffffff; /* Cor desejada para o h1 no cabeçalho */
+    color: #ffffff;
     font-size: 2.0em;
     margin-bottom: 1em;
 }
@@ -58,10 +38,12 @@ header h1 {
 /* Estilo da navegação */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -70,41 +52,39 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Estilo da seção Sobre */
-#sobre h2 {
-    font-size: 1.8em;
-    color: #333;
+/* Estilo da imagem circular */
+.foto-circular {
+    display: block;
+    margin: 0 auto 20px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#sobre p {
+/* Estilo das seções */
+#sobre h2, #projetos h2, #contato h2 {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+}
+
+#sobre p, #projetos p, #contato p {
     margin-bottom: 1.3em;
     line-height: 1.5;
-    margin-bottom: 10px;
     margin-top: 20px;
 }
 
 /* Estilo da seção Projetos */
-#projetos h2 {
-    font-size: 1.8em;
+#projetos h3, #projetos h4, #projetos h5 {
+    margin-bottom: 10px;
     color: #333;
 }
 
-#projetos h3 {
-    margin-bottom: 10px;
-}
-
-#projetos h4 {
+#projetos h4, #projetos h5 {
     font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
     margin-top: 20px;
-}
-
-#projetos h5 {
-    font-size: 1.5em; /* Tamanho específico para o h5 na seção Projetos */
-    color: #333;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 #projetos a {
@@ -122,15 +102,9 @@ nav ul li a {
 
 .custom-list li {
     padding-left: 0.5em;
-    text-indent: 0;
 }
 
-/* Estilo da seção Contato */
-#contato h2 {
-    font-size: 1.8em;
-    color: #333;
-}
-
+/* Estilo do contato */
 .container a {
     text-decoration: none;
     color: #000;
@@ -140,8 +114,8 @@ nav ul li a {
 }
 
 .icone {
-    margin-right: 50px; /* Espaçamento entre o ícone e o texto */
-    width: 20px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px;
+    width: 20px;
     height: 20px;
 }
 
@@ -166,8 +140,13 @@ footer {
         padding: 0 1em;
     }
 
-    nav ul li {
-        display: block;
-        margin: 0;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foto-circular {
+        width: 140px;
+        height: 140px;
     }
 }
