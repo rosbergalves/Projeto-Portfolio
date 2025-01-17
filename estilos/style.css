@@ -31,8 +31,8 @@ header {
 }
 
 .foto-circular {
-    width: 160px; /* Largura da imagem */
-    height: 160px; /* Altura da imagem */
+    width: 170px; /* Largura da imagem */
+    height: 170px; /* Altura da imagem */
     border-radius: 50%; /* Torna a imagem circular */
     border: 5px solid white; /* Borda branca ao redor da imagem */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
