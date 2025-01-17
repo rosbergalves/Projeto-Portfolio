@@ -56,8 +56,10 @@ nav ul li a {
 .foto-circular {
     display: block;
     margin: 0 auto 20px;
-    width: 170px;
-    height: 170px;
+    width: 170px; /* Largura da imagem */
+    height: 170px; /* Altura da imagem */
+    top: 100px; /* Move para baixo */
+    left: 200px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -67,7 +69,9 @@ nav ul li a {
 #sobre h2, #projetos h2, #contato h2 {
     font-size: 1.8em;
     color: #333;
-    text-align: center;
+    text-align: left; /* Alinha os títulos à esquerda */
+    margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
+    padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
 }
 
 #sobre p, #projetos p, #contato p {
