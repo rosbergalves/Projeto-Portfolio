@@ -58,7 +58,7 @@ nav ul li a {
     width: 170px; /* Largura da imagem */
     height: 170px; /* Altura da imagem */
     position: relative; /* Adiciona a propriedade position para permitir movimentação */
-    top: 100px; /* Move para baixo */
+    top: 75px; /* Move para baixo */
     left: 150px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
