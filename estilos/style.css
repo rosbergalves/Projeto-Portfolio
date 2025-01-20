@@ -77,7 +77,7 @@ nav ul li a {
 }
 
 img.lado {
-    float: right; /* Imagem lado meus projetos */
+    float: left; /* Imagem lado meus projetos */
 }
 
 #sobre p, #projetos p, #contato p {
