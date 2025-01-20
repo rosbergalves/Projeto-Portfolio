@@ -76,6 +76,10 @@ nav ul li a {
     margin-bottom: 0em; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
+#sobre p:nth-last-of-type(1) {
+    margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
+}
+
 /* Estilo da seção Projetos */
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 5px;
