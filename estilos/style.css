@@ -76,6 +76,10 @@ nav ul li a {
     margin-bottom: 20px; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
+#sobre-mim p {
+    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os parágrafos */
+}
+
 #sobre p:nth-last-of-type(1) {
     margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
 }
