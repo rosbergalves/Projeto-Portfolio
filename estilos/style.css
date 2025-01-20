@@ -78,7 +78,7 @@ nav ul li a {
 
 .container {
     position: relative; /* Referência para a imagem posicionada absolutamente */
-    padding: 20px;
+    padding: 50px;
 }
 
 img.lado {
