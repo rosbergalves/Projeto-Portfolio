@@ -73,7 +73,7 @@ nav ul li a {
     text-align: left; /* Alinha os títulos à esquerda */
     margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
     padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
-    margin-bottom: 0em; /* Ajuste o espaçamento entre os títulos e o conteúdo */
+    margin-bottom: 20px; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
 #sobre p:nth-last-of-type(1) {
