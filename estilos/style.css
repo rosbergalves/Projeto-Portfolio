@@ -76,6 +76,10 @@ nav ul li a {
     margin-bottom: 0em; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
+img.lado {
+    float: right; /* Imagem lado meus projetos */
+}
+
 #sobre p, #projetos p, #contato p {
     margin-bottom: 1.3em;
     line-height: 1.5;
