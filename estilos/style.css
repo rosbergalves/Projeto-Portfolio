@@ -76,8 +76,16 @@ nav ul li a {
     margin-bottom: 0em; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
+.container {
+    position: relative; /* Referência para a imagem posicionada absolutamente */
+    padding: 20px;
+}
+
 img.lado {
-    float: left; /* Imagem lado meus projetos */
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 150px;
 }
 
 #sobre p, #projetos p, #contato p {
