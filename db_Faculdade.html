@@ -5,20 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de Dados db_Faculdade</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <style>
+        /* Centralizar todo o conteúdo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: #110d55e3;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Container central */
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Estilização dos parágrafos */
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Imagens responsivas */
+        .imagem-projeto {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        /* Botão de voltar */
+        .btn-back {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-back img {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Banco de Dados db_Faculdade</h1>
-        </header>
-        <article>
-            <p>A <abbr title="HyperText Markup Language">HTML</abbr> é uma linguagem de marcação para a criação de sites. Atualmente na versão 5, ela usa a semântica dos elementos para criar o conteúdo de uma página Web. Com as <abbr title="Cascading Style Sheets">CSS</abbr>, criamos as configurações visuais que um site vai ter.</p>
+    <header>
+        <h1>Banco de Dados db_Faculdade</h1>
+    </header>
 
-            <img src="Imagens/22112357_6554783.jpg" alt="texto" width="560" height="315">
+    <main class="container">
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>O projeto <strong>db_Faculdade</strong> foi desenvolvido com o objetivo de criar um banco de dados estruturado para a gestão acadêmica de uma faculdade, contemplando alunos, professores, cursos e disciplinas.</p>
+        </section>
 
-            <a href="index.html"><img src="Imagens/btn-back.png" alt="Voltar"></a>
-            
-        </article>
+        <section>
+            <h2>Detalhes do Desenvolvimento</h2>
+            <p>Este banco de dados foi modelado seguindo as melhores práticas de normalização e otimização, garantindo consistência e integridade nos dados armazenados.</p>
+            <ul>
+                <li>Levantamento de requisitos e análise de necessidades</li>
+                <li>Modelagem conceitual e lógica</li>
+                <li>Implementação no SQL Server</li>
+                <li>Testes e validação de dados</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Imagens do Projeto</h2>
+            <img src="Imagens/22112357_6554783.jpg" alt="Modelo de Banco de Dados" class="imagem-projeto">
+            <img src="Imagens/diagrama.png" alt="Diagrama Entidade-Relacionamento" class="imagem-projeto">
+        </section>
+
+        <div class="btn-back">
+            <a href="index.html">
+                <img src="Imagens/btn-back.png" alt="Voltar">
+            </a>
+        </div>
     </main>
 </body>
 </html>
