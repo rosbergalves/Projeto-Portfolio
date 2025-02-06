@@ -92,6 +92,18 @@ nav ul li a {
     color: #333;
 }
 
+#projetos a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#projetos a:hover {
+    text-decoration: underline;
+}
+
 #projetos h4, #projetos h5 {
     font-size: 1.5em;
     margin-top: 20px;
