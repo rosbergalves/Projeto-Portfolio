@@ -288,18 +288,18 @@
             <a href="https://github.com/rosbergalves/db_Faculdade">Tenha acesso ao código completo no repositório do projeto.</a>
 
             <pre><code class="language-sql">
-    --Tabela para cadastro das disciplinas cursadas na faculdade
-    CREATE TABLE Disciplina (
-	Cod_Disciplina INT PRIMARY KEY IDENTITY,
-	Nome_Disciplina VARCHAR(30) NOT NULL,
-	Descricao VARCHAR(200),
-	Qtde_Alunos INT NOT NULL,
-	Carga_Horaria INT NOT NULL,
-	Cod_Disciplina_Depende INT NULL,
-	Cod_Departamento INT NOT NULL,
-	CONSTRAINT fk_departamento_disciplina FOREIGN KEY (Cod_Departamento) REFERENCES Departamento (Cod_Departamento),
-	CONSTRAINT fk_disciplinadepende_disciplina FOREIGN KEY (Cod_Disciplina_Depende) REFERENCES Disciplina (Cod_Disciplina)
-    );
+--Tabela para cadastro das disciplinas cursadas na faculdade
+CREATE TABLE Disciplina (
+Cod_Disciplina INT PRIMARY KEY IDENTITY,
+Nome_Disciplina VARCHAR(30) NOT NULL,
+Descricao VARCHAR(200),
+Qtde_Alunos INT NOT NULL,
+Carga_Horaria INT NOT NULL,
+Cod_Disciplina_Depende INT NULL,
+Cod_Departamento INT NOT NULL,
+CONSTRAINT fk_departamento_disciplina FOREIGN KEY (Cod_Departamento) REFERENCES Departamento (Cod_Departamento),
+CONSTRAINT fk_disciplinadepende_disciplina FOREIGN KEY (Cod_Disciplina_Depende) REFERENCES Disciplina (Cod_Disciplina)
+);
                 </code></pre>
         </section>
 
