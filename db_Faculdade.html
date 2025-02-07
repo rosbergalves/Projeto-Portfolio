@@ -285,23 +285,10 @@
         <section>
             <h2>Scripts de Criação do Banco de Dados</h2>
 
-            <p>Adicionei alguns scripts do processo de criação do Banco de Dados db_Faculdade.</p>
+            <p>Adicionei algumas imagens dos scripts do processo de criação do Banco de Dados db_Faculdade.</p>
             <a href="https://github.com/rosbergalves/db_Faculdade">Tenha acesso ao código completo no repositório do projeto.</a>
 
-<pre><code class="language-sql">
---Tabela para cadastro das disciplinas cursadas na faculdade
-CREATE TABLE Disciplina (
-Cod_Disciplina INT PRIMARY KEY IDENTITY,
-Nome_Disciplina VARCHAR(30) NOT NULL,
-Descricao VARCHAR(200),
-Qtde_Alunos INT NOT NULL,
-Carga_Horaria INT NOT NULL,
-Cod_Disciplina_Depende INT NULL,
-Cod_Departamento INT NOT NULL,
-CONSTRAINT fk_departamento_disciplina FOREIGN KEY (Cod_Departamento) REFERENCES Departamento (Cod_Departamento),
-CONSTRAINT fk_disciplinadepende_disciplina FOREIGN KEY (Cod_Disciplina_Depende) REFERENCES Disciplina (Cod_Disciplina)
-);
-</code></pre>
+            <img src="Imagens/script_tbl_disciplina.png" alt="Tabela Disciplina" class="imagem-projeto">
         </section>
 
         <div class="btn-back">
