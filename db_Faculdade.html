@@ -6,6 +6,10 @@
     <title>Banco de Dados db_Faculdade</title>
     <link rel="stylesheet" href="estilos/style.css">
     <style>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -287,7 +291,7 @@
             <p>Adicionei alguns scripts do processo de criação do Banco de Dados db_Faculdade.</p>
             <a href="https://github.com/rosbergalves/db_Faculdade">Tenha acesso ao código completo no repositório do projeto.</a>
 
-            <pre><code class="language-sql">
+<pre><code class="language-sql">
 --Tabela para cadastro das disciplinas cursadas na faculdade
 CREATE TABLE Disciplina (
 Cod_Disciplina INT PRIMARY KEY IDENTITY,
@@ -300,7 +304,7 @@ Cod_Departamento INT NOT NULL,
 CONSTRAINT fk_departamento_disciplina FOREIGN KEY (Cod_Departamento) REFERENCES Departamento (Cod_Departamento),
 CONSTRAINT fk_disciplinadepende_disciplina FOREIGN KEY (Cod_Disciplina_Depende) REFERENCES Disciplina (Cod_Disciplina)
 );
-            </code></pre>
+</code></pre>
         </section>
 
         <div class="btn-back">
