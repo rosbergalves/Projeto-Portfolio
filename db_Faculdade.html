@@ -192,7 +192,31 @@
             <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
             <figcaption>Modelo Conceitual</figcaption>
             </figure>
-            
+      
+            <h3>Modelo Lógico</h3>
+
+            <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
+
+            <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
+
+            <ul class="custom-list"></ul>
+            <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
+            <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
+            <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
+            </ul>
+
+            <ul class="custom-list">
+                <li><b>Aluno_Disciplina:</b> Relaciona os alunos às disciplinas cursadas.</li>
+                <li><b>Professor_Disciplina:</b> Relaciona os professores às disciplinas que lecionam.</li>
+                <li><b>Curso_Disciplina:</b> Mapeia as disciplinas pertencentes a cada curso.</li>
+                <li><b>Disciplina_Historico</b> Associa as disciplinas ao histórico dos alunos.</li>
+            </ul>
+
+            figure>
+            <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Lógico" class="imagem-projeto">
+            <figcaption>Modelo Lógico</figcaption>
+            </figure>
+
         </section>
 
         <div class="btn-back">
