@@ -134,7 +134,6 @@
             <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
             <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
             <p>Confira um exemplo de dados gerados através de IA generativa e o resultado de uma consulta a base de dados:</p>
-
         </section>
 
         <section>
@@ -151,7 +150,30 @@
                 <li><b>Excel:</b> Utilização de planilhas para criação do dicionário de dados.</li>
                 <li><b>Visual Studio Code:</b> Utilizado para edição do arquivo Readme do projeto.</li>
             </ul>
+        </section>
 
+        <section>
+            <h2>Modelagem</h2>
+
+            <p>Nesta seção, temos a modelagem dos diagramas Entidade-Relacionamento (ER) do banco de dados, começando pelo modelo conceitual e avançando para o modelo lógico. O modelo conceitual foca na estrutura geral do banco, destacando entidades e seus relacionamentos, enquanto o modelo lógico detalha os atributos, chaves primárias e estrangeiras, refinando a modelagem para a implementação do banco de dados.</p>
+        </section>
+
+        <section>
+            <h2>Diagramas Entidade Relacionamento (ER)</h2>
+
+            <h3>Modelo Conceitual</h3>
+
+            <p>O diagrama conceitual representa uma visão de alto nível da estrutura do banco de dados, destacando as principais entidades e seus relacionamentos, sem detalhar atributos específicos. Este modelo serve para mapear os principais conceitos e suas conexões, facilitando o entendimento da estrutura do banco antes da implementação técnica.</p>
+
+            <p>O banco de dados foi modelado para armazenar e gerenciar informações acadêmicas de uma faculdade, abrangendo o cadastro de alunos, professores, cursos, disciplinas, turmas, departamentos e histórico escolar etc. Entre as principais entidades, destacam-se:</p>
+
+            <ul class="custom-list">
+                <li><b>Aluno:</b>Representa os estudantes matriculados na instituição. Cada aluno pode estar vinculado a uma turma e a um curso.</li>
+                <li><b>Curso:</b>Contém os cursos oferecidos pela faculdade, sendo associados a um departamento específico.</li>
+                <li><b>Professor:</b>Representa os docentes da instituição, que pertencem a um departamento e lecionam disciplinas.</li>
+                <li><b>Disciplina:</b>Representa as matérias lecionadas nos cursos, podendo ter pré-requisitos e estar vinculadas a um departamento.</li>
+                <li><b>Departamento:</b>Administração acadêmica responsável pelos cursos e disciplinas.</li>
+            </ul>
         </section>
 
         <div class="btn-back">
