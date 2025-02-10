@@ -86,6 +86,20 @@ nav ul li a {
     margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
 }
 
+section {
+    display: flex;  /* Organiza os elementos em linha */
+    justify-content: flex-start; /* Alinha as imagens à esquerda */
+    flex-wrap: wrap; /* Permite que quebrem para a próxima linha em telas menores */
+    gap: 15px; /* Espaço entre as imagens */
+    padding: 20px 0;
+    width: 100%; /* Garante que a seção ocupe toda a largura */
+}
+
+.left {
+    width: 80px; /* Reduz o tamanho das imagens */
+    height: auto; /* Mantém a proporção original */
+}
+
 /* Estilo da seção Projetos */
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 5px;
