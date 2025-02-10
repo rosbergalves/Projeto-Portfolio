@@ -173,3 +173,15 @@ footer {
     }
 }
 
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Permite que quebre linha se necessário */
+    gap: 10px; /* Espaçamento entre os ícones */
+    margin-top: 20px;
+}
+
+.icon {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
