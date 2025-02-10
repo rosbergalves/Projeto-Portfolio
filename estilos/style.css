@@ -96,8 +96,8 @@ section {
 }
 
 .left {
-    max-width: 80px; /* Define o tamanho máximo das imagens */
-    height: auto; /* Mantém a proporção original */
+    max-width: 80px !important;
+    height: auto !important;
 }
 
 /* Estilo da seção Projetos */
