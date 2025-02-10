@@ -101,7 +101,8 @@ section {
 }
 
 .tech-title {
-    font-size: 1.5em; /* Define o tamanho do título */
+    font-size: 1.8em; /* Define o tamanho do título */
+    margin-top: 10px;
     margin-bottom: 10px; /* Adiciona espaço entre o título e as imagens */
     color: #333; /* Cor do texto */
     text-align: left; /* Alinha o título à esquerda */
