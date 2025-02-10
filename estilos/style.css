@@ -1,153 +1,125 @@
-/* Reset básico para remover margens e paddings padrão */
-body, h1, h2, h3, h4, h5, p, ul, li, a {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo geral do corpo */
+/* Estilo geral */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
-/* Estilo do cabeçalho */
+/* Cabeçalho */
 header {
     background-color: #110d55e3;
     color: #fff;
-    padding: 1em 0;
     text-align: center;
-    margin-bottom: -8em;
+    padding: 1em 0;
 }
 
 header h1 {
-    color: #ffffff;
-    font-size: 2.0em;
-    margin-bottom: 1em;
+    font-size: 2em;
 }
 
-/* Contêiner comum */
+/* Contêiner principal */
 .container {
     width: 65%;
-    margin: auto;
-    padding: 1em 0;
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
 }
 
-/* Estilo da navegação */
+/* Navegação */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-/* Estilo da foto circular */
+/* Imagem de perfil */
 .foto-circular {
     display: block;
+    width: 170px;
+    height: 170px;
     margin: 0 auto 20px;
-    width: 170px; /* Largura da imagem */
-    height: 170px; /* Altura da imagem */
-    position: relative; /* Adiciona a propriedade position para permitir movimentação */
-    top: 30px; /* Move para baixo */
-    left: -405px; /* Move para a direita */
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo das seções */
-#sobre h2, #projetos h2, #contato h2 {
+/* Títulos */
+h2 {
     font-size: 1.8em;
     color: #333;
-    text-align: left; /* Alinha os títulos à esquerda */
-    margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
-    padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
-    margin-bottom: 20px; /* Ajuste o espaçamento entre os títulos e o conteúdo */
+    margin-bottom: 15px;
 }
 
-#sobre p:nth-of-type(1),
-#sobre p:nth-of-type(2),
-#sobre p:nth-of-type(3) {
-    margin-bottom: 1em; /* Ajuste o valor conforme necessário */
-}
-
-#sobre p:nth-last-of-type(1) {
-    margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
-}
-
-/* Estilo da seção Projetos */
-#projetos h3, #projetos h4, #projetos h5 {
-    margin-bottom: 5px;
-    color: #333;
-}
-
-#projetos h4, #projetos h5 {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
-
-#projetos a {
+h3 a {
     color: #007BFF;
     text-decoration: none;
-    margin-top: 20px;
-    display: block;
 }
 
-/* Estilo das listas personalizadas */
+h3 a:hover {
+    text-decoration: underline;
+}
+
+/* Lista personalizada */
 .custom-list {
-    padding-left: 1em;
-    margin: 0;
+    list-style-type: square;
+    padding-left: 20px;
 }
 
-.custom-list li {
-    padding-left: 0.5em;
+/* Contato */
+.contato-lista {
+    list-style: none;
+    padding: 0;
+    text-align: left;
 }
 
-/* Estilo do contato */
-.container a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
+.contato-lista li {
+    margin-bottom: 10px;
+}
+
+.contato-lista a {
     display: flex;
     align-items: center;
-}
-
-.icone {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
-}
-
-#contato a {
     color: #007BFF;
     text-decoration: none;
-    margin-bottom: 0.6em;
 }
 
-/* Estilo do rodapé */
+.contato-lista img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Rodapé */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1em 0;
+    margin-top: 20px;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
     .container {
-        width: 100%;
-        padding: 0 1em;
+        width: 90%;
     }
 
     nav ul {
