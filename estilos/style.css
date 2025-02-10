@@ -73,7 +73,7 @@ nav ul li a {
     text-align: left; /* Alinha os títulos à esquerda */
     margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
     padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
-    width: 50px; /* Define um tamanho fixo pequeno */
+    width: 10px; /* Define um tamanho fixo pequeno */
     height: auto; /* Mantém a proporção */
     float: left;
     margin-top: 10px;
