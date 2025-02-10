@@ -91,6 +91,19 @@ nav ul li a {
     margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
 }
 
+.icon-container {
+    display: flex; /* Usa flexbox para alinhar os ícones em linha */
+    justify-content: left; /* Alinha os ícones à esquerda */
+    gap: 15px; /* Espaço entre os ícones */
+    flex-wrap: wrap; /* Permite que os ícones quebrem linha se necessário */
+    margin-top: 10px; /* Espaço superior */
+}
+
+.icon {
+    width: 80px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
 /* Estilo da seção Projetos */
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 5px;
