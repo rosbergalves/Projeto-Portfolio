@@ -100,6 +100,14 @@ section {
     height: auto !important;
 }
 
+.tech-title {
+    font-size: 1.5em; /* Define o tamanho do título */
+    margin-bottom: 10px; /* Adiciona espaço entre o título e as imagens */
+    color: #333; /* Cor do texto */
+    text-align: left; /* Alinha o título à esquerda */
+    width: 100%; /* Faz o título ocupar toda a largura da seção */
+}
+
 /* Estilo da seção Projetos */
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 5px;
