@@ -73,10 +73,6 @@ nav ul li a {
     text-align: left; /* Alinha os títulos à esquerda */
     margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
     padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
-    width: 10px; /* Define um tamanho fixo pequeno */
-    height: auto; /* Mantém a proporção */
-    float: left;
-    margin-top: 10px;
     margin-bottom: 20px; /* Ajuste o espaçamento entre os títulos e o conteúdo */
 }
 
@@ -87,21 +83,7 @@ nav ul li a {
 }
 
 #sobre p:nth-last-of-type(1) {
-    margin-top: 10px;
     margin-bottom: 20px; /* Ajuste o valor para o espaçamento desejado */
-}
-
-.icon-container {
-    display: flex; /* Usa flexbox para alinhar os ícones em linha */
-    justify-content: left; /* Alinha os ícones à esquerda */
-    gap: 15px; /* Espaço entre os ícones */
-    flex-wrap: wrap; /* Permite que os ícones quebrem linha se necessário */
-    margin-top: 10px; /* Espaço superior */
-}
-
-.icon {
-    width: 20px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção */
 }
 
 /* Estilo da seção Projetos */
@@ -190,3 +172,5 @@ footer {
         height: 140px;
     }
 }
+
+
