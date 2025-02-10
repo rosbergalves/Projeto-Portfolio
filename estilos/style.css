@@ -87,16 +87,16 @@ nav ul li a {
 }
 
 section {
-    display: flex;  /* Organiza os elementos em linha */
+    display: flex; /* Organiza as imagens em linha */
     justify-content: flex-start; /* Alinha as imagens à esquerda */
-    flex-wrap: wrap; /* Permite que quebrem para a próxima linha em telas menores */
-    gap: 15px; /* Espaço entre as imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha se necessário */
+    gap: 10px; /* Adiciona espaço entre as imagens */
     padding: 20px 0;
     width: 100%; /* Garante que a seção ocupe toda a largura */
 }
 
 .left {
-    width: 20px; /* Reduz o tamanho das imagens */
+    max-width: 80px; /* Define o tamanho máximo das imagens */
     height: auto; /* Mantém a proporção original */
 }
 
