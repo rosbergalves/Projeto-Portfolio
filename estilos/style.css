@@ -182,6 +182,8 @@ footer {
 }
 
 .icon {
-    width: 5px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção */
+    width: 50px; /* Define uma largura fixa */
+    max-width: 100%; /* Garante que as imagens não fiquem maiores que o necessário */
+    height: 50px; /* Define uma altura fixa */
+    object-fit: contain; /* Mantém a proporção dentro da caixa definida */
 }
