@@ -30,14 +30,6 @@ header h1 {
 
 /* Contêiner comum */
 .container {
-    text-align: left;
-    width: 80%;
-    max-width: 900px;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: -20px;
     width: 65%;
     margin: auto;
     padding: 1em 0;
@@ -98,18 +90,6 @@ nav ul li a {
 #projetos h3, #projetos h4, #projetos h5 {
     margin-bottom: 5px;
     color: #333;
-}
-
-#projetos a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-#projetos a:hover {
-    text-decoration: underline;
 }
 
 #projetos h4, #projetos h5 {
