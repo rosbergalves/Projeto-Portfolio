@@ -182,7 +182,7 @@ footer {
 }
 
 .icon {
-    width: 100px; /* Define uma largura fixa */
-    height: 100px; /* Define uma altura fixa */
+    width: 200px; /* Define uma largura fixa */
+    height: 200px; /* Define uma altura fixa */
     object-fit: contain; /* Mantém a proporção dentro da caixa definida */
 }
