@@ -6,13 +6,14 @@
     <title>Banco de Dados db_Faculdade</title>
     <link rel="stylesheet" href="estilos/style.css">
     <style>
-        
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
             margin: 0;
             padding: 0;
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
@@ -43,7 +44,6 @@
             text-align: left;
             margin-top: 20px;
             margin-bottom: 10px;
-            clear: both;
         }
 
         h3 {font-size: 1.2em;
@@ -51,7 +51,6 @@
             text-align: left;
             margin-top: 20px;
             margin-bottom: 10px;
-            clear: both;
         }
 
         header {
@@ -72,29 +71,19 @@
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin: 20px auto;
+            margin-top: -20px;
         }
 
         p {
             text-align: left;
             line-height: 1.6;
             margin-top: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .custom-list {
             margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        ul.custom-list {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-
-        ul.custom-list li {
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
         .recuo {
@@ -102,12 +91,13 @@
         }
 
         .imagem-projeto {
-            width: 100%;
-            max-width: 700px;
-            height: center;
+            width: 80%;
+            height: auto;
             display: block;
             margin: 20px auto;
             border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
         figure {
@@ -134,7 +124,6 @@
             height: auto;
             cursor: pointer;
         }
-
     </style>
 </head>
 <body>
@@ -144,55 +133,42 @@
 
     <main class="container">
         <section>
-            <figure>
             <img src="Imagens/22112357_6554783.jpg" alt="Modelo de Banco de Dados" class="imagem-projeto">
-            </figure>
-            
+
             <h2>Objetivo do Banco de Dados</h2>
             <p>Este banco de dados foi desenvolvido durante o curso de SQL Server promovido pelo professor Fábio dos Reis da Bóson Treinamentos com o propósito de fornecer uma base estruturada para a realização de testes de inserção de dados.</p>
             <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
 
-            <h2>Fases do Projeto</h2>
-                <ul class="custom-list">
+            <h3>Fases do Projeto</h3>
+                <ul class="custom-list"></ul>
                 <li>Levantamento de Requisitos</li>
                 <li>Identificação de Entidades e Relacionamentos</li>
                 <li>Modelo E-R e Diagrama E-R</li>
                 <li>Dicionário de Dados</li>
                 <li>Normalização (1ª, 2ª e 3ª formas normais)</li>
-                <li>Implementação do banco db_Faculdade</li>
+                <li>Implementação do banco ‘db_Faculdade’</li>
                 <li>Testes Básicos</li>
             </ul>
         </section>
 
         <section>
-            <h2>Regras de Negócio</h2>
+            <h3>Regras de Negócio</h3>
             <ul class="custom-list">
                 <li>Um aluno só pode estar matriculado em um curso por vez.</li>
                 <li>Alunos possuem um código de identificação (RA).</li>
                 <li>Cursos são compostos por disciplinas.</li>
                 <li>Cada disciplina terá no máximo 30 alunos por turma.</li>
                 <li>As disciplinas podem ser obrigatórias ou optativas.</li>
-                <li>As disciplinas pertencem, a departamentos específicos.</li>
                 <li>Cada disciplina possui um código de identificação.</li>
-                <li>Alunos podem trancar matrícula, não estando então matriculados em nenhuma disciplina no semestre.</li>
                 <li>Em cada semestre, um aluno pode se matricular em até 9 disciplinas.</li>
-                <li>O aluno só pode ser reprovado no máximo 3 vezes na mesma disciplina.</li>
-                <li>A faculdade terá no máximo 3.000 alunos matriculados simultaneamente, em 10 cursos distintos.</li>
-                <li>Entram 300 alunos novos por ano.</li>
-                <li>Existem 90 disciplinas no total disponíveis.</li>
-                <li>Um histórico traz as disciplinas cursadas por um aluno, incluindo nota final, frequência e período do curso.</li>
                 <li>Professores podem ser cadastrados mesmo sem lecionar disciplinas.</li>
-                <li>Existem 40 professores trabalhando na faculdade.</li>
-                <li>Cada professor irá lecionar no máximo 4 disciplinas diferentes.</li>
-                <li>Cada professor é vinculado a um departamento.</li>
-                <li>Professores são identificados por um código de professor.</li>
             </ul>
         </section>
 
         <section>
             <h2>Detalhes do Desenvolvimento</h2>
 
-            <h2>Geração de Dados Fictícios para Testes</h2>
+            <h3>Geração de Dados Fictícios para Testes</h3>
 
             <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
             <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
@@ -200,12 +176,12 @@
         </section>
 
         <section>
-         
+
             <img src="Imagens/insert.png" alt="Scrip de Inserts" class="imagem-projeto">
             <img src="Imagens/select_08.png" alt="Funcionamento do Banco" class="imagem-projeto">
 
             <h2>Ferramentas e Tecnologias Utilizadas</h2>
-            
+
             <ul class="custom-list">
                 <li><b>SQL Server:</b> SGBD utilizado para criar e gerenciar o banco de dados, além de executar consultas SQL para manipulação e análise dos dados.</li>
                 <li><b>SQL:</b> Linguagem de consulta usada para gerenciar e manipular bancos de dados relacionais, ela é especializada na interação com o banco de dados.</li>
@@ -224,7 +200,7 @@
         <section>
             <h2>Diagramas Entidade Relacionamento (ER)</h2>
 
-            <h2>Modelo Conceitual</h2>
+            <h3>Modelo Conceitual</h3>
 
             <p>O diagrama conceitual representa uma visão de alto nível da estrutura do banco de dados, destacando as principais entidades e seus relacionamentos, sem detalhar atributos específicos. Este modelo serve para mapear os principais conceitos e suas conexões, facilitando o entendimento da estrutura do banco antes da implementação técnica.</p>
 
@@ -239,17 +215,17 @@
             </ul>
 
             <figure>
-            <figcaption>Modelo Conceitual</figcaption>
             <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
+            <figcaption>Modelo Conceitual</figcaption>
             </figure>
-      
-            <h2>Modelo Lógico</h2>
+
+            <h3>Modelo Lógico</h3>
 
             <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
 
             <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
 
-            <ul class="custom-list">
+            <ul class="custom-list"></ul>
             <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
             <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
             <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
@@ -263,8 +239,8 @@
             </ul>
 
             <figure>
-            <figcaption>Modelo Lógico</figcaption>
             <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Lógico" class="imagem-projeto">
+            <figcaption>Modelo Lógico</figcaption>
             </figure>
         </section>
 
@@ -284,29 +260,26 @@
             <h2>Dicionário de Dados</h2>
 
             <p>Aqui é podemos observar algumas imagens das tabelas descritas no dicionário de dados, clique no link abaixo para ter acesso ao dicionário de dados completo.</p>
-            
+
             <a href="https://drive.google.com/drive/folders/1XdWXLfsamOwjxcFQ50T2N5lNkEibZxuo?usp=sharing" target="_blank">Download do Dicionário de Dados Completo</a>
         </section>
 
         <section>
             <h2>Entidades e Atributos</h2>
 
-            <h2>Entidade Aluno</h2>
+            <h3>Entidade Aluno</h3>
             <img src="Imagens/entidate_tbl_aluno.png" alt="Entidade Aluno" class="imagem-projeto">
-
-            <h2>Atributos Aluno</h2>
+            <h3>Atributos Aluno</h3>
             <img src="Imagens/atributos_tbl_aluno.png" alt="Atributos Aluno" class="imagem-projeto">
 
-            <h2>Entidade Curso</h2>
+            <h3>Entidade Curso</h3>
             <img src="Imagens/entidate_tbl_curso.png" alt="Entidade Curso" class="imagem-projeto">
-
-            <h2>Atributos Curso</h2>
+            <h3>Atributos Curso</h3>
             <img src="Imagens/atributos_tbl_curso.png" alt="Atributos Curso" class="imagem-projeto">
 
-            <h2>Entidade Disciplina</h2>
+            <h3>Entidade Disciplina</h3>
             <img src="Imagens/entidate_tbl_disciplina.png" alt="Entidade Disciplina" class="imagem-projeto">
-
-            <h2>Atributos Disciplina</h2>
+            <h3>Atributos Disciplina</h3>
             <img src="Imagens/atributos_tbl_disciplina.png" alt="Atributos Disciplina" class="imagem-projeto">
         </section>
 
@@ -339,13 +312,13 @@
 
             <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
 
-            <ul class="custom-list">
+            <ul class="custom-list"></ul>
             <li>A integridade das relações entre as tabelas.</li>
             <li>O correto armazenamento e recuperação das informações.</li>
             <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
             </ul>
 
-                <figure>
+            <figure>
                 <img src="Imagens/select_01.png" alt="select01" class="imagem-projeto">
                 <figcaption><b>Resultado da Consulta:</b> Essa consulta confirma que os alunos estão corretamente vinculados aos cursos e às turmas, as relações entre as tabelas Aluno, Curso e Turma estão funcionando corretamente e os alunos possuem informações de curso e período corretamente associadas.</figcaption>
                 </figure>
@@ -364,16 +337,16 @@
 
         <section>
             <h2>Contato</h2>
-                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> LinkedIn</a></p>
-                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> GitHub</a></p>
-                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Medium</a></p>
+                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> Acesse meu LinkedIn</a></p>
+                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> Acesse meu GitHub</a></p>
+                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Acesse meu Medium</a></p>
         </section>
 
         <div class="btn-back">
             <a href="index.html">
-                <img src="Imagens/btn-back.png" alt="Voltar"></a>
+                <img src="Imagens/btn-back.png" alt="Voltar">
+            </a>
         </div>
     </main>
 </body>
 </html>
-
