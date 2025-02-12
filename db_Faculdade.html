@@ -153,7 +153,7 @@
             <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
 
             <h3>Fases do Projeto</h3>
-                <ul class="custom-list"></ul>
+                <ul class="custom-list">
                 <li>Levantamento de Requisitos</li>
                 <li>Identificação de Entidades e Relacionamentos</li>
                 <li>Modelo E-R e Diagrama E-R</li>
@@ -166,7 +166,7 @@
 
         <section>
             <h3>Regras de Negócio</h3>
-            <ul class="custom-list"></ul>
+            <ul class="custom-list">
                 <li>Um aluno só pode estar matriculado em um curso por vez.</li>
                 <li>Alunos possuem um código de identificação (RA).</li>
                 <li>Cursos são compostos por disciplinas.</li>
@@ -249,13 +249,13 @@
 
             <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
 
-            <ul class="custom-list"></ul>
+            <ul class="custom-list">
             <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
             <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
             <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
             </ul>
 
-            <ul class="custom-list recuo"></ul>
+            <ul class="custom-list recuo">
                 <li><b>Aluno_Disciplina:</b> Relaciona os alunos às disciplinas cursadas.</li>
                 <li><b>Professor_Disciplina:</b> Relaciona os professores às disciplinas que lecionam.</li>
                 <li><b>Curso_Disciplina:</b> Mapeia as disciplinas pertencentes a cada curso.</li>
@@ -271,7 +271,7 @@
         <section>
             <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
 
-            <ul class="custom-list"></ul>
+            <ul class="custom-list">
                 <li><b>Primeira Forma Normal (1FN):</b> Cada tabela contém apenas valores atômicos, sem grupos repetitivos ou colunas multivaloradas, garantindo que todos os atributos sejam indivisíveis.</li>
                 <li><b>Segunda Forma Normal (2FN):</b> Todas as tabelas atendem à 1FN e não possuem dependências parciais, ou seja, todos os atributos não-chave dependem totalmente da chave primária.</li>
                 <li><b>Terceira Forma Normal (3FN):</b> Além de atender à 2FN, eliminamos dependências transitivas, garantindo que os atributos não-chave dependam apenas da chave primária e não de outros atributos não-chave.</li>
@@ -336,7 +336,7 @@
 
             <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
 
-            <ul class="custom-list"></ul>
+            <ul class="custom-list">
             <li>A integridade das relações entre as tabelas.</li>
             <li>O correto armazenamento e recuperação das informações.</li>
             <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
