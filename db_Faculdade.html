@@ -1,153 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco de Dados db_Faculdade</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Portfólio - Scripts SQL</title>
     <style>
-        
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
             margin: 0;
             padding: 0;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
         }
-
-        body a {
-            color: blue !important;
-            text-decoration: underline;
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-
+        h1, h2 {
+            color: #444;
+        }
         a {
             color: blue;
-            text-decoration: underline;
+            text-decoration: none;
         }
-
-        a:hover {
-        color: darkblue;
-        }
-
-        h1 {font-size: 2em;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        h2 {font-size: 1.5em;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            clear: both;
-        }
-
-        h3 {font-size: 1.2em;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            clear: both;
-        }
-
-        header {
-            background-color: #110d55e3;
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 2em 0;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            text-align: left;
-            width: 80%;
-            max-width: 900px;
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin: 20px auto;
-        }
-
-        p {
-            text-align: left;
-            line-height: 1.6;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .custom-list {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        ul.custom-list {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-
-        ul.custom-list li {
-            margin-bottom: 5px;
-        }
-
-        .recuo {
-            margin-left: 40px;
-        }
-
-        .imagem-projeto {
-            width: 100%;
-            max-width: 700px;
-            height: center;
-            display: block;
-            margin: 20px auto;
+        .btn-back {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
             border-radius: 5px;
         }
-
-        figure {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .btn-back:hover {
+            background: #0056b3;
         }
-
-        figcaption {
-            font-size: 14px;
-            color: #555;
-            margin-top: 5px;
-            font-style: italic;
+        ul {
+            list-style: none;
+            padding: 0;
         }
-
-        .btn-back {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+        ul li {
+            margin: 5px 0;
         }
-
-        .btn-back img {
-            width: 50px;
+        .image-container img {
+            max-width: 100%;
             height: auto;
-            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
         }
-
     </style>
 </head>
 <body>
-    <header>
-        <h1>Banco de Dados db_Faculdade</h1>
-    </header>
-
-    <main class="container">
-        <section>
-            <figure>
+    <div class="container">
+        <header>
+            <h1>Banco de Dados db_Faculdade</h1>
+        </header>
+        <main>
+            <section>
+                <figure>
             <img src="Imagens/22112357_6554783.jpg" alt="Modelo de Banco de Dados" class="imagem-projeto">
-            </figure>
-            
+                </figure>
+            </section>
+                    
+            <section>
             <h2>Objetivo do Banco de Dados</h2>
             <p>Este banco de dados foi desenvolvido durante o curso de SQL Server promovido pelo professor Fábio dos Reis da Bóson Treinamentos com o propósito de fornecer uma base estruturada para a realização de testes de inserção de dados.</p>
             <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
@@ -162,11 +81,9 @@
                 <li>Implementação do banco db_Faculdade</li>
                 <li>Testes Básicos</li>
             </ul>
-        </section>
 
-        <section>
-            <h2>Regras de Negócio</h2>
-            <ul class="custom-list">
+             <h2>Regras de Negócio</h2>
+                <ul class="custom-list">
                 <li>Um aluno só pode estar matriculado em um curso por vez.</li>
                 <li>Alunos possuem um código de identificação (RA).</li>
                 <li>Cursos são compostos por disciplinas.</li>
@@ -187,9 +104,21 @@
                 <li>Cada professor é vinculado a um departamento.</li>
                 <li>Professores são identificados por um código de professor.</li>
             </ul>
-        </section>
+            </section>
 
-        <section>
+            <section>
+            <h2>Ferramentas e Tecnologias Utilizadas</h2>
+            
+            <ul class="custom-list">
+                <li><b>SQL Server:</b> SGBD utilizado para criar e gerenciar o banco de dados, além de executar consultas SQL para manipulação e análise dos dados.</li>
+                <li><b>SQL:</b> Linguagem de consulta usada para gerenciar e manipular bancos de dados relacionais, ela é especializada na interação com o banco de dados.</li>
+                <li><b>BRModelo:</b> software utilizado para modelagem do banco de dados e criação de diagramas de entidade-relacionamento (ER).</li>
+                <li><b>Excel:</b> Utilização de planilhas para criação do dicionário de dados.</li>
+                <li><b>Visual Studio Code:</b> Utilizado para edição do arquivo Readme do projeto.</li>
+            </ul>
+            </section>
+
+            <section>
             <h2>Detalhes do Desenvolvimento</h2>
 
             <h2>Geração de Dados Fictícios para Testes</h2>
@@ -197,13 +126,12 @@
             <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
             <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
             <p>Confira um exemplo de insert a partir de dados gerados através de IA generativa e o resultado de uma consulta a esses dados:</p>
+
+            <img src="Imagens/insert.png" alt="Scrip de Inserts" class="imagem-projeto">
+            <img src="Imagens/select_08.png" alt="Funcionamento do Banco" class="imagem-projeto">
         </section>
 
         <section>
-         
-            <img src="Imagens/insert.png" alt="Scrip de Inserts" class="imagem-projeto">
-            <img src="Imagens/select_08.png" alt="Funcionamento do Banco" class="imagem-projeto">
-
             <h2>Ferramentas e Tecnologias Utilizadas</h2>
             
             <ul class="custom-list">
@@ -219,9 +147,7 @@
             <h2>Modelagem</h2>
 
             <p>Nesta seção, temos a modelagem dos diagramas Entidade-Relacionamento (ER) do banco de dados, começando pelo modelo conceitual e avançando para o modelo lógico. O modelo conceitual foca na estrutura geral do banco, destacando entidades e seus relacionamentos, enquanto o modelo lógico detalha os atributos, chaves primárias e estrangeiras, refinando a modelagem para a implementação do banco de dados.</p>
-        </section>
 
-        <section>
             <h2>Diagramas Entidade Relacionamento (ER)</h2>
 
             <h2>Modelo Conceitual</h2>
@@ -242,7 +168,7 @@
             <figcaption>Modelo Conceitual</figcaption>
             <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
             </figure>
-      
+
             <h2>Modelo Lógico</h2>
 
             <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
@@ -269,6 +195,8 @@
         </section>
 
         <section>
+            <h2>Normalização</h2>
+
             <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
 
             <ul class="custom-list">
@@ -331,8 +259,8 @@
             <figcaption>Tabela Aluno</figcaption>
             </figure>
         </section>
-
-        <section>
+            
+            <section>
             <h2>Demonstração do Funcionamento do Banco de Dados</h2>
 
             <p>Aqui podemos acompanhar o funcionamento do banco de dados através de consultas SQL e seus respectivos resultados. As capturas de tela ilustram a interação com o banco, demonstrando a integridade dos dados e a eficácia das relações estabelecidas entre as tabelas.</p>
@@ -362,19 +290,10 @@
                 </figure>
         </section>
 
-        <section>
-            <h2>Contato</h2>
-                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> LinkedIn</a></p>
-                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> GitHub</a></p>
-                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Medium</a></p>
-        </section>
-
         <div class="btn-back">
             <a href="index.html">
-                <img src="Imagens/btn-back.png" alt="Voltar">
-            </a>
+                <img src="Imagens/btn-back.png" alt="Voltar"></a>
         </div>
     </main>
 </body>
 </html>
-
