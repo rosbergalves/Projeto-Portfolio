@@ -13,7 +13,6 @@
             color: #333;
             margin: 0;
             padding: 0;
-            display: flex;
             flex-direction: column;
             align-items: center;
         }
@@ -44,6 +43,7 @@
             text-align: left;
             margin-top: 20px;
             margin-bottom: 10px;
+            clear: both;
         }
 
         h3 {font-size: 1.2em;
@@ -51,6 +51,7 @@
             text-align: left;
             margin-top: 20px;
             margin-bottom: 10px;
+            clear: both;
         }
 
         header {
@@ -71,7 +72,7 @@
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin-top: -20px;
+            margin: 20px auto;
         }
 
         p {
@@ -86,18 +87,27 @@
             margin-bottom: 20px;
         }
 
+        ul.custom-list {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        ul.custom-list li {
+            margin-bottom: 5px;
+        }
+
         .recuo {
             margin-left: 40px;
         }
 
         .imagem-projeto {
-            width: 80%;
+            width: 100%;
+            max-width: 600px;
             height: auto;
             display: block;
             margin: 20px auto;
             border-radius: 5px;
-            margin-top: 10px;
-            margin-bottom: 20px;
         }
 
         figure {
@@ -134,7 +144,9 @@
 
     <main class="container">
         <section>
+            <figure>
             <img src="Imagens/22112357_6554783.jpg" alt="Modelo de Banco de Dados" class="imagem-projeto">
+            </figure>
             
             <h2>Objetivo do Banco de Dados</h2>
             <p>Este banco de dados foi desenvolvido durante o curso de SQL Server promovido pelo professor Fábio dos Reis da Bóson Treinamentos com o propósito de fornecer uma base estruturada para a realização de testes de inserção de dados.</p>
