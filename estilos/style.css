@@ -77,6 +77,12 @@ nav ul li a {
     margin-top: -55px;
 }
 
+.titulo-especial {
+    position: relative;
+    left: 20px;  /* Move para a direita */
+    top: 10px;   /* Move para baixo */
+  }
+
 #sobre p:nth-of-type(1),
 #sobre p:nth-of-type(2),
 #sobre p:nth-of-type(3) {
