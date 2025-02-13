@@ -91,8 +91,17 @@
 
         .custom-list {
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            list-style-type: square;
+            padding-left: 20px;
         }
+
+
+        .Fases-do-Projeto {
+            color: blue;
+            }
+
+        
 
         .recuo {
             margin-left: 40px;
@@ -151,7 +160,7 @@
         <section>
             <h3>Fases do Projeto</h3>
 
-                <ul class="custom-list">
+                <ul class="custom-list Fases do Projeto">
                 <li>Levantamento de Requisitos</li>
                 <li>Identificação de Entidades e Relacionamentos</li>
                 <li>Modelo E-R e Diagrama E-R</li>
@@ -163,7 +172,7 @@
         
             <h3>Regras de Negócio</h3>
 
-                <ul class="custom-list">
+                <ul class="custom-list Regras do Negocio">
                 <li>Um aluno só pode estar matriculado em um curso por vez.</li>
                 <li>Alunos possuem um código de identificação (RA).</li>
                 <li>Cursos são compostos por disciplinas.</li>
@@ -183,16 +192,15 @@
                 <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
                 <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
                 <p>Confira um exemplo de insert a partir de dados gerados através de IA generativa e o resultado de uma consulta a esses dados:</p>
+        
+            <img src="Imagens/insert.png" alt="Scrip de Inserts" class="imagem-projeto">
+            <img src="Imagens/select_08.png" alt="Funcionamento do Banco" class="imagem-projeto">
         </section>
 
         <section>
-
-            <img src="Imagens/insert.png" alt="Scrip de Inserts" class="imagem-projeto">
-            <img src="Imagens/select_08.png" alt="Funcionamento do Banco" class="imagem-projeto">
-
             <h2>Ferramentas e Tecnologias Utilizadas</h2>
 
-                <ul class="custom-list">
+                <ul class="custom-list Ferramentas e Tecnologias Utilizadas">
                 <li><b>SQL Server:</b> SGBD utilizado para criar e gerenciar o banco de dados, além de executar consultas SQL para manipulação e análise dos dados.</li>
                 <li><b>SQL:</b> Linguagem de consulta usada para gerenciar e manipular bancos de dados relacionais, ela é especializada na interação com o banco de dados.</li>
                 <li><b>BRModelo:</b> software utilizado para modelagem do banco de dados e criação de diagramas de entidade-relacionamento (ER).</li>
@@ -205,12 +213,10 @@
             <h2>Modelagem</h2>
 
                 <p>Nesta seção, temos a modelagem dos diagramas Entidade-Relacionamento (ER) do banco de dados, começando pelo modelo conceitual e avançando para o modelo lógico. O modelo conceitual foca na estrutura geral do banco, destacando entidades e seus relacionamentos, enquanto o modelo lógico detalha os atributos, chaves primárias e estrangeiras, refinando a modelagem para a implementação do banco de dados.</p>
-        </section>
-
-        <section>
+        
             <h2>Diagramas Entidade Relacionamento (ER)</h2>
 
-            <h2>Modelo Conceitual</h2>
+            <h3>Modelo Conceitual</h3>
 
                 <figure>
                 <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
@@ -221,7 +227,7 @@
 
                 <p>O banco de dados foi modelado para armazenar e gerenciar informações acadêmicas de uma faculdade, abrangendo o cadastro de alunos, professores, cursos, disciplinas, turmas, departamentos e histórico escolar etc. Entre as principais entidades, destacam-se:</p>
 
-                <ul class="custom-list">
+                <ul class="custom-list Modelo Conceitual">
                 <li><b>Aluno:</b> Representa os estudantes matriculados na instituição. Cada aluno pode estar vinculado a uma turma e a um curso.</li>
                 <li><b>Curso:</b> Contém os cursos oferecidos pela faculdade, sendo associados a um departamento específico.</li>
                 <li><b>Professor:</b> Representa os docentes da instituição, que pertencem a um departamento e lecionam disciplinas.</li>
@@ -240,7 +246,7 @@
 
                 <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
 
-                <ul class="custom-list"></ul>
+                <ul class="custom-list Modelo Logico">
                 <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
                 <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
                 <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
@@ -252,16 +258,14 @@
                 <li><b>Curso_Disciplina:</b> Mapeia as disciplinas pertencentes a cada curso.</li>
                 <li><b>Disciplina_Historico:</b> Associa as disciplinas ao histórico dos alunos.</li>
                 </ul>
-            
         </section>
 
         <section>
-
             <h2>Normalização</h2>
 
                 <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
 
-                <ul class="custom-list">
+                <ul class="custom-list Normalização">
                 <li><b>Primeira Forma Normal (1FN):</b> Cada tabela contém apenas valores atômicos, sem grupos repetitivos ou colunas multivaloradas, garantindo que todos os atributos sejam indivisíveis.</li>
                 <li><b>Segunda Forma Normal (2FN):</b> Todas as tabelas atendem à 1FN e não possuem dependências parciais, ou seja, todos os atributos não-chave dependem totalmente da chave primária.</li>
                 <li><b>Terceira Forma Normal (3FN):</b> Além de atender à 2FN, eliminamos dependências transitivas, garantindo que os atributos não-chave dependam apenas da chave primária e não de outros atributos não-chave.</li>
@@ -276,8 +280,7 @@
                 <p>Aqui é podemos observar algumas imagens das tabelas descritas no dicionário de dados, clique no link abaixo para ter acesso ao dicionário de dados completo.</p>
 
                 <a href="https://drive.google.com/drive/folders/1XdWXLfsamOwjxcFQ50T2N5lNkEibZxuo?usp=sharing" target="_blank">Download do Dicionário de Dados Completo</a>
-        </section>
-
+        
         <section>
             <h2>Entidades e Atributos</h2>
 
@@ -329,7 +332,7 @@
 
                 <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
 
-                <ul class="custom-list">
+                <ul class="custom-list Demonstração do Funcionamento do Banco">
                 <li>A integridade das relações entre as tabelas.</li>
                 <li>O correto armazenamento e recuperação das informações.</li>
                 <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
@@ -354,9 +357,9 @@
 
         <section>
             <h2>Contato</h2>
-                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> Acesse meu LinkedIn</a></p>
-                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> Acesse meu GitHub</a></p>
-                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Acesse meu Medium</a></p>
+                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> LinkedIn</a></p>
+                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> GitHub</a></p>
+                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Medium</a></p>
         </section>
 
         <div class="btn-back">
