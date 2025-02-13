@@ -80,7 +80,7 @@ nav ul li a {
 .titulo-especial {
     position: relative;
     left: 0px;  /* Move para a direita */
-    top: 5px;   /* Move para baixo */
+    top: -5px;   /* Move para baixo */
   }
 
 #sobre p:nth-of-type(1),
