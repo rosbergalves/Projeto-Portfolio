@@ -56,8 +56,8 @@ nav ul li a {
 .foto-circular {
     display: block;
     margin: 0 auto 20px;
-    width: 170px; /* Largura da imagem */
-    height: 170px; /* Altura da imagem */
+    width: 160px; /* Largura da imagem */
+    height: 160px; /* Altura da imagem */
     position: relative; /* Adiciona a propriedade position para permitir movimentação */
     top: 30px; /* Move para baixo */
     left: -405px; /* Move para a direita */
