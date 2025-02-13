@@ -74,7 +74,7 @@ nav ul li a {
     margin-left: 0; /* Remove qualquer margem à esquerda, se necessário */
     padding-left: 0; /* Remove qualquer padding à esquerda, se necessário */
     margin-bottom: 20px; /* Ajuste o espaçamento entre os títulos e o conteúdo */
-    margin-top: -50px;
+    margin-top: -55px;
 }
 
 #sobre p:nth-of-type(1),
