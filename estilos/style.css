@@ -172,6 +172,10 @@ section {
     margin-top: 5px;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 /* Estilo do rodapé */
 footer {
     background-color: #333;
