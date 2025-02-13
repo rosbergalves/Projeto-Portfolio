@@ -140,13 +140,13 @@
             <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
 
             <h3>Fases do Projeto</h3>
-                <ul class="custom-list"></ul>
+                <ul class="custom-list">
                 <li>Levantamento de Requisitos</li>
                 <li>Identificação de Entidades e Relacionamentos</li>
                 <li>Modelo E-R e Diagrama E-R</li>
                 <li>Dicionário de Dados</li>
                 <li>Normalização (1ª, 2ª e 3ª formas normais)</li>
-                <li>Implementação do banco ‘db_Faculdade’</li>
+                <li>Implementação do banco db_Faculdade</li>
                 <li>Testes Básicos</li>
             </ul>
         </section>
@@ -202,6 +202,11 @@
 
             <h3>Modelo Conceitual</h3>
 
+            <figure>
+                <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
+                <figcaption>Modelo Conceitual</figcaption>
+            </figure>
+
             <p>O diagrama conceitual representa uma visão de alto nível da estrutura do banco de dados, destacando as principais entidades e seus relacionamentos, sem detalhar atributos específicos. Este modelo serve para mapear os principais conceitos e suas conexões, facilitando o entendimento da estrutura do banco antes da implementação técnica.</p>
 
             <p>O banco de dados foi modelado para armazenar e gerenciar informações acadêmicas de uma faculdade, abrangendo o cadastro de alunos, professores, cursos, disciplinas, turmas, departamentos e histórico escolar etc. Entre as principais entidades, destacam-se:</p>
@@ -214,12 +219,12 @@
                 <li><b>Departamento:</b> Administração acadêmica responsável pelos cursos e disciplinas.</li>
             </ul>
 
-            <figure>
-            <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
-            <figcaption>Modelo Conceitual</figcaption>
-            </figure>
+           <h3>Modelo Lógico</h3>
 
-            <h3>Modelo Lógico</h3>
+            <figure>
+                <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Lógico" class="imagem-projeto">
+                <figcaption>Modelo Lógico</figcaption>
+            </figure>
 
             <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
 
@@ -237,14 +242,13 @@
                 <li><b>Curso_Disciplina:</b> Mapeia as disciplinas pertencentes a cada curso.</li>
                 <li><b>Disciplina_Historico:</b> Associa as disciplinas ao histórico dos alunos.</li>
             </ul>
-
-            <figure>
-            <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Lógico" class="imagem-projeto">
-            <figcaption>Modelo Lógico</figcaption>
-            </figure>
+            
         </section>
 
         <section>
+
+        <h2>Normalização</h2>
+
             <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
 
             <ul class="custom-list">
@@ -253,7 +257,7 @@
                 <li><b>Terceira Forma Normal (3FN):</b> Além de atender à 2FN, eliminamos dependências transitivas, garantindo que os atributos não-chave dependam apenas da chave primária e não de outros atributos não-chave.</li>
             </ul>
 
-            <p>Essas normalizações contribuem para a eliminação de redundâncias e a melhoria do desempenho do banco, garantindo maior confiabilidade nos testes e inserções de dados. Dessa forma, este banco de dados será capaz de gerenciar informações acadêmicas de alunos, professores, cursos, disciplinas, departamentos históricos, turmas, endereços etc.</p>
+            <p>Aas normalizações contribuem para a eliminação de redundâncias e a melhoria do desempenho do banco, garantindo maior confiabilidade nos testes e inserções de dados. Dessa forma, este banco de dados será capaz de gerenciar informações acadêmicas de alunos, professores, cursos, disciplinas, departamentos históricos, turmas, endereços etc.</p>
         </section>
 
         <section>
@@ -269,16 +273,19 @@
 
             <h3>Entidade Aluno</h3>
             <img src="Imagens/entidate_tbl_aluno.png" alt="Entidade Aluno" class="imagem-projeto">
+
             <h3>Atributos Aluno</h3>
             <img src="Imagens/atributos_tbl_aluno.png" alt="Atributos Aluno" class="imagem-projeto">
 
             <h3>Entidade Curso</h3>
             <img src="Imagens/entidate_tbl_curso.png" alt="Entidade Curso" class="imagem-projeto">
+
             <h3>Atributos Curso</h3>
             <img src="Imagens/atributos_tbl_curso.png" alt="Atributos Curso" class="imagem-projeto">
 
             <h3>Entidade Disciplina</h3>
             <img src="Imagens/entidate_tbl_disciplina.png" alt="Entidade Disciplina" class="imagem-projeto">
+
             <h3>Atributos Disciplina</h3>
             <img src="Imagens/atributos_tbl_disciplina.png" alt="Atributos Disciplina" class="imagem-projeto">
         </section>
@@ -312,7 +319,7 @@
 
             <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
 
-            <ul class="custom-list"></ul>
+            <ul class="custom-list">
             <li>A integridade das relações entre as tabelas.</li>
             <li>O correto armazenamento e recuperação das informações.</li>
             <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
