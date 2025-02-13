@@ -51,7 +51,7 @@
             font-size: 1.2em;
             font-weight: bold;
             text-align: left;
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 10px;
         }
 
@@ -140,8 +140,8 @@
             <img src="Imagens/22112357_6554783.jpg" alt="Modelo de Banco de Dados" class="imagem-projeto">
 
             <h2>Objetivo do Banco de Dados</h2>
-            <p>Este banco de dados foi desenvolvido durante o curso de SQL Server promovido pelo professor Fábio dos Reis da Bóson Treinamentos com o propósito de fornecer uma base estruturada para a realização de testes de inserção de dados.</p>
-            <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
+                <p>Este banco de dados foi desenvolvido durante o curso de SQL Server promovido pelo professor Fábio dos Reis da Bóson Treinamentos com o propósito de fornecer uma base estruturada para a realização de testes de inserção de dados.</p>
+                <p>Ele permite simular operações de inserção de registros em diferentes tabelas, possibilitando a validação de regras de integridade, desempenho de consultas e otimização de comandos SQL. Essa estrutura auxilia no aprimoramento e ajuste de procedimentos de manipulação de dados antes da aplicação em ambientes produtivos.</p>
 
             <h3>Fases do Projeto</h3>
 
@@ -153,13 +153,13 @@
                 <li>Normalização (1ª, 2ª e 3ª formas normais)</li>
                 <li>Implementação do banco db_Faculdade</li>
                 <li>Testes Básicos</li>
-            </ul>
+                </ul>
         </section>
 
         <section>
             <h3>Regras de Negócio</h3>
 
-            <ul class="custom-list">
+                <ul class="custom-list">
                 <li>Um aluno só pode estar matriculado em um curso por vez.</li>
                 <li>Alunos possuem um código de identificação (RA).</li>
                 <li>Cursos são compostos por disciplinas.</li>
@@ -168,7 +168,7 @@
                 <li>Cada disciplina possui um código de identificação.</li>
                 <li>Em cada semestre, um aluno pode se matricular em até 9 disciplinas.</li>
                 <li>Professores podem ser cadastrados mesmo sem lecionar disciplinas.</li>
-            </ul>
+                </ul>
         </section>
 
         <section>
@@ -176,9 +176,9 @@
 
             <h3>Geração de Dados Fictícios para Testes</h3>
 
-            <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
-            <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
-            <p>Confira um exemplo de insert a partir de dados gerados através de IA generativa e o resultado de uma consulta a esses dados:</p>
+                <p>Para validar a estrutura e o funcionamento do banco de dados, utilizei dados fictícios cedidos durante o curso de SQL Server da Bóson Treinamentos e dados fictícios gerados através de IA generativa, onde os dados foram gerados utilizando ChatGPT para os nomes dos alunos, nomes dos professores, e-mail, cpf, nome da mãe, nome do pai, endereços, whatsapp, números de telefone etc.</p>
+                <p>O objetivo era simular um ambiente realista, garantindo que as tabelas e os relacionamentos fossem testados corretamente. Os dados passaram por verificações para evitar erros manter a integridade e coerência esperadas dentro do contexto acadêmico.</p>
+                <p>Confira um exemplo de insert a partir de dados gerados através de IA generativa e o resultado de uma consulta a esses dados:</p>
         </section>
 
         <section>
@@ -188,19 +188,19 @@
 
             <h2>Ferramentas e Tecnologias Utilizadas</h2>
 
-            <ul class="custom-list">
+                <ul class="custom-list">
                 <li><b>SQL Server:</b> SGBD utilizado para criar e gerenciar o banco de dados, além de executar consultas SQL para manipulação e análise dos dados.</li>
                 <li><b>SQL:</b> Linguagem de consulta usada para gerenciar e manipular bancos de dados relacionais, ela é especializada na interação com o banco de dados.</li>
                 <li><b>BRModelo:</b> software utilizado para modelagem do banco de dados e criação de diagramas de entidade-relacionamento (ER).</li>
                 <li><b>Excel:</b> Utilização de planilhas para criação do dicionário de dados.</li>
                 <li><b>Visual Studio Code:</b> Utilizado para edição do arquivo Readme do projeto.</li>
-            </ul>
+                </ul>
         </section>
 
         <section>
             <h2>Modelagem</h2>
 
-            <p>Nesta seção, temos a modelagem dos diagramas Entidade-Relacionamento (ER) do banco de dados, começando pelo modelo conceitual e avançando para o modelo lógico. O modelo conceitual foca na estrutura geral do banco, destacando entidades e seus relacionamentos, enquanto o modelo lógico detalha os atributos, chaves primárias e estrangeiras, refinando a modelagem para a implementação do banco de dados.</p>
+                <p>Nesta seção, temos a modelagem dos diagramas Entidade-Relacionamento (ER) do banco de dados, começando pelo modelo conceitual e avançando para o modelo lógico. O modelo conceitual foca na estrutura geral do banco, destacando entidades e seus relacionamentos, enquanto o modelo lógico detalha os atributos, chaves primárias e estrangeiras, refinando a modelagem para a implementação do banco de dados.</p>
         </section>
 
         <section>
@@ -208,130 +208,130 @@
 
             <h2>Modelo Conceitual</h2>
 
-            <figure>
+                <figure>
                 <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
                 <figcaption>Modelo Conceitual</figcaption>
-            </figure>
+                </figure>
 
-            <p>O diagrama conceitual representa uma visão de alto nível da estrutura do banco de dados, destacando as principais entidades e seus relacionamentos, sem detalhar atributos específicos. Este modelo serve para mapear os principais conceitos e suas conexões, facilitando o entendimento da estrutura do banco antes da implementação técnica.</p>
+                <p>O diagrama conceitual representa uma visão de alto nível da estrutura do banco de dados, destacando as principais entidades e seus relacionamentos, sem detalhar atributos específicos. Este modelo serve para mapear os principais conceitos e suas conexões, facilitando o entendimento da estrutura do banco antes da implementação técnica.</p>
 
-            <p>O banco de dados foi modelado para armazenar e gerenciar informações acadêmicas de uma faculdade, abrangendo o cadastro de alunos, professores, cursos, disciplinas, turmas, departamentos e histórico escolar etc. Entre as principais entidades, destacam-se:</p>
+                <p>O banco de dados foi modelado para armazenar e gerenciar informações acadêmicas de uma faculdade, abrangendo o cadastro de alunos, professores, cursos, disciplinas, turmas, departamentos e histórico escolar etc. Entre as principais entidades, destacam-se:</p>
 
-            <ul class="custom-list">
+                <ul class="custom-list">
                 <li><b>Aluno:</b> Representa os estudantes matriculados na instituição. Cada aluno pode estar vinculado a uma turma e a um curso.</li>
                 <li><b>Curso:</b> Contém os cursos oferecidos pela faculdade, sendo associados a um departamento específico.</li>
                 <li><b>Professor:</b> Representa os docentes da instituição, que pertencem a um departamento e lecionam disciplinas.</li>
                 <li><b>Disciplina:</b> Representa as matérias lecionadas nos cursos, podendo ter pré-requisitos e estar vinculadas a um departamento.</li>
                 <li><b>Departamento:</b> Administração acadêmica responsável pelos cursos e disciplinas.</li>
-            </ul>
+                </ul>
 
            <h3>Modelo Lógico</h3>
 
-            <figure>
+                <figure>
                 <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Lógico" class="imagem-projeto">
                 <figcaption>Modelo Lógico</figcaption>
-            </figure>
+                </figure>
 
-            <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
+                <p>O diagrama lógico refina o modelo conceitual, detalhando a estrutura do banco de dados com a inclusão de atributos, chaves primárias, chaves estrangeiras e tabelas associativas para normalizar os relacionamentos.</p>
 
-            <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
+                <p>A modelagem lógica seguiu as melhores práticas de banco de dados, garantindo:</p>
 
-            <ul class="custom-list"></ul>
-            <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
-            <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
-            <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
-            </ul>
+                <ul class="custom-list"></ul>
+                <li>Levantamento de RequisitosIntegridade referencial, com a definição de chaves estrangeiras conectando tabelas que e relacionam.</li>
+                <li>Eliminação de redundâncias, aplicando a normalização até a Terceira Forma Normal (3FN) para garantir a eficiência no armazenamento e minimizar inconsistências.</li>
+                <li>Relacionamentos N:N (Muitos para Muitos) representados por tabelas associativas, como:</li>
+                </ul>
 
-            <ul class="custom-list recuo">
+                <ul class="custom-list recuo">
                 <li><b>Aluno_Disciplina:</b> Relaciona os alunos às disciplinas cursadas.</li>
                 <li><b>Professor_Disciplina:</b> Relaciona os professores às disciplinas que lecionam.</li>
                 <li><b>Curso_Disciplina:</b> Mapeia as disciplinas pertencentes a cada curso.</li>
                 <li><b>Disciplina_Historico:</b> Associa as disciplinas ao histórico dos alunos.</li>
-            </ul>
+                </ul>
             
         </section>
 
         <section>
 
-        <h2>Normalização</h2>
+            <h2>Normalização</h2>
 
-            <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
+                <p>Para garantir a integridade referencial e eficiência da modelagem, o banco de dados foi projetado seguindo os princípios das 1ª, 2ª e 3ª formas normais:</p>
 
-            <ul class="custom-list">
+                <ul class="custom-list">
                 <li><b>Primeira Forma Normal (1FN):</b> Cada tabela contém apenas valores atômicos, sem grupos repetitivos ou colunas multivaloradas, garantindo que todos os atributos sejam indivisíveis.</li>
                 <li><b>Segunda Forma Normal (2FN):</b> Todas as tabelas atendem à 1FN e não possuem dependências parciais, ou seja, todos os atributos não-chave dependem totalmente da chave primária.</li>
                 <li><b>Terceira Forma Normal (3FN):</b> Além de atender à 2FN, eliminamos dependências transitivas, garantindo que os atributos não-chave dependam apenas da chave primária e não de outros atributos não-chave.</li>
-            </ul>
+                </ul>
 
-            <p>Aas normalizações contribuem para a eliminação de redundâncias e a melhoria do desempenho do banco, garantindo maior confiabilidade nos testes e inserções de dados. Dessa forma, este banco de dados será capaz de gerenciar informações acadêmicas de alunos, professores, cursos, disciplinas, departamentos históricos, turmas, endereços etc.</p>
+                <p>Aas normalizações contribuem para a eliminação de redundâncias e a melhoria do desempenho do banco, garantindo maior confiabilidade nos testes e inserções de dados. Dessa forma, este banco de dados será capaz de gerenciar informações acadêmicas de alunos, professores, cursos, disciplinas, departamentos históricos, turmas, endereços etc.</p>
         </section>
 
         <section>
             <h2>Dicionário de Dados</h2>
 
-            <p>Aqui é podemos observar algumas imagens das tabelas descritas no dicionário de dados, clique no link abaixo para ter acesso ao dicionário de dados completo.</p>
+                <p>Aqui é podemos observar algumas imagens das tabelas descritas no dicionário de dados, clique no link abaixo para ter acesso ao dicionário de dados completo.</p>
 
-            <a href="https://drive.google.com/drive/folders/1XdWXLfsamOwjxcFQ50T2N5lNkEibZxuo?usp=sharing" target="_blank">Download do Dicionário de Dados Completo</a>
+                <a href="https://drive.google.com/drive/folders/1XdWXLfsamOwjxcFQ50T2N5lNkEibZxuo?usp=sharing" target="_blank">Download do Dicionário de Dados Completo</a>
         </section>
 
         <section>
             <h2>Entidades e Atributos</h2>
 
-            <h3>Entidade Aluno</h3>
-            <img src="Imagens/entidate_tbl_aluno.png" alt="Entidade Aluno" class="imagem-projeto">
+                <h3>Entidade Aluno</h3>
+                <img src="Imagens/entidate_tbl_aluno.png" alt="Entidade Aluno" class="imagem-projeto">
 
-            <h3>Atributos Aluno</h3>
-            <img src="Imagens/atributos_tbl_aluno.png" alt="Atributos Aluno" class="imagem-projeto">
+                <h3>Atributos Aluno</h3>
+                <img src="Imagens/atributos_tbl_aluno.png" alt="Atributos Aluno" class="imagem-projeto">
 
-            <h3>Entidade Curso</h3>
-            <img src="Imagens/entidate_tbl_curso.png" alt="Entidade Curso" class="imagem-projeto">
+                <h3>Entidade Curso</h3>
+                <img src="Imagens/entidate_tbl_curso.png" alt="Entidade Curso" class="imagem-projeto">
 
-            <h3>Atributos Curso</h3>
-            <img src="Imagens/atributos_tbl_curso.png" alt="Atributos Curso" class="imagem-projeto">
+                <h3>Atributos Curso</h3>
+                <img src="Imagens/atributos_tbl_curso.png" alt="Atributos Curso" class="imagem-projeto">
 
-            <h3>Entidade Disciplina</h3>
-            <img src="Imagens/entidate_tbl_disciplina.png" alt="Entidade Disciplina" class="imagem-projeto">
+                <h3>Entidade Disciplina</h3>
+                <img src="Imagens/entidate_tbl_disciplina.png" alt="Entidade Disciplina" class="imagem-projeto">
 
-            <h3>Atributos Disciplina</h3>
-            <img src="Imagens/atributos_tbl_disciplina.png" alt="Atributos Disciplina" class="imagem-projeto">
+                <h3>Atributos Disciplina</h3>
+                <img src="Imagens/atributos_tbl_disciplina.png" alt="Atributos Disciplina" class="imagem-projeto">
         </section>
 
         <section>
             <h2>Scripts de Criação do Banco de Dados</h2>
 
-            <p>Adicionei algumas imagens dos scripts do processo de criação do Banco de Dados db_Faculdade.</p>
-            <a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">Tenha acesso ao código completo no repositório do projeto.</a>
+                <p>Adicionei algumas imagens dos scripts do processo de criação do Banco de Dados db_Faculdade.</p>
+                <a href="https://github.com/rosbergalves/db_Faculdade" target="_blank">Tenha acesso ao código completo no repositório do projeto.</a>
 
-            <figure>
-            <img src="Imagens/script_tbl_disciplina.png" alt="Tabela Disciplina" class="imagem-projeto">
-            <figcaption>Tabela Disciplina</figcaption>
-            </figure>
+                <figure>
+                <img src="Imagens/script_tbl_disciplina.png" alt="Tabela Disciplina" class="imagem-projeto">
+                <figcaption>Tabela Disciplina</figcaption>
+                </figure>
 
-            <figure>
-            <img src="Imagens/script_tbl_professor.png" alt="Tabela Professor" class="imagem-projeto">
-            <figcaption>Tabela Professor</figcaption>
-            </figure>
+                <figure>
+                <img src="Imagens/script_tbl_professor.png" alt="Tabela Professor" class="imagem-projeto">
+                <figcaption>Tabela Professor</figcaption>
+                </figure>
 
-            <figure>
-            <img src="Imagens/script_tbl_aluno.png" alt="Tabela Aluno" class="imagem-projeto">
-            <figcaption>Tabela Aluno</figcaption>
-            </figure>
+                <figure>
+                <img src="Imagens/script_tbl_aluno.png" alt="Tabela Aluno" class="imagem-projeto">
+                <figcaption>Tabela Aluno</figcaption>
+                </figure>
         </section>
 
         <section>
             <h2>Demonstração do Funcionamento do Banco de Dados</h2>
 
-            <p>Aqui podemos acompanhar o funcionamento do banco de dados através de consultas SQL e seus respectivos resultados. As capturas de tela ilustram a interação com o banco, demonstrando a integridade dos dados e a eficácia das relações estabelecidas entre as tabelas.</p>
+                <p>Aqui podemos acompanhar o funcionamento do banco de dados através de consultas SQL e seus respectivos resultados. As capturas de tela ilustram a interação com o banco, demonstrando a integridade dos dados e a eficácia das relações estabelecidas entre as tabelas.</p>
 
-            <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
+                <p>Para validar o modelo de dados, foram realizadas consultas que demonstram:</p>
 
-            <ul class="custom-list">
-            <li>A integridade das relações entre as tabelas.</li>
-            <li>O correto armazenamento e recuperação das informações.</li>
-            <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
-            </ul>
+                <ul class="custom-list">
+                <li>A integridade das relações entre as tabelas.</li>
+                <li>O correto armazenamento e recuperação das informações.</li>
+                <li>A extração de dados relevantes para fins acadêmicos e administrativos como pode ser observado nas imagens abaixo.</li>
+                </ul>
 
-            <figure>
+                <figure>
                 <img src="Imagens/select_01.png" alt="select01" class="imagem-projeto">
                 <figcaption><b>Resultado da Consulta:</b> Essa consulta confirma que os alunos estão corretamente vinculados aos cursos e às turmas, as relações entre as tabelas Aluno, Curso e Turma estão funcionando corretamente e os alunos possuem informações de curso e período corretamente associadas.</figcaption>
                 </figure>
@@ -356,9 +356,9 @@
         </section>
 
         <div class="btn-back">
-            <a href="index.html">
+                <a href="index.html">
                 <img src="Imagens/btn-back.png" alt="Voltar">
-            </a>
+                </a>
         </div>
     </main>
 </body>
