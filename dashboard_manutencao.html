@@ -425,83 +425,83 @@
 
                 <ul class="custom-list recuo">
                     <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.</li>
-                    <li><b>Origem:</b> Consulta nula criada no Power Query.</li>
-                    <li><b>Lógica aplicada:</b> DataMinima = menor valor encontrado em DataInicio (camada Prata).
+                    <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
+                    <p><b>Lógica aplicada:</b> DataMinima = menor valor encontrado em DataInicio (camada Prata).
                                                 DataMaxima = maior valor encontrado em DataFim (Camada Prata).
                                                 DataInicial = 1º de janeiro do ano correspondente à data mínima.
                                                 DataFim = 31 de dezembro do ano correspondente à data máxima.
                                                 Duracao = intervalo de dias entre DataInicial e DataFinal.
-                                                List.Dates utilizado para gerar a sequência de datas contínuas.</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Calendario, ID_DataInicio e ID_DataFim.</li>
-                    <li><b>Colunas Principais:</b> Data: Data no formato completo (DD-MM-YYYY).
+                                                List.Dates utilizado para gerar a sequência de datas contínuas.</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Calendario, ID_DataInicio e ID_DataFim.</p>
+                    <p><b>Colunas Principais:</b> Data: Data no formato completo (DD-MM-YYYY).
                                                    Ano: Ano da data.
                                                    Mes: Número do mês.
                                                    NomeMes: Nome do mês por extenso.
                                                    Trimestre: Identificação do trimestre (1, 2, 3, 4).
                                                    NomeDia: Nome do dia da semana.
-                                                   DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</li>
+                                                   DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</p>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.</li>
-                    <li><b>Origem:</b> Camada Prata (coluna Equipamento).</li>
-                    <li><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
+                    <p><b>Origem:</b> Camada Prata (coluna Equipamento).</p>
+                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                 Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                                Inclusão de chave substituta (ID_Equipamento).</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Equipamento.</li>
-                    <li><b>Coluna Principal:</b> Equipamento: Indica o máquina que necessita de manutenção.</li>
+                                                Inclusão de chave substituta (ID_Equipamento).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Equipamento.</p>
+                    <p><b>Coluna Principal:</b> Equipamento: Indica o máquina que necessita de manutenção.</p>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.</li>
-                    <li><b>Origem:</b> Camada Prata (coluna CentroCusto).</li>
-                    <li><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
+                    <p><b>Origem:</b> Camada Prata (coluna CentroCusto).</p>
+                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                 Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                                Inclusão de chave substituta (ID_CentroCusto).</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_CentroCusto.</li>
-                    <li><b>Coluna Principal:</b> CentroCusto: Centro de custo de onde a solicitação de manutenção está sendo emitida.</li>
+                                                Inclusão de chave substituta (ID_CentroCusto).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_CentroCusto.</p>
+                    <p><b>Coluna Principal:</b> CentroCusto: Centro de custo de onde a solicitação de manutenção está sendo emitida.</p>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.</li>
-                    <li><b>Origem:</b> Camada Prata (coluna Consequencia).</li>
-                    <li><b>Lógica aplicada:</b> Seleção de valores distintos.
+                    <p><b>Origem:</b> Camada Prata (coluna Consequencia).</p>
+                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                 Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                                Inclusão de chave substituta (ID_Ocorrencia).</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Ocorrencia.</li>
-                    <li><b>Colunas Principais:</b> Ocorrencia: Ao gerar uma nota, o colaborador tem que colocar uma ocorrência.
-                                                   StatusOcorrencia: Descrição da situação do equipamento no ato da ocorrência.</li>
+                                                Inclusão de chave substituta (ID_Ocorrencia).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Ocorrencia.</p>
+                    <p><b>Colunas Principais:</b> Ocorrencia: Ao gerar uma nota, o colaborador tem que colocar uma ocorrência.
+                                                  StatusOcorrencia: Descrição da situação do equipamento no ato da ocorrência.</p>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.</li>
-                    <li><b>Origem:</b> Camada Prata (coluna Rank).</li>
-                    <li><b>Lógica aplicada:</b> Seleção de valores distintos.
+                    <p><b>Origem:</b> Camada Prata (coluna Rank).</p>
+                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                 Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                                Inclusão de chave substituta (ID_Rank).</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Rank.</li>
-                    <li><b>Colunas Principais:</b> Rank: Input manual que a equipe de manutenção faz para categorizar o tempo necessário para e execução.
-                                                   DescricaoRank: Critério de classificação dos tipos de ocorrencias dividido em A, B, C e D.</li>
+                                                Inclusão de chave substituta (ID_Rank).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Rank.</p>
+                    <p><b>Colunas Principais:</b> Rank: Input manual que a equipe de manutenção faz para categorizar o tempo necessário para e execução.
+                                                   DescricaoRank: Critério de classificação dos tipos de ocorrencias dividido em A, B, C e D.</p>
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.</li>
-                    <li><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</li>
-                    <li><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</li>
-                    <li><b>Colunas Principais:</b> Hora: Horas do dia de 00:00 a 23:00.
+                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.</p>
+                    <p><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</p>
+                    <p><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</p>
+                    <p><b>Colunas Principais:</b> Hora: Horas do dia de 00:00 a 23:00.
                                                    HoraDoDia: Definição de manhã, tarde, noite e madrugada com base na hora.
-                                                   Turno: Definição do turno baseado na hora.</li>
+                                                   Turno: Definição do turno baseado na hora.</p>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimDocumento:</b> Contém informações únicas sobre cada documento ou ordem de manutenção, permitindo relacionar a fato FtManutencao de forma otimizada.</li>
-                    <li><b>Origem:</b> Camada Prata (coluna NumeroNota, NumeroOrdem).</li>
-                    <li><b>Lógica aplicada:</b> Remoção de duplicidades.
-                                                Inclusão de chave substituta (ID_Documentp).</li>
-                    <li><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Documento.</li>
-                    <li><b>Colunas Principais:</b> NumeroNota: Número da nota gerada ao solicitar uma manutenção.
-                                                   NumeroOrdem: Número de ordem gerada pela equipe de manutenção, ao atender uma solicitação.</li>
+                    <p><b>Origem:</b> Camada Prata (coluna NumeroNota, NumeroOrdem).</p>
+                    <p><b>Lógica aplicada:</b> Remoção de duplicidades.
+                                                Inclusão de chave substituta (ID_Documentp).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Documento.</p>
+                    <p><b>Colunas Principais:</b> NumeroNota: Número da nota gerada ao solicitar uma manutenção.
+                                                   NumeroOrdem: Número de ordem gerada pela equipe de manutenção, ao atender uma solicitação.</p>
                 </ul>
 
                 <ul class="custom-list Processo">
@@ -510,9 +510,9 @@
 
                 <ul class="custom-list recuo">
                     <li><b>FtManutencao:</b> Consolida os registros de ordens de manutenção, com granularidade 1 linha por manutenção. Contém as chaves de relacionamento com as dimensões Calendario, Equipamento, CentroCusto, Ocorrencia, Rank, Hora e Documento.</li>
-                    <li><b>Origem:</b> Consulta Prata (Manutenção_Industria_Pneus_Prata), proveniente da base operacional da manutenção.</li>
-                    <li><b>Lógica aplicada:</b> Dados tratados da camada Prata.
-                                                Substituição de atributos textuais por FKs das dimensões.</li>
+                    <p><b>Origem:</b> Consulta Prata (Manutenção_Industria_Pneus_Prata), proveniente da base operacional da manutenção.</p>
+                    <p><b>Lógica aplicada:</b> Dados tratados da camada Prata.
+                                               Substituição de atributos textuais por FKs das dimensões.</p>
                 </ul>
                     <li><b>Colunas principais:</b> <ul class="custom-list recuo">
                         <li>ID_Manutencao: Identificador único da manutenção na tabela fato.</li>
