@@ -430,8 +430,9 @@
                 <ul class="custom-list recuo">
                     <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
                     <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
+                                       <p>
                                        <ul class="custom-list recuo"></ul>
-                                       <p><b>Lógica aplicada:</b>
+                                       <b>Lógica aplicada:</b>
                                        <li>DataMinima = menor valor encontrado em DataInicio (camada Prata).</li>
                                        <li>DataMaxima = maior valor encontrado em DataFim (Camada Prata).</li>
                                        <li>DataInicial = 1º de janeiro do ano correspondente à data mínima.</li>
