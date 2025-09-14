@@ -148,17 +148,16 @@
 <body>
   <header>
     <h1>Documentação Técnica</h1>
-    <p>Gestão de Manutenção</p>
-  </header>
+    </header>
 
   <main class="container">
 
     <section>
-      <h2>📅 Informações Gerais</h2>
+      <h2>Documentação Técnica</h2>
       <ul>
-        <li><strong>Data de início do projeto:</strong> 17/08/2025</li>
-        <li><strong>Última atualização:</strong> 08/09/2025</li>
-        <li><strong>Desenvolvido por:</strong> Rosberg Alves</li>
+        <li>Data de início do projeto: 17/08/2025</li>
+        <li>Última atualização: 08/09/2025</li>
+        <li>Desenvolvido por: Rosberg Alves</li>
       </ul>
     </section>
 
@@ -175,25 +174,25 @@
 
       <h3>1.2 Público-Alvo</h3>
       <ul>
-        <li><strong>Primário:</strong> Coordenação de Manutenção</li>
-        <li><strong>Secundário:</strong> Gerência Industrial</li>
-        <li><strong>Usuários Finais:</strong> Equipe de Manutenção</li>
+        <li>Primário: Coordenação de Manutenção</li>
+        <li>Secundário: Gerência Industrial</li>
+        <li>Usuários Finais: Equipe de Manutenção</li>
       </ul>
 
       <h3>1.3 Contexto do Negócio</h3>
       <p>Fabricante multinacional de pneus, com dados de janeiro/2015 até agosto/2022.</p>
 
       <h3>1.4 Frequência de Uso</h3>
-      <p><strong>Diária:</strong> monitoramento dos principais indicadores.</p>
+      <p>Diária: monitoramento dos principais indicadores.</p>
     </section>
 
     <section>
       <h2>02. Fonte de Dados</h2>
       <h3>2.1 Infraestrutura Técnica</h3>
       <ul>
-        <li><strong>Arquivo:</strong> CSV (Excel)</li>
-        <li><strong>ETL:</strong> Power Query</li>
-        <li><strong>Visualização:</strong> Power BI</li>
+        <li>Arquivo: CSV (Excel)</li>
+        <li>>ETL: Power Query</li>
+        <li>Visualização: Power BI</li>
       </ul>
     </section>
 
@@ -205,9 +204,9 @@
       <h4>Camada Bronze</h4>
       <p>Armazena os dados brutos sem alterações, garantindo fidelidade da fonte.</p>
       <ul>
-        <li><strong>Fonte:</strong> “Manutenção_Industria_Pneus.csv” (Kaggle).</li>
-        <li><strong>Período:</strong> jan/2015 – ago/2022.</li>
-        <li><strong>Ingestão:</strong> Power BI Desktop (Texto/CSV).</li>
+        <li>Fonte: “Manutenção_Industria_Pneus.csv” (Kaggle).</li>
+        <li>Período: jan/2015 – ago/2022.</li>
+        <li>Ingestão: Power BI Desktop (Texto/CSV).</li>
       </ul>
 
       <h4>Camada Prata</h4>
@@ -222,8 +221,8 @@
       <h4>Camada Ouro</h4>
       <p>Modelo dimensional em esquema estrela:</p>
       <ul>
-        <li><strong>Tabela fato:</strong> FtManutencao (tempo, custo, métricas).</li>
-        <li><strong>Tabelas dimensão:</strong> Calendário, Equipamento, Centro de Custo, Ocorrência, Rank, Hora, Documento.</li>
+        <li>Tabela fato: FtManutencao (tempo, custo, métricas).</li>
+        <li>Tabelas dimensão: Calendário, Equipamento, Centro de Custo, Ocorrência, Rank, Hora, Documento.</li>
       </ul>
     </section>
 
