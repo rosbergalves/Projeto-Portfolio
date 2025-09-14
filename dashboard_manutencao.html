@@ -231,35 +231,35 @@
                 </ul>
 
                 <ul class="custom-list Fonte dos dados">
-                    <li>Fonte dos dados</li>
-                </ul>
+                    <li><b>Fonte dos dados</b></li>
 
-                <ul class="custom-list recuo">
-                    <li><b>Arquivo:</b> “Manutenção_Industria_Pneus.csv”.</li>
-                    <li><b>Formato:</b> CSV (valores separados por vírgula).</li>
-                    <li><b>Origem:</b> Dataset público do Kaggle (ordens de manutenção de uma fabricante multinacional de pneus).</li>
-                    <li><b>Período:</b> Janeiro/2015 até Agosto/2022.</li>
+                    <ul class="custom-list recuo">
+                        <li><b>Arquivo:</b> “Manutenção_Industria_Pneus.csv”.</li>
+                        <li><b>Formato:</b> CSV (valores separados por vírgula).</li>
+                        <li><b>Origem:</b> Dataset público do Kaggle (ordens de manutenção de uma fabricante multinacional de pneus).</li>
+                        <li><b>Período:</b> Janeiro/2015 até Agosto/2022.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Método de ingestão">
-                    <li>Método de ingestão</li>
-                </ul>
+                    <li><b>Método de ingestão</b></li>
 
-                <ul class="custom-list recuo">
-                    <li><b>Ferramenta:</b> Power BI Desktop</li>
-                    <li><b>Conector Utilizado:</b> Texto/CSV</li>
-                    <li><b>Justificativa da Escolha:</b> O dataset é único e estático, não haverá substituições nem cargas incrementais.</li>
+                    <ul class="custom-list recuo">
+                        <li><b>Ferramenta:</b> Power BI Desktop</li>
+                        <li><b>Conector Utilizado:</b> Texto/CSV</li>
+                        <li><b>Justificativa da Escolha:</b> O dataset é único e estático, não haverá substituições nem cargas incrementais.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Passos de Ingestão">
-                    <li>Passos de Ingestão</li>
-                </ul>
+                    <li><b>Passos de Ingestão</b></li>
 
-                <ul class="custom-list recuo">
-                    <li>No Power BI Desktop, acessar Página Inicial → Obter Dados → Texto/CSV.</li>
-                    <li>Selecionar o arquivo “Manutenção_Industria_Pneus.csv” no diretório local.</li>
-                    <li>Confirmar a importação mantendo o encoding padrão (UTF-8) e delimitador vírgula ( , ).</li>
-                    <li>Nomear a consulta como “Camada Bronze” que será a base para criação da camada prata.</li>
+                    <ul class="custom-list recuo">
+                        <li>No Power BI Desktop, acessar Página Inicial → Obter Dados → Texto/CSV.</li>
+                        <li>Selecionar o arquivo “Manutenção_Industria_Pneus.csv” no diretório local.</li>
+                        <li>Confirmar a importação mantendo o encoding padrão (UTF-8) e delimitador vírgula ( , ).</li>
+                        <li>Nomear a consulta como “Camada Bronze” que será a base para criação da camada prata.</li>
+                    </ul>
                 </ul>
             </section>
 
@@ -272,7 +272,7 @@
                 </ul>
 
                 <ul class="custom-list Processos">
-                    <li>Processos</li>
+                    <li><b>Processos</b></li>
                 
                     <ul class="custom-list recuo">
                         <li>Corrigir tipos de dados (datas, horas, valores).</li>
@@ -286,16 +286,16 @@
                 <h3>Tratamentos Aplicados</h3>
 
                 <ul class="custom-list Padronização de colunas de texto">
-                    <li>Padronização de colunas de texto</li>
-                </ul>
+                    <li><b>Padronização de colunas de texto</b></li>
 
-                <ul class="custom-list recuo">
-                    <li>Todos os registros de texto das tabelas Dimensão foram convertidos para primeira letra maiúscula.</li>
-                    <li>Objetivo: Evitar inconsistências e variações de escrita.</li>
+                    <ul class="custom-list recuo">
+                        <li>Todos os registros de texto das tabelas Dimensão foram convertidos para primeira letra maiúscula.</li>
+                        <li>Objetivo: Evitar inconsistências e variações de escrita.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Substituição de valores nulos">
-                    <li>Substituição de valores nulos</li>
+                    <li><b>Substituição de valores nulos</b></li>
                                 
                     <ul class="custom-list recuo">
                         <li>Valores vazios na coluna NumeroOrdem foram substituídos por Sem_Ordem.</li>
@@ -321,7 +321,7 @@
                 </ul>
 
                 <ul class="custom-list Criação de coluna derivada da descrição do Rank">
-                    <li>Criação de coluna derivada da descrição do Rank</li>
+                    <li><b>Criação de coluna derivada da descrição do Rank</b></li>
                                 
                     <ul class="custom-list recuo">
                         <li>Coluna DescricaoRank criada a partir da coluna Rank.</li>
@@ -334,7 +334,7 @@
                 </ul>
 
                 <ul class="custom-list Criação de colunas auxiliares de data e hora">
-                    <li>Criação de colunas auxiliares de data e hora</li>
+                    <li><b>Criação de colunas auxiliares de data e hora</b></li>
                                 
                     <ul class="custom-list recuo">
                         <li>DataHoraInicio = DataInicio + HoraInicio</li>
@@ -346,42 +346,42 @@
                 </ul>
 
                 <ul class="custom-list Flags de qualidade">
-                    <li>Flags de qualidade</li>
-                </ul>
+                    <li><b>Flags de qualidade</b></li>
                 
-                <ul class="custom-list recuo">
-                    <li>SemOrdem = True se NumeroOrdem for nulo.</li>
-                    <li>SemRank = True se Rank for nulo.</li>
-                    <li>SemHoraInicio, SemHoraOrdem, SemHoraFim = True se respectivas colunas de hora forem nulas.</li>
-                    <li>SemDataFim = True se DataFim for nula.</li>
-                    <li>Objetivo: Analisar ordens concluídas e ordens abertas.</li>
+                    <ul class="custom-list recuo">
+                        <li>SemOrdem = True se NumeroOrdem for nulo.</li>
+                        <li>SemRank = True se Rank for nulo.</li>
+                        <li>SemHoraInicio, SemHoraOrdem, SemHoraFim = True se respectivas colunas de hora forem nulas.</li>
+                        <li>SemDataFim = True se DataFim for nula.</li>
+                        <li>Objetivo: Analisar ordens concluídas e ordens abertas.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Tratamento de métricas numéricas">
-                    <li>Tratamento de métricas numéricas</li>
-                </ul>
+                    <li><b>Tratamento de métricas numéricas</b></li>
                 
-                <ul class="custom-list recuo">
-                    <li>Coluna CustoPecas verificada, sem valores negativos.</li>
-                    <li>Colunas TempoReal e TempoManutencao corrigidas para número decimal, separador correto ( , ).</li>
-                    <li>Objetivo: Garantir consistência para cálculos e visualizações.</li>
+                    <ul class="custom-list recuo">
+                        <li>Coluna CustoPecas verificada, sem valores negativos.</li>
+                        <li>Colunas TempoReal e TempoManutencao corrigidas para número decimal, separador correto ( , ).</li>
+                        <li>Objetivo: Garantir consistência para cálculos e visualizações.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Verificação de duplicatas">
-                    <li>Verificação de duplicatas</li>
-                </ul>
+                    <li><b>Verificação de duplicatas</b></li>
                 
-                <ul class="custom-list recuo">
-                    <li>NumeroNota e NumeroOrdem conferidos e não apresentaram duplicatas.</li>
-                    <li>Mantidos como chaves naturais de referência.</li>
+                    <ul class="custom-list recuo">
+                        <li>NumeroNota e NumeroOrdem conferidos e não apresentaram duplicatas.</li>
+                        <li>Mantidos como chaves naturais de referência.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Linhas com dados incompletos">
-                    <li>Linhas com dados incompletos</li>
-                </ul>
+                    <li><b>Linhas com dados incompletos</b></li>
                 
-                <ul class="custom-list recuo">
-                    <li>Mantidas na consulta para permitir análise de ordens abertas e backlog operacional.</li>
+                    <ul class="custom-list recuo">
+                        <li>Mantidas na consulta para permitir análise de ordens abertas e backlog operacional.</li>
+                    </ul>
                 </ul>
 
                 <h3>Observações Gerais</h3>
