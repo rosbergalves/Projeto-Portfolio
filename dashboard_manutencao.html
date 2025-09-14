@@ -550,14 +550,14 @@
                 <p><b>Modelo Conceitual:</b> Criado no software brModelo antes do desenvolvimento no Power BI, serviu como guia para definição das entidades, atributos e relacionamentos.</p>
 
                 <figure>
-                <img src="Imagens/DiagramaER_ModeloConceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
+                <img src="Imagens/Diagrama_Conceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
                 <figcaption>Modelo Conceitual</figcaption>
                 </figure>
 
                 <p><b>Modelo Estrela (Star Schema):</b> O modelo foi desenvolvido no formato estrela (Star Schema) para facilitar consultas analíticas, manter simplicidade de relacionamento, tipos de cardinalidade e ajustes de integridade referencial garantindo boa performance em cálculos DAX.</p>
 
                 <figure>
-                <img src="Imagens/DiagramaER_ModeloLógico.png" alt="Modelo Estrela (Star Schema)" class="imagem-projeto">
+                <img src="Imagens/Modelo_Dimensional.png" alt="Modelo Estrela (Star Schema)" class="imagem-projeto">
                 <figcaption>Modelo Estrela (Star Schema)</figcaption>
                 </figure>
             </section>
@@ -565,10 +565,13 @@
             <section>
                 <h3>3.3 Medidas</h3>
 
+                <p>
+                <h3>Disponibilidade</h3>
                 <pre><code class="language-dax">
                 Disponibilidade =
                 DIVIDE([Horas_Funcionando], [Horas_Disponiveis], 0)
                 </code></pre>
+                </p>
                 <p>Descrição: Calcula a disponibilidade operacional dos equipamentos, dividindo as horas em funcionamento pelas horas disponíveis.</p>
 
             </section>
