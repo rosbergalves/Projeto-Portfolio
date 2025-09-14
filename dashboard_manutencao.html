@@ -147,107 +147,40 @@
 </head>
 <body>
   <header>
-    <h1>Documentação Técnica</h1>
+    <h1>Dashboard Manutenção</h1>
     </header>
 
   <main class="container">
 
     <section>
+      <img src="Imagens/19553.jpg" alt="Dashboard Manutenção" class="imagem-projeto">
       <h2>Documentação Técnica</h2>
-      <ul>
-        <li>Data de início do projeto: 17/08/2025</li>
-        <li>Última atualização: 08/09/2025</li>
-        <li>Desenvolvido por: Rosberg Alves</li>
-      </ul>
     </section>
 
     <section>
-      <h2>01. Visão Geral</h2>
-      <h3>1.1 Objetivo do Dashboard</h3>
-      <ul>
-        <li>Monitorar tempo total das manutenções e tempo de execução real.</li>
-        <li>Identificar gargalos em máquinas/equipamentos.</li>
-        <li>Avaliar custos de peças por manutenção.</li>
-        <li>Classificar manutenções por rank e consequência.</li>
-        <li>Permitir visão por centro de custo, tipo de equipamento e período.</li>
-      </ul>
+      <h2>Visão Geral</h2>
+      <h3>Objetivo do Dashboard</h3>
+      <p>O relatório foi desenvolvido a partir de um dataset público do Kaggle que simula registros de ordens de manutenção de máquinas de uma fabricante de pneus, cobrindo o período de janeiro de 2015 até agosto de 2020.</p>
 
-      <h3>1.2 Público-Alvo</h3>
-      <ul>
-        <li>Primário: Coordenação de Manutenção</li>
-        <li>Secundário: Gerência Industrial</li>
-        <li>Usuários Finais: Equipe de Manutenção</li>
-      </ul>
+      <p>O objetivo foi criar um dashboard completo para monitorar um cenário realista de acompanhamento de manutenções industriais, permitindo analisar quantidade de ocorrências, tempo total de manutenção, custos de peças, disponibilidade de equipamentos, MTTR e MTBF, além de gerar insights por centro de custo, tipo de equipamento e período.</p>
 
-      <h3>1.3 Contexto do Negócio</h3>
-      <p>Fabricante multinacional de pneus, com dados de janeiro/2015 até agosto/2022.</p>
+      <p>Durante o processo, consolidei conhecimentos fundamentais em modelagem de dados, criação de medidas DAX e boas práticas de documentação. Para estruturar os dados, utilizei a abordagem de camadas Bronze, Prata e Ouro: na Bronze, mantive os dados brutos para rastreabilidade; na Prata, tratei e normalizei as informações (datas, colunas e inconsistências); e na Ouro, organizei um modelo dimensional com tabelas fato e dimensão, garantindo melhor desempenho analítico no Power BI.</p>
 
-      <h3>1.4 Frequência de Uso</h3>
-      <p>Diária: monitoramento dos principais indicadores.</p>
-    </section>
+      <p>Esse projeto representa mais um passo na minha trilha de aprendizagem em análise de dados, reforçando como boas práticas de ETL, modelagem dimensional e documentação podem transformar dados em insights acionáveis.</p>
+
+      <p>
+      📂 Dataset utilizado
+      📂 Arquivo .pbix final
+      📂 Documentação técnica detalhada
+      📂 Arquivo com todas as medidas DAX
+      📂 Imagens do layout e diagrama relacional
+      📂 README explicativo
+      
+      📊 Dashboard em produção: https://lnkd.in/dqAiTJYN
+      </p>
 
     <section>
-      <h2>02. Fonte de Dados</h2>
-      <h3>2.1 Infraestrutura Técnica</h3>
-      <ul>
-        <li>Arquivo: CSV (Excel)</li>
-        <li>>ETL: Power Query</li>
-        <li>Visualização: Power BI</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>03. Transformação dos Dados</h2>
-      <h3>3.1 Processo de ETL</h3>
-      <p>Estruturado em três camadas: Bronze, Prata e Ouro.</p>
-
-      <h4>Camada Bronze</h4>
-      <p>Armazena os dados brutos sem alterações, garantindo fidelidade da fonte.</p>
-      <ul>
-        <li>Fonte: “Manutenção_Industria_Pneus.csv” (Kaggle).</li>
-        <li>Período: jan/2015 – ago/2022.</li>
-        <li>Ingestão: Power BI Desktop (Texto/CSV).</li>
-      </ul>
-
-      <h4>Camada Prata</h4>
-      <p>Contém dados tratados e padronizados, base para o modelo estrela.</p>
-      <ul>
-        <li>Correção de tipos de dados.</li>
-        <li>Padronização de texto.</li>
-        <li>Criação de colunas auxiliares e flags de qualidade.</li>
-        <li>Tratamento de valores nulos e duplicados.</li>
-      </ul>
-
-      <h4>Camada Ouro</h4>
-      <p>Modelo dimensional em esquema estrela:</p>
-      <ul>
-        <li>Tabela fato: FtManutencao (tempo, custo, métricas).</li>
-        <li>Tabelas dimensão: Calendário, Equipamento, Centro de Custo, Ocorrência, Rank, Hora, Documento.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>3.2 Modelo Dimensional</h3>
-      <p>Modelo estrela (Star Schema), construído com base em modelo conceitual no brModelo. Todas as dimensões possuem relacionamento 1:N com a tabela fato.</p>
-    </section>
-
-    <section>
-      <h3>3.3 Medidas DAX</h3>
-      <p>Principais medidas implementadas:</p>
-      <ul>
-        <li><code>Custo_CentroCusto</code>: soma de custos por centro de custo.</li>
-        <li><code>Horas_Disponiveis</code>: total de horas planejadas de operação.</li>
-        <li><code>Horas_Paradas</code>: tempo total de equipamentos parados.</li>
-        <li><code>Disponibilidade</code>: horas funcionando ÷ horas disponíveis.</li>
-        <li><code>MTBF</code>: tempo médio entre falhas.</li>
-        <li><code>MTTR</code>: tempo médio para reparar.</li>
-        <li><code>Qtd_Falhas</code>: total de falhas registradas.</li>
-        <li><code>Qtd_OcorrenciasEmAberto</code>: ordens abertas sem data de conclusão.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>3.4 Design do Dashboard</h3>
+      <h3>Design do Dashboard</h3>
       <p>Layout, capa e cartões desenvolvidos no Figma e aplicados no Power BI.</p>
     </section>
 
