@@ -429,7 +429,6 @@
 
                 <ul class="custom-list recuo">
                     <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
-                    </li>
                     <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
                     <p><b>Lógica aplicada:</b> DataMinima = menor valor encontrado em DataInicio (camada Prata).
                                                DataMaxima = maior valor encontrado em DataFim (Camada Prata).
@@ -445,33 +444,33 @@
                                                Trimestre: Identificação do trimestre (1, 2, 3, 4).
                                                NomeDia: Nome do dia da semana.
                                                DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.
-                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Equipamento).</p>
                     <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
                                                Inclusão de chave substituta (ID_Equipamento).</p>
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Equipamento.</p>
                     <p><b>Coluna Principal:</b> Equipamento: Indica o máquina que necessita de manutenção.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.
-                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna CentroCusto).</p>
                     <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
                                                Inclusão de chave substituta (ID_CentroCusto).</p>
                     <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_CentroCusto.</p>
                     <p><b>Coluna Principal:</b> CentroCusto: Centro de custo de onde a solicitação de manutenção está sendo emitida.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.
-                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Consequencia).</p>
                     <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -479,11 +478,11 @@
                     <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_Ocorrencia.</p>
                     <p><b>Colunas Principais:</b> Ocorrencia: Ao gerar uma nota, o colaborador tem que colocar uma ocorrência.
                                                StatusOcorrencia: Descrição da situação do equipamento no ato da ocorrência.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.
-                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Rank).</p>
                     <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -491,17 +490,18 @@
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Rank.</p>
                     <p><b>Colunas Principais:</b> Rank: Input manual que a equipe de manutenção faz para categorizar o tempo necessário para e execução.
                                                   DescricaoRank: Critério de classificação dos tipos de ocorrencias dividido em A, B, C e D.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
                     <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.
-                    </li>
                     <p><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</p>
                     <p><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</p>
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</p>
                     <p><b>Colunas Principais:</b> Hora: Horas do dia de 00:00 a 23:00.
                                                   HoraDoDia: Definição de manhã, tarde, noite e madrugada com base na hora.
                                                   Turno: Definição do turno baseado na hora.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list recuo">
