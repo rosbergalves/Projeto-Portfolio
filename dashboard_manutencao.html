@@ -226,7 +226,8 @@
                 <h3>Camada Bronze</h3>
 
                 <ul class="custom-list Objetivo">
-                    <li><b>Objetivo:</b> Armazenar os dados brutos, preservando a integridade do arquivo original sem aplicar transformações, mantendo assim a fidelidade da fonte.</li>
+                    <li><b>Objetivo:</b> Armazenar os dados brutos, preservando a integridade do arquivo original sem aplicar transformações, mantendo assim a fidelidade da fonte.
+                    </li>
                 </ul>
 
                 <ul class="custom-list Fonte dos dados">
@@ -266,7 +267,8 @@
                 <h3>Camada Prata</h3>
 
                 <ul class="custom-list Objetivo">
-                    <li><b>Objetivo:</b> A Camada Prata contém os dados tratados e padronizados da tabela de ordens de manutenção, mantendo a rastreabilidade das informações originais, incluindo colunas auxiliares e flags de qualidade. Essa camada serve como base confiável para a criação da Camada Ouro (modelo estrela) no Power BI.</li>
+                    <li><b>Objetivo:</b> A Camada Prata contém os dados tratados e padronizados da tabela de ordens de manutenção, mantendo a rastreabilidade das informações originais, incluindo colunas auxiliares e flags de qualidade. Essa camada serve como base confiável para a criação da Camada Ouro (modelo estrela) no Power BI.
+                    </li>
                 </ul>
 
                 <ul class="custom-list Processos">
@@ -399,8 +401,10 @@
                 </ul>
                 
                 <ul class="custom-list recuo">
-                    <li><b>Tabela Fato (FtManutencao):</b> Centraliza os registros das ordens de manutenção, contendo métricas quantitativas (ex.: TempoReal, CustoPecas) e as chaves de ligação com as dimensões.</li>
-                    <li><b>Tabelas Dimensão:</b> Fornecem contexto descritivo para análise como tempo, equipamentos, centro de custo, ocorrência, rank, hora, documento etc.</li>
+                    <li><b>Tabela Fato (FtManutencao):</b> Centraliza os registros das ordens de manutenção, contendo métricas quantitativas (ex.: TempoReal, CustoPecas) e as chaves de ligação com as dimensões.
+                    </li>
+                    <li><b>Tabelas Dimensão:</b> Fornecem contexto descritivo para análise como tempo, equipamentos, centro de custo, ocorrência, rank, hora, documento etc.
+                    </li>
                 </ul>
 
                 <ul class="custom-list Relacionamentos">
@@ -424,7 +428,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.</li>
+                    <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
+                    </li>
                     <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
                     <p><b>Lógica aplicada:</b> DataMinima = menor valor encontrado em DataInicio (camada Prata).
                                                DataMaxima = maior valor encontrado em DataFim (Camada Prata).
@@ -443,7 +448,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.</li>
+                    <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.
+                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Equipamento).</p>
                     <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -453,7 +459,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.</li>
+                    <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.
+                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna CentroCusto).</p>
                     <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -463,7 +470,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.</li>
+                    <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.
+                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Consequencia).</p>
                     <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -474,7 +482,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.</li>
+                    <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.
+                    </li>
                     <p><b>Origem:</b> Camada Prata (coluna Rank).</p>
                     <p><b>Lógica aplicada:</b> Seleção de valores distintos.
                                                Padronização textual (primeira letra maiúscula, remoção de espaços).
@@ -485,7 +494,8 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.</p>
+                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.
+                    </li>
                     <p><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</p>
                     <p><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</p>
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</p>
@@ -495,13 +505,14 @@
                 </ul>
 
                 <ul class="custom-list recuo">
-                    <li><b>DimDocumento:</b> Contém informações únicas sobre cada documento ou ordem de manutenção, permitindo relacionar a fato FtManutencao de forma otimizada.</li>
+                    <li><b>DimDocumento:</b> Contém informações únicas sobre cada documento ou ordem de manutenção, permitindo relacionar a fato FtManutencao de forma otimizada.
                     <p><b>Origem:</b> Camada Prata (coluna NumeroNota, NumeroOrdem).</p>
                     <p><b>Lógica aplicada:</b> Remoção de duplicidades.
                                                Inclusão de chave substituta (ID_Documentp).</p>
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Documento.</p>
                     <p><b>Colunas Principais:</b> NumeroNota: Número da nota gerada ao solicitar uma manutenção.
                                                   NumeroOrdem: Número de ordem gerada pela equipe de manutenção, ao atender uma solicitação.</p>
+                    </li>
                 </ul>
 
                 <ul class="custom-list Processo">
@@ -540,8 +551,10 @@
                 <h3>Observações Gerais</h3>
 
                 <ul class="custom-list Observações Gerais">
-                    <li>As colunas de tempo (TempoReal, TempoManutencao) foram padronizadas para minutos, mas todas as medidas DAX convertem para horas quando necessário.</li>
-                    <li>O campo ID_Ocorrencia é central para os cálculos de disponibilidade, pois diferencia se a manutenção implicou em parada total, funcionamento normal ou parada parcial.</li>
+                    <li>As colunas de tempo (TempoReal, TempoManutencao) foram padronizadas para minutos, mas todas as medidas DAX convertem para horas quando necessário.
+                    </li>
+                    <li>O campo ID_Ocorrencia é central para os cálculos de disponibilidade, pois diferencia se a manutenção implicou em parada total, funcionamento normal ou parada parcial.
+                    </li>
                 </ul>    
             </section>
 
