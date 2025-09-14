@@ -273,14 +273,14 @@
 
                 <ul class="custom-list Processos">
                     <li>Processos</li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li>Corrigir tipos de dados (datas, horas, valores).</li>
-                    <li>Criar colunas auxiliares.</li>
-                    <li>Padronizar texto (equipamento, centro de custo).</li>
-                    <li>Remover inconsistências (linhas vazias, duplicadas).</li>
-                    <li>Nomear como Consulta Prata.</li>
+                
+                    <ul class="custom-list recuo">
+                        <li>Corrigir tipos de dados (datas, horas, valores).</li>
+                        <li>Criar colunas auxiliares.</li>
+                        <li>Padronizar texto (equipamento, centro de custo).</li>
+                        <li>Remover inconsistências (linhas vazias, duplicadas).</li>
+                        <li>Nomear como Consulta Prata.</li>
+                    </ul>
                 </ul>
 
                 <h3>Tratamentos Aplicados</h3>
@@ -296,53 +296,53 @@
 
                 <ul class="custom-list Substituição de valores nulos">
                     <li>Substituição de valores nulos</li>
-                </ul>
-                
-                <ul class="custom-list recuo">
-                    <li>Valores vazios na coluna NumeroOrdem foram substituídos por Sem_Ordem.</li>
-                    <li>Valores vazios na coluna Rank, foram substituídos por Sem_Rank.</li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Valores vazios na coluna NumeroOrdem foram substituídos por Sem_Ordem.</li>
+                        <li>Valores vazios na coluna Rank, foram substituídos por Sem_Rank.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Criação de coluna derivada do Status da Ocorrencia">
-                    <li>Criação de coluna derivada do Status da Ocorrencia</li>
-                </ul>
-                
-                <ul class="custom-list recuo">
-                    <li>Coluna StatusOcorrencia criada a partir da coluna Ocorrencia.</li>
-                    <li>1 = Máquina Parada</li>
-                    <li>2 = Máquina Parada Parcialmente</li>
-                    <li>3 = Máquina Funcionando</li>
-                    <li>4 = Não Informado</li>
-                    <li>5 = Não Informado</li>
-                    <li>6 = Não Informado</li>
-                    <li>7 = Não Informado</li>
-                    <li>8 = Não Informado</li>
-                    <li>Objetivo: Facilitar a interpretação e análise operacional.</li>
+                    <li><b>Criação de coluna derivada do Status da Ocorrencia</b></li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Coluna StatusOcorrencia criada a partir da coluna Ocorrencia.</li>
+                        <li>1 = Máquina Parada</li>
+                        <li>2 = Máquina Parada Parcialmente</li>
+                        <li>3 = Máquina Funcionando</li>
+                        <li>4 = Não Informado</li>
+                        <li>5 = Não Informado</li>
+                        <li>6 = Não Informado</li>
+                        <li>7 = Não Informado</li>
+                        <li>8 = Não Informado</li>
+                        <li>Objetivo: Facilitar a interpretação e análise operacional.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Criação de coluna derivada da descrição do Rank">
                     <li>Criação de coluna derivada da descrição do Rank</li>
-                </ul>
-                
-                <ul class="custom-list recuo">
-                    <li>Coluna DescricaoRank criada a partir da coluna Rank.</li>
-                    <li>A = Manutenções com duração maiores ou iguais à 240 minutos</li>
-                    <li>B = Manutenções com duração entre 20 e 240 minutos</li>
-                    <li>C = Manutenções com duração entre 0 e 20 minutos</li>
-                    <li>D = Manutenção de máquinas específicas independente do tempo</li>
-                    <li>Sem_Rank = Sem classificação</li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Coluna DescricaoRank criada a partir da coluna Rank.</li>
+                        <li>A = Manutenções com duração maiores ou iguais à 240 minutos</li>
+                        <li>B = Manutenções com duração entre 20 e 240 minutos</li>
+                        <li>C = Manutenções com duração entre 0 e 20 minutos</li>
+                        <li>D = Manutenção de máquinas específicas independente do tempo</li>
+                        <li>Sem_Rank = Sem classificação</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Criação de colunas auxiliares de data e hora">
                     <li>Criação de colunas auxiliares de data e hora</li>
-                </ul>
-                
-                <ul class="custom-list recuo">
-                    <li>DataHoraInicio = DataInicio + HoraInicio</li>
-                    <li>DataHoraOrdem = DataInicio + HoraOrdem</li>
-                    <li>DataHoraFim = DataFim + HoraFim</li>
-                    <li>Tratamento condicional: se hora for nula → valor null</li>
-                    <li>Objetivo: Possibilitar cálculo de métricas temporais como tempo de execução, tempo total.</li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>DataHoraInicio = DataInicio + HoraInicio</li>
+                        <li>DataHoraOrdem = DataInicio + HoraOrdem</li>
+                        <li>DataHoraFim = DataFim + HoraFim</li>
+                        <li>Tratamento condicional: se hora for nula → valor null</li>
+                        <li>Objetivo: Possibilitar cálculo de métricas temporais como tempo de execução, tempo total.</li>
+                    </ul>
                 </ul>
 
                 <ul class="custom-list Flags de qualidade">
