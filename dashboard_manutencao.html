@@ -430,20 +430,27 @@
                 <ul class="custom-list recuo">
                     <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
                     <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
-                    <p><b>Lógica aplicada:</b> DataMinima = menor valor encontrado em DataInicio (camada Prata).
-                                               DataMaxima = maior valor encontrado em DataFim (Camada Prata).
-                                               DataInicial = 1º de janeiro do ano correspondente à data mínima.
-                                               DataFim = 31 de dezembro do ano correspondente à data máxima.
-                                               Duracao = intervalo de dias entre DataInicial e DataFinal.
-                                               List.Dates utilizado para gerar a sequência de datas contínuas.</p>
+                                       <ul class="custom-list recuo"></ul>
+                                       <p><b>Lógica aplicada:</b>
+                                       <li>DataMinima = menor valor encontrado em DataInicio (camada Prata).</li>
+                                       <li>DataMaxima = maior valor encontrado em DataFim (Camada Prata).</li>
+                                       <li>DataInicial = 1º de janeiro do ano correspondente à data mínima.</li>
+                                       <li>DataFim = 31 de dezembro do ano correspondente à data máxima.</li>
+                                       <li>Duracao = intervalo de dias entre DataInicial e DataFinal.</li>
+                                       <li>List.Dates utilizado para gerar a sequência de datas contínuas.</li></p>
+                                       </ul>
                     <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Calendario, ID_DataInicio e ID_DataFim.</p>
-                    <p><b>Colunas Principais:</b> Data: Data no formato completo (DD-MM-YYYY).
-                                               Ano: Ano da data.
-                                               Mes: Número do mês.
-                                               NomeMes: Nome do mês por extenso.
-                                               Trimestre: Identificação do trimestre (1, 2, 3, 4).
-                                               NomeDia: Nome do dia da semana.
-                                               DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</p>
+                    <p><b>Colunas principais:</b>
+                                               <ul class="custom-list recuo">
+                                               <li>Data: Data no formato completo (DD-MM-YYYY).</li>
+                                               <li>Ano: Ano da data.</li>
+                                               <li>Mes: Número do mês.</li>
+                                               <li>NomeMes: Nome do mês por extenso.</li>
+                                               <li>Trimestre: Identificação do trimestre (1, 2, 3, 4).</li>
+                                               <li>NomeDia: Nome do dia da semana.</li>
+                                               <li>DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</li></p>
+                                               </ul>
+
                     </li>
                 </ul>
 
