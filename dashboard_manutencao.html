@@ -32,7 +32,8 @@
             color: #007BFF;
             text-decoration: none;
             display: inline-block;
-            margin-top: -13px;
+            margin-top: -8px;
+            
         }
 
         a:hover {
@@ -146,11 +147,10 @@
 
         pre {
             background: #f4f4f4;
-            padding: 10px;
+            padding: 0px;
             border-radius: 8px;
             overflow-x: auto;
             text-align: left;   /* força alinhamento à esquerda */
-            margin: 1em 0;      /* dá um espaço em cima e embaixo */
             }
 
         code {
@@ -170,7 +170,7 @@
   <main class="container">
     <section>
         <section>
-            <img src="Imagens/19553.jpg" alt="Dashboard Manutenção" class="imagem-projeto">
+            <img src="Imagens/capa_dashboard.png" alt="Dashboard Manutenção" class="imagem-projeto">
         </section>
 
         <section>
@@ -590,16 +590,167 @@
             <section>
                 <h3>3.3 Medidas</h3>
 
-                <p>
-                <h3>Disponibilidade</h3>
+                <p><b>Disponibilidade:</b> Calcula a disponibilidade operacional dos equipamentos, dividindo as horas em funcionamento pelas horas disponíveis.</p> 
+
                 <pre><code class="language-dax">
                 Disponibilidade =
                 DIVIDE([Horas_Funcionando], [Horas_Disponiveis], 0)
                 </code></pre>
-                </p>
-                <p>Descrição: Calcula a disponibilidade operacional dos equipamentos, dividindo as horas em funcionamento pelas horas disponíveis.</p>
 
+                <p><b>Horas_Disponiveis:</b> Horas totais disponíveis considerando dias úteis, quantidade de equipamentos, turnos e horas por turno.</p>
+
+                <pre><code class="language-dax">
+                Horas_Disponiveis =
+                VAR TurnosPorDia = 3  -- total de turnos por dia
+                VAR HorasPorTurno = 7 -- horas planejadas por turno
+                VAR QtdEquipamentos =
+                    DISTINCTCOUNT(DimEquipamento[ID_Equipamento])
+                VAR DiasUteis =
+                    CALCULATE(
+                        COUNTROWS(DimCalendario),
+                        KEEPFILTERS(DimCalendario[DiaUtil] = "Sim")
+                    )
+                RETURN
+                    QtdEquipamentos * DiasUteis * TurnosPorDia * HorasPorTurno
+                </code></pre>
+
+                <p><b>Horas_Funcionando:</b> Descrição: Soma do tempo real de funcionamento, considerando ocorrências de tipo 3 (funcionamento normal).</p>
+
+                <pre><code class="language-dax">
+                Horas_Funcionando =
+                CALCULATE(
+                    SUM(FtManutencao[TempoReal]),
+                    FILTER(
+                        DimOcorrencia,
+                        DimOcorrencia[Ocorrencia] = 3
+                    )
+                )
+                </code></pre>
+
+                <p><b>Horas_Paradas:</b> Soma do tempo de paradas, considerando ocorrências de tipo 1.</p> 
+
+                <pre><code class="language-dax">
+                Horas_Paradas =
+                CALCULATE(
+                    SUM(FtManutencao[TempoReal]),
+                    KEEPFILTERS(
+                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1})
+                    )
+                )
+                </code></pre>
+
+                <p><b>Horas_Operacionais:</b> Horas disponíveis menos horas paradas, garantindo que não fique negativo.</p> 
+
+                <pre><code class="language-dax">
+                Horas_Operacionais =
+                VAR hDisp = [Horas_Disponiveis]
+                VAR hPar  = [Horas_Paradas]
+                RETURN
+                    MAX(0, hDisp - hPar)
+                </code></pre>
+
+                <p><b>Custo_CentroCusto:</b> Soma dos custos de peças, analisado por centro de custo.</p> 
+
+                <pre><code class="language-dax">
+                Custo_CentroCusto =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>Custo_Equipamento:</b> Soma dos custos de peças, analisado por equipamento.</p> 
+
+                <pre><code class="language-dax">
+                Custo_Equipamento =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>CustoTotal_Manutencao:</b> Soma total histórica dos custos de peças em manutenções.</p> 
+
+                <pre><code class="language-dax">
+                CustoTotal_Manutencao =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>MTBF (Mean Time Between Failures):</b> Tempo médio entre falhas: divide horas operacionais pela quantidade de falhas.</p> 
+
+                <pre><code class="language-dax">
+                MTBF =
+                VAR falhas = [Qtd_Falhas]
+                VAR horasOp = [Horas_Operacionais]
+                RETURN
+                    IF(falhas = 0, BLANK(), DIVIDE(horasOp, falhas))
+                </code></pre>
+
+                <p><b>MTTR (Mean Time To Repair):</b> Tempo médio para reparo: divide o tempo total de manutenção pela quantidade de falhas.</p> 
+
+                <pre><code class="language-dax">
+                MTTR =
+                VAR falhas = [Qtd_Falhas]
+                VAR sumRep =
+                    CALCULATE(
+                        SUM(FtManutencao[TempoManutencao]),
+                        KEEPFILTERS(
+                            FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
+                        )
+                    )
+                RETURN
+                    IF(falhas = 0, BLANK(), DIVIDE(sumRep, falhas))
+                </code></pre>
+
+                <p><b>Qtd_Falhas:</b> Número total de falhas (ocorrências do tipo 1 e 2).</p> 
+
+                <pre><code class="language-dax">
+                Qtd_Falhas =
+                CALCULATE(
+                    COUNTROWS(FtManutencao),
+                    KEEPFILTERS(
+                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
+                    )
+                )
+                </code></pre>
+
+                <p><b>Qtd_EquipamentosFalha:</b> Número de equipamentos distintos que apresentaram falha (Ocorrencia = 2).</p> 
+
+                <pre><code class="language-dax">
+                Qtd_EquipamentosFalha =
+                CALCULATE(
+                    DISTINCTCOUNT(FtManutencao[ID_Equipamento]),
+                    FILTER(
+                        DimOcorrencia,
+                        DimOcorrencia[Ocorrencia] = 2
+                    )
+                )
+                </code></pre>
+
+                <p><b>Qtd_Ocorrencias:</b> Contagem de todas as ocorrências registradas.</p> 
+
+                <pre><code class="language-dax">
+                Qtd_Ocorrencias =
+                COUNTROWS(FtManutencao)
+                </code></pre>
+
+                <p><b>Qtd_OcorrenciasEmAberto:</b> Quantidade de ocorrências que não possuem data de fim ou que ultrapassam a data de análise.</p> 
+
+                <pre><code class="language-dax">
+                Qtd_OcorrenciasEmAberto =
+                VAR vDataFinal = MAX(DimCalendario[Data])
+                VAR vOcorrenciasAbertas =
+                    FILTER(
+                        ALL(FtManutencao),
+                        FtManutencao[ID_DataInicio] <= vDataFinal &&
+                        (FtManutencao[ID_DataFim] > vDataFinal || ISBLANK(FtManutencao[ID_DataFim]))
+                    )
+                RETURN
+                    COUNTROWS(vOcorrenciasAbertas) + 0
+                </code></pre>
+
+                <p><b>TempoMedio_Manutencao:</b> Tempo médio das manutenções com base na coluna TempoReal na tabela FtManutencao.</p> 
+
+                <pre><code class="language-dax">
+                TempoMedio_Manutencao =
+                AVERAGE(FtManutencao[TempoReal])
+                </code></pre>
             </section>
+            
         </section>
 
     </section>
