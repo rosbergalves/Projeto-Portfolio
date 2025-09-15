@@ -130,6 +130,7 @@ section {
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 10;
 }
 
 #projetos a:hover {
@@ -139,13 +140,6 @@ section {
 #projetos h4, #projetos h5 {
     font-size: 1.5em;
     margin-top: 10px;
-}
-
-#projetos a {
-    color: #007BFF;
-    text-decoration: none;
-    margin-top: 10px;
-    display: block;
 }
 
 /* Estilo das listas personalizadas */
