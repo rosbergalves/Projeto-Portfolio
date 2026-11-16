@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Manutenção</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body a {
+            color: blue !important;
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 5px; /* Diminui o espaçamento entre as seções */
+            padding: 5px; /* Ajusta o espaçamento interno */
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: -8px;
+            
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h2 {display: block;
+            width: 100%;
+            clear: both;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 1px;
+            margin-bottom: 5px;
+        }
+
+        h3 {display: block;
+            width: 100%;
+            clear: both;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+
+        header {
+            background-color: #110d55e3;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            text-align: left;
+            width: 80%;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: -10px;
+        }
+
+        p { display: block;
+            width: 100%;
+            clear: both;
+            text-align: left;
+            line-height: 1.6;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+
+        .custom-list {
+            margin-top: 3px;
+            margin-bottom: 10px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    
+        .recuo {
+            margin-left: 40px;
+            list-style-type: square;
+        }
+
+        .imagem-projeto {
+            width: 60%;
+            height: auto;
+            display: block;
+            clear: both;
+            margin: 20px auto;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        figure {
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+
+        figcaption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .btn-back {
+            display: flex;
+            justify-content: left;
+            margin-top: 10px;
+        }
+
+        .btn-back img {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 0px;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: left;   /* força alinhamento à esquerda */
+            }
+
+        code {
+            font-family: "Fira Code", "Courier New", monospace;
+            color: #333;
+            font-size: 0.95rem;
+            }
+
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Dashboard de Manutenção</h1>
+    </header>
+
+  <main class="container">
+    <section>
+        <section>
+            <img src="Imagens/capa_dashboard.png" alt="Comunicação de Acidentes de Trabalho no Brasil" class="imagem-projeto">
+        </section>
+
+        <section>
+            <h2>01 Visão Geral</h2>
+
+            <h3>1.1 Objetivo do Dashboard</h3>
+          
+            <p>Desenvolver um dashboard no Power BI para analisar os registros de acidentes de trabalho no Brasil, permitindo identificar padrões e características dos acidentes registrados a partir dos dados disponibilizados pelo Portal de Dados Abertos do INSS.</p>
+
+            <h3>2 Contexto</h3>
+
+            <p>Quais são as principais características dos acidentes de trabalho registrados e como esses registros se distribuem ao longo do tempo, território, perfil dos trabalhadores e características dos acidentes.
+            O dashboard analisa as “CATs” emitidas entre janeiro de 2024 e julho de 2026. O período de análise é determinado pela data de emissão da CAT. A data do acidente é mantida para análises relacionadas ao momento em que o acidente ocorreu.
+            </p>
+
+            <h3>1.3 Contexto do Negócio</h3>
+
+            <p>Um fabricante multinacional de pneus, que contém informações de janeiro de 2015 até agosto de 2022.</p>
+
+            <h3>1.4 Frequência de Uso Esperada</h3>
+
+            <ul class="custom-list 1.4 Frequência de Uso Esperada">
+                <li>Diária: Monitoramento dos principais indicadores.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>02 Fonte de Dados</h2>
+
+            <h3>2.1 Infraestrutura Técnica</h3>
+
+            <ul class="custom-list 2.1 Infraestrutura Técnica">
+                <li>Arquivo CSV: Excel</li>
+                <li>ETL: Power Query</li>
+                <li>Ferramenta de visualização: Power BI</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>03 Transformação dos Dados</h2>
+
+            <h3>3.1 Processo de ETL</h3>
+
+            <p>O processo de transformação utiliza Power Query estruturando os dados em três etapas principais.</p>
+            
+            <section>
+                <h3>Camada Bronze</h3>
+
+                <ul class="custom-list Objetivo">
+                    <li><b>Objetivo:</b> Armazenar os dados brutos, preservando a integridade do arquivo original sem aplicar transformações, mantendo assim a fidelidade da fonte.
+                    </li>
+                </ul>
+
+                <ul class="custom-list Fonte dos dados">
+                    <li><b>Fonte dos dados</b></li>
+
+                    <ul class="custom-list recuo">
+                        <li><b>Arquivo:</b> “Manutenção_Industria_Pneus.csv”.</li>
+                        <li><b>Formato:</b> CSV (valores separados por vírgula).</li>
+                        <li><b>Origem:</b> Dataset público do Kaggle (ordens de manutenção de uma fabricante multinacional de pneus).</li>
+                        <li><b>Período:</b> Janeiro/2015 até Agosto/2022.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Método de ingestão">
+                    <li><b>Método de ingestão</b></li>
+
+                    <ul class="custom-list recuo">
+                        <li><b>Ferramenta:</b> Power BI Desktop</li>
+                        <li><b>Conector Utilizado:</b> Texto/CSV</li>
+                        <li><b>Justificativa da Escolha:</b> O dataset é único e estático, não haverá substituições nem cargas incrementais.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Passos de Ingestão">
+                    <li><b>Passos de Ingestão</b></li>
+
+                    <ul class="custom-list recuo">
+                        <li>No Power BI Desktop, acessar Página Inicial → Obter Dados → Texto/CSV.</li>
+                        <li>Selecionar o arquivo “Manutenção_Industria_Pneus.csv” no diretório local.</li>
+                        <li>Confirmar a importação mantendo o encoding padrão (UTF-8) e delimitador vírgula ( , ).</li>
+                        <li>Nomear a consulta como “Camada Bronze” que será a base para criação da camada prata.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Camada Prata</h3>
+
+                <ul class="custom-list Objetivo">
+                    <li><b>Objetivo:</b> A Camada Prata contém os dados tratados e padronizados da tabela de ordens de manutenção, mantendo a rastreabilidade das informações originais, incluindo colunas auxiliares e flags de qualidade. Essa camada serve como base confiável para a criação da Camada Ouro (modelo estrela) no Power BI.
+                    </li>
+                </ul>
+
+                <ul class="custom-list Processos">
+                    <li><b>Processos</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li>Corrigir tipos de dados (datas, horas, valores).</li>
+                        <li>Criar colunas auxiliares.</li>
+                        <li>Padronizar texto (equipamento, centro de custo).</li>
+                        <li>Remover inconsistências (linhas vazias, duplicadas).</li>
+                        <li>Nomear como Consulta Prata.</li>
+                    </ul>
+                </ul>
+
+                <h3>Tratamentos Aplicados</h3>
+
+                <ul class="custom-list Padronização de colunas de texto">
+                    <li><b>Padronização de colunas de texto</b></li>
+
+                    <ul class="custom-list recuo">
+                        <li>Todos os registros de texto das tabelas Dimensão foram convertidos para primeira letra maiúscula.</li>
+                        <li>Objetivo: Evitar inconsistências e variações de escrita.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Substituição de valores nulos">
+                    <li><b>Substituição de valores nulos</b></li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Valores vazios na coluna NumeroOrdem foram substituídos por Sem_Ordem.</li>
+                        <li>Valores vazios na coluna Rank, foram substituídos por Sem_Rank.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Criação de coluna derivada do Status da Ocorrencia">
+                    <li><b>Criação de coluna derivada do Status da Ocorrencia</b></li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Coluna StatusOcorrencia criada a partir da coluna Ocorrencia.</li>
+                        <li>1 = Máquina Parada</li>
+                        <li>2 = Máquina Parada Parcialmente</li>
+                        <li>3 = Máquina Funcionando</li>
+                        <li>4 = Não Informado</li>
+                        <li>5 = Não Informado</li>
+                        <li>6 = Não Informado</li>
+                        <li>7 = Não Informado</li>
+                        <li>8 = Não Informado</li>
+                        <li>Objetivo: Facilitar a interpretação e análise operacional.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Criação de coluna derivada da descrição do Rank">
+                    <li><b>Criação de coluna derivada da descrição do Rank</b></li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>Coluna DescricaoRank criada a partir da coluna Rank.</li>
+                        <li>A = Manutenções com duração maiores ou iguais à 240 minutos</li>
+                        <li>B = Manutenções com duração entre 20 e 240 minutos</li>
+                        <li>C = Manutenções com duração entre 0 e 20 minutos</li>
+                        <li>D = Manutenção de máquinas específicas independente do tempo</li>
+                        <li>Sem_Rank = Sem classificação</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Criação de colunas auxiliares de data e hora">
+                    <li><b>Criação de colunas auxiliares de data e hora</b></li>
+                                
+                    <ul class="custom-list recuo">
+                        <li>DataHoraInicio = DataInicio + HoraInicio</li>
+                        <li>DataHoraOrdem = DataInicio + HoraOrdem</li>
+                        <li>DataHoraFim = DataFim + HoraFim</li>
+                        <li>Tratamento condicional: se hora for nula → valor null</li>
+                        <li>Objetivo: Possibilitar cálculo de métricas temporais como tempo de execução, tempo total.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Flags de qualidade">
+                    <li><b>Flags de qualidade</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li>SemOrdem = True se NumeroOrdem for nulo.</li>
+                        <li>SemRank = True se Rank for nulo.</li>
+                        <li>SemHoraInicio, SemHoraOrdem, SemHoraFim = True se respectivas colunas de hora forem nulas.</li>
+                        <li>SemDataFim = True se DataFim for nula.</li>
+                        <li>Objetivo: Analisar ordens concluídas e ordens abertas.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Tratamento de métricas numéricas">
+                    <li><b>Tratamento de métricas numéricas</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li>Coluna CustoPecas verificada, sem valores negativos.</li>
+                        <li>Colunas TempoReal e TempoManutencao corrigidas para número decimal, separador correto ( , ).</li>
+                        <li>Objetivo: Garantir consistência para cálculos e visualizações.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Verificação de duplicatas">
+                    <li><b>Verificação de duplicatas</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li>NumeroNota e NumeroOrdem conferidos e não apresentaram duplicatas.</li>
+                        <li>Mantidos como chaves naturais de referência.</li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Linhas com dados incompletos">
+                    <li><b>Linhas com dados incompletos</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li>Mantidas na consulta para permitir análise de ordens abertas e backlog operacional.</li>
+                    </ul>
+                </ul>
+
+                <h3>Observações Gerais</h3>
+
+                <ul class="custom-list Observações Gerais">
+                    <li>A Camada Prata não possui ID’s nem dimensões, sua função é fornecer dados limpos e confiáveis para modelagem analítica na Camada Ouro.</li>
+                    <li>Mantém a rastreabilidade dos dados originais e registros incompletos, permitindo análises operacionais e históricas.</li>
+                    <li>Facilita criação de tabelas fato e dimensões, incluindo calendário, equipamentos, centros de custo, ranks e status da ocorrência.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Camada Ouro</h3>
+
+                <ul class="custom-list Estrutura do Modelo">
+                    <li><b>Estrutura do Modelo</b></li>
+                
+                    <ul class="custom-list recuo">
+                        <li><b>Tabela Fato (FtManutencao):</b> Centraliza os registros das ordens de manutenção, contendo métricas quantitativas (ex.: TempoReal, CustoPecas) e as chaves de ligação com as dimensões.
+                        </li>
+                        <li><b>Tabelas Dimensão:</b> Fornecem contexto descritivo para análise como tempo, equipamentos, centro de custo, ocorrência, rank, hora, documento etc.
+                        </li>
+                    </ul>
+                </ul>
+
+                <ul class="custom-list Relacionamentos">
+                    <li><b>Relacionamentos</b></li>
+                </ul>
+
+                <p>Cada Dimensão possui um relacionamento 1:N com a tabela fato FtManutencao, a direção do filtro é do tipo single da dimensão para a fato, preservando a integridade do modelo estrela sendo:</p>
+                
+                <ul class="custom-list recuo">
+                    <li><b>DimCalendario:</b> Permite análise temporal em diferentes granularidades (ano, mês, dia).</li>
+                    <li><b>DimEquipamento:</b> Identifica de forma única os equipamentos e máquinas da fábrica.</li>
+                    <li><b>DimCentroCusto:</b> Possibilita segmentação financeira e administrativa.</li>
+                    <li><b>DimOcorrencia:</b> Categoriza o status das ocorrências (parada, funcionando, não informado).</li>
+                    <li><b>DimRank:</b> Classifica as manutenções em grupos (A, B, C, D, Sem Rank).</li>
+                    <li><b>DimHora:</b> Auxilia análises de ocorrências por horário e turno.</li>
+                    <li><b>DimDocumento:</b> Garante integridade e rastreabilidade de ordens e notas.</li>
+                </ul>
+
+                <ul class="custom-list Processo">
+                    <li><b>Tabelas de dimensão criadas</b></li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
+                    <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
+                                       <ul class="custom-list recuo"></ul>
+                                       <p><b>Lógica aplicada:</b>
+                                          <li>DataMinima = menor valor encontrado em DataInicio (camada Prata).</li>
+                                          <li>DataMaxima = maior valor encontrado em DataFim (Camada Prata).</li>
+                                          <li>DataInicial = 1º de janeiro do ano correspondente à data mínima.</li>
+                                          <li>DataFim = 31 de dezembro do ano correspondente à data máxima.</li>
+                                          <li>Duracao = intervalo de dias entre DataInicial e DataFinal.</li>
+                                          <li>List.Dates utilizado para gerar a sequência de datas contínuas.</li></p>
+                                       </ul>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Calendario, ID_DataInicio e ID_DataFim.</p>
+                    <p><b>Colunas principais:</b>
+                                               <ul class="custom-list recuo">
+                                               <li>Data: Data no formato completo (DD-MM-YYYY).</li>
+                                               <li>Ano: Ano da data.</li>
+                                               <li>Mes: Número do mês.</li>
+                                               <li>NomeMes: Nome do mês por extenso.</li>
+                                               <li>Trimestre: Identificação do trimestre (1, 2, 3, 4).</li>
+                                               <li>NomeDia: Nome do dia da semana.</li>
+                                               <li>DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</li></p>
+                                               </ul>
+
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.
+                    <p><b>Origem:</b> Camada Prata (coluna Equipamento).</p>
+                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
+                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
+                                               Inclusão de chave substituta (ID_Equipamento).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Equipamento.</p>
+                    <p><b>Coluna Principal:</b> Equipamento: Indica o máquina que necessita de manutenção.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.
+                    <p><b>Origem:</b> Camada Prata (coluna CentroCusto).</p>
+                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
+                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
+                                               Inclusão de chave substituta (ID_CentroCusto).</p>
+                    <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_CentroCusto.</p>
+                    <p><b>Coluna Principal:</b> CentroCusto: Centro de custo de onde a solicitação de manutenção está sendo emitida.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.
+                    <p><b>Origem:</b> Camada Prata (coluna Consequencia).</p>
+                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
+                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
+                                               Inclusão de chave substituta (ID_Ocorrencia).</p>
+                    <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_Ocorrencia.</p>
+                    <p><b>Colunas Principais:</b> Ocorrencia: Ao gerar uma nota, o colaborador tem que colocar uma ocorrência.
+                                               StatusOcorrencia: Descrição da situação do equipamento no ato da ocorrência.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.
+                    <p><b>Origem:</b> Camada Prata (coluna Rank).</p>
+                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
+                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
+                                               Inclusão de chave substituta (ID_Rank).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Rank.</p>
+                    <p><b>Colunas Principais:</b> Rank: Input manual que a equipe de manutenção faz para categorizar o tempo necessário para e execução.
+                                                  DescricaoRank: Critério de classificação dos tipos de ocorrencias dividido em A, B, C e D.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.
+                    <p><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</p>
+                    <p><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</p>
+                    <p><b>Colunas Principais:</b> Hora: Horas do dia de 00:00 a 23:00.
+                                                  HoraDoDia: Definição de manhã, tarde, noite e madrugada com base na hora.
+                                                  Turno: Definição do turno baseado na hora.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>DimDocumento:</b> Contém informações únicas sobre cada documento ou ordem de manutenção, permitindo relacionar a fato FtManutencao de forma otimizada.
+                    <p><b>Origem:</b> Camada Prata (coluna NumeroNota, NumeroOrdem).</p>
+                    <p><b>Lógica aplicada:</b> Remoção de duplicidades.
+                                               Inclusão de chave substituta (ID_Documentp).</p>
+                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Documento.</p>
+                    <p><b>Colunas Principais:</b> NumeroNota: Número da nota gerada ao solicitar uma manutenção.
+                                                  NumeroOrdem: Número de ordem gerada pela equipe de manutenção, ao atender uma solicitação.</p>
+                    </li>
+                </ul>
+
+                <ul class="custom-list Processo">
+                    <li><b>Tabela de fatos criada</b></li>
+                </ul>
+
+                <ul class="custom-list recuo">
+                    <li><b>FtManutencao:</b> Consolida os registros de ordens de manutenção, com granularidade 1 linha por manutenção. Contém as chaves de relacionamento com as dimensões Calendario, Equipamento, CentroCusto, Ocorrencia, Rank, Hora e Documento.
+                    <p><b>Origem:</b> Consulta Prata (Manutenção_Industria_Pneus_Prata), proveniente da base operacional da manutenção.</p>
+                    <p><b>Lógica aplicada:</b> Dados tratados da camada Prata.
+                                               Substituição de atributos textuais por FKs das dimensões.</p>
+                    </li>
+                </ul>
+                    <li><b>Colunas principais:</b> <ul class="custom-list recuo">
+                        <li>ID_Manutencao: Identificador único da manutenção na tabela fato.</li>
+                        <li>ID_Calendario: Chave estrangeira para DimCalendario, representando a data de abertura/ocorrência.</li>
+                        <li>ID_Equipamento: Chave estrangeira para DimEquipamento.</li>
+                        <li>ID_CentroCusto: Chave estrangeira para DimCentroCusto.</li>
+                        <li>ID_Ocorrencia: Chave estrangeira para DimOcorrencia.</li>
+                        <li>ID_Rank: Chave estrangeira para DimRank, utilizada para análises de priorização ou classificação.</li>
+                        <li>ID_Hora: Chave estrangeira para DimHora.</li>
+                        <li>ID_Documento: Chave estrangeira para DimDocumento.</ul>
+                    </li>
+                
+                    <li><b>Colunas de tempo e desempenho:</b> <ul class="custom-list recuo">
+                        <li>ID_HoraInicio: Horário em que a manutenção começou (extraído do sistema de ordens).</li>
+                        <li>ID_HoraOrdem: Horário em que a ordem foi registrada/aberta.</li>
+                        <li>ID_HoraFim: Horário de término da manutenção.</li>
+                        <li>ID_DataInicio: A data em que foi aberta a solicitação de manutenção.</li>
+                        <li>ID_DataFim: Data do fim da manutenção.</li>
+                        <li>TempoManutencao: Tempo líquido da atividade de manutenção (em minutos), desconsiderando intervalos ou atrasos de registro.</li>
+                        <li>TempoReal: O tempo que levou desde a solicitação até o fim da manutenção.</li>
+                        <li>CustoPecas: Valor total de peças utilizadas na manutenção.</ul>
+                    </li>
+                
+                <h3>Observações Gerais</h3>
+
+                <ul class="custom-list Observações Gerais">
+                    <li>As colunas de tempo (TempoReal, TempoManutencao) foram padronizadas para minutos, mas todas as medidas DAX convertem para horas quando necessário.
+                    </li>
+                    <li>O campo ID_Ocorrencia é central para os cálculos de disponibilidade, pois diferencia se a manutenção implicou em parada total, funcionamento normal ou parada parcial.
+                    </li>
+                </ul>    
+            </section>
+
+            <section>
+                <h3>3.2 Modelo Dimensional</h3>
+
+                <p><b>Modelo Conceitual:</b> Criado no software brModelo antes do desenvolvimento no Power BI, serviu como guia para definição das entidades, atributos e relacionamentos.</p>
+
+                <figure>
+                <img src="Imagens/Diagrama_Conceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
+                <figcaption>Modelo Conceitual</figcaption>
+                </figure>
+
+                <p><b>Modelo Estrela (Star Schema):</b> O modelo foi desenvolvido no formato estrela (Star Schema) para facilitar consultas analíticas, manter simplicidade de relacionamento, tipos de cardinalidade e ajustes de integridade referencial garantindo boa performance em cálculos DAX.</p>
+
+                <figure>
+                <img src="Imagens/Modelo_Dimensional.png" alt="Modelo Estrela (Star Schema)" class="imagem-projeto">
+                <figcaption>Modelo Estrela (Star Schema)</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h3>3.3 Medidas</h3>
+
+                <p><b>Disponibilidade:</b> Calcula a disponibilidade operacional dos equipamentos, dividindo as horas em funcionamento pelas horas disponíveis.</p> 
+
+                <pre><code class="language-dax">
+                Disponibilidade =
+                DIVIDE([Horas_Funcionando], [Horas_Disponiveis], 0)
+                </code></pre>
+
+                <p><b>Horas_Disponiveis:</b> Horas totais disponíveis considerando dias úteis, quantidade de equipamentos, turnos e horas por turno.</p>
+
+                <pre><code class="language-dax">
+                Horas_Disponiveis =
+                VAR TurnosPorDia = 3  -- total de turnos por dia
+                VAR HorasPorTurno = 7 -- horas planejadas por turno
+                VAR QtdEquipamentos =
+                    DISTINCTCOUNT(DimEquipamento[ID_Equipamento])
+                VAR DiasUteis =
+                    CALCULATE(
+                        COUNTROWS(DimCalendario),
+                        KEEPFILTERS(DimCalendario[DiaUtil] = "Sim")
+                    )
+                RETURN
+                    QtdEquipamentos * DiasUteis * TurnosPorDia * HorasPorTurno
+                </code></pre>
+
+                <p><b>Horas_Funcionando:</b> Descrição: Soma do tempo real de funcionamento, considerando ocorrências de tipo 3 (funcionamento normal).</p>
+
+                <pre><code class="language-dax">
+                Horas_Funcionando =
+                CALCULATE(
+                    SUM(FtManutencao[TempoReal]),
+                    FILTER(
+                        DimOcorrencia,
+                        DimOcorrencia[Ocorrencia] = 3
+                    )
+                )
+                </code></pre>
+
+                <p><b>Horas_Paradas:</b> Soma do tempo de paradas, considerando ocorrências de tipo 1.</p> 
+
+                <pre><code class="language-dax">
+                Horas_Paradas =
+                CALCULATE(
+                    SUM(FtManutencao[TempoReal]),
+                    KEEPFILTERS(
+                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1})
+                    )
+                )
+                </code></pre>
+
+                <p><b>Horas_Operacionais:</b> Horas disponíveis menos horas paradas, garantindo que não fique negativo.</p> 
+
+                <pre><code class="language-dax">
+                Horas_Operacionais =
+                VAR hDisp = [Horas_Disponiveis]
+                VAR hPar  = [Horas_Paradas]
+                RETURN
+                    MAX(0, hDisp - hPar)
+                </code></pre>
+
+                <p><b>Custo_CentroCusto:</b> Soma dos custos de peças, analisado por centro de custo.</p> 
+
+                <pre><code class="language-dax">
+                Custo_CentroCusto =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>Custo_Equipamento:</b> Soma dos custos de peças, analisado por equipamento.</p> 
+
+                <pre><code class="language-dax">
+                Custo_Equipamento =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>CustoTotal_Manutencao:</b> Soma total histórica dos custos de peças em manutenções.</p> 
+
+                <pre><code class="language-dax">
+                CustoTotal_Manutencao =
+                SUM(FtManutencao[CustoPecas])
+                </code></pre>
+
+                <p><b>MTBF (Mean Time Between Failures):</b> Tempo médio entre falhas: divide horas operacionais pela quantidade de falhas.</p> 
+
+                <pre><code class="language-dax">
+                MTBF =
+                VAR falhas = [Qtd_Falhas]
+                VAR horasOp = [Horas_Operacionais]
+                RETURN
+                    IF(falhas = 0, BLANK(), DIVIDE(horasOp, falhas))
+                </code></pre>
+
+                <p><b>MTTR (Mean Time To Repair):</b> Tempo médio para reparo: divide o tempo total de manutenção pela quantidade de falhas.</p> 
+
+                <pre><code class="language-dax">
+                MTTR =
+                VAR falhas = [Qtd_Falhas]
+                VAR sumRep =
+                    CALCULATE(
+                        SUM(FtManutencao[TempoManutencao]),
+                        KEEPFILTERS(
+                            FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
+                        )
+                    )
+                RETURN
+                    IF(falhas = 0, BLANK(), DIVIDE(sumRep, falhas))
+                </code></pre>
+
+                <p><b>Qtd_Falhas:</b> Número total de falhas (ocorrências do tipo 1 e 2).</p> 
+
+                <pre><code class="language-dax">
+                Qtd_Falhas =
+                CALCULATE(
+                    COUNTROWS(FtManutencao),
+                    KEEPFILTERS(
+                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
+                    )
+                )
+                </code></pre>
+
+                <p><b>Qtd_EquipamentosFalha:</b> Número de equipamentos distintos que apresentaram falha (Ocorrencia = 2).</p> 
+
+                <pre><code class="language-dax">
+                Qtd_EquipamentosFalha =
+                CALCULATE(
+                    DISTINCTCOUNT(FtManutencao[ID_Equipamento]),
+                    FILTER(
+                        DimOcorrencia,
+                        DimOcorrencia[Ocorrencia] = 2
+                    )
+                )
+                </code></pre>
+
+                <p><b>Qtd_Ocorrencias:</b> Contagem de todas as ocorrências registradas.</p> 
+
+                <pre><code class="language-dax">
+                Qtd_Ocorrencias =
+                COUNTROWS(FtManutencao)
+                </code></pre>
+
+                <p><b>Qtd_OcorrenciasEmAberto:</b> Quantidade de ocorrências que não possuem data de fim ou que ultrapassam a data de análise.</p> 
+
+                <pre><code class="language-dax">
+                Qtd_OcorrenciasEmAberto =
+                VAR vDataFinal = MAX(DimCalendario[Data])
+                VAR vOcorrenciasAbertas =
+                    FILTER(
+                        ALL(FtManutencao),
+                        FtManutencao[ID_DataInicio] <= vDataFinal &&
+                        (FtManutencao[ID_DataFim] > vDataFinal || ISBLANK(FtManutencao[ID_DataFim]))
+                    )
+                RETURN
+                    COUNTROWS(vOcorrenciasAbertas) + 0
+                </code></pre>
+
+                <p><b>TempoMedio_Manutencao:</b> Tempo médio das manutenções com base na coluna TempoReal na tabela FtManutencao.</p> 
+
+                <pre><code class="language-dax">
+                TempoMedio_Manutencao =
+                AVERAGE(FtManutencao[TempoReal])
+                </code></pre>
+            </section>
+            
+        </section>
+
+    </section>
+
+    <section>
+            <h2>Links</h2>
+
+                <p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDFkZTAxNWItOGQ2Yy00MDgwLWJkMmEtZTZjYTc1ZmFiNmI3IiwidCI6IjIxYjFmMTkyLTUyM2MtNGQ5Ny1iYzc2LWYzZDgwYTYxYjNmNCJ9" target="_blank">Dashboard em produção<a></p>
+
+                <p><a href="https://github.com/rosbergalves/gestaomanutencao_dashboard" target="_blank">Repositório no GitHub</a></p>
+    </section>
+
+    <section>
+            <h2>Contato</h2>
+                <p><a href="https://www.linkedin.com/in/rosbergalves/" target="_blank"><img src="Imagens/linkedin.png" alt=""> LinkedIn</a></p>
+                <p><a href="https://github.com/rosbergalves" target="_blank"><img src="Imagens/github-sign.png" alt=""> GitHub</a></p>
+                <p><a href="https://medium.com/@rosbergalvess" target="_blank"><img src="Imagens/medium.png" alt=""> Medium</a></p>
+    </section>
+
+        <div class="btn-back">
+                <a href="index.html">
+                <img src="Imagens/btn-back.png" alt="Voltar">
+                </a>
+        </div>
+    </main>
+</body>
+</html>
