@@ -159,6 +159,18 @@
             font-size: 0.95rem;
             }
 
+                table {
+                width: 100%;
+                border-collapse: collapse; /* Faz as bordas se juntarem em uma linha única */
+            }
+            th, td {
+                border: 1px solid black; /* Cria a borda preta ao redor das células */
+                padding: 8px; /* Dá um espaço interno para o texto não encostar na linha */
+                text-align: left; /* Alinha o texto à esquerda */
+            }
+            th {
+                background-color: #f2f2f2; /* Cor de fundo cinza claro no cabeçalho */
+            }
 
     </style>
 </head>
@@ -170,7 +182,7 @@
   <main class="container">
     <section>
         <section>
-            <img src="Imagens/capa_dashboard.png" alt="Comunicação de Acidentes de Trabalho no Brasil" class="imagem-projeto">
+            <img src="projeto_comunicacao_acidentes_trabalhobr.html" alt="Comunicação de Acidentes de Trabalho no Brasil" class="imagem-projeto">
         </section>
 
         <section>
@@ -179,50 +191,617 @@
             <h3>1.1 Objetivo do Dashboard</h3>
           
             <p>Desenvolver um dashboard no Power BI para analisar os registros de acidentes de trabalho no Brasil, permitindo identificar padrões e características dos acidentes registrados a partir dos dados disponibilizados pelo Portal de Dados Abertos do INSS.</p>
+        </section>
 
+        <section>    
             <h3>2 Contexto</h3>
 
             <p>Quais são as principais características dos acidentes de trabalho registrados e como esses registros se distribuem ao longo do tempo, território, perfil dos trabalhadores e características dos acidentes.
             O dashboard analisa as “CATs” emitidas entre janeiro de 2024 e julho de 2026. O período de análise é determinado pela data de emissão da CAT. A data do acidente é mantida para análises relacionadas ao momento em que o acidente ocorreu.
             </p>
+        </section>
 
-            <h3>1.3 Contexto do Negócio</h3>
+        <section>
+            <h3>3 Objetivos específicos</h3>
 
-            <p>Um fabricante multinacional de pneus, que contém informações de janeiro de 2015 até agosto de 2022.</p>
-
-            <h3>1.4 Frequência de Uso Esperada</h3>
-
-            <ul class="custom-list 1.4 Frequência de Uso Esperada">
-                <li>Diária: Monitoramento dos principais indicadores.</li>
+            <ul class="custom-list">
+                <li>Analisar a evolução temporal dos registros de Comunicação de Acidente de Trabalho (CAT)</li>
+                <li>Comparar a distribuição dos registros entre as Unidades da Federação</li>
+                <li>Analisar a distribuição dos registros por sexo</li>
+                <li>Avaliar a ocorrência de afastamentos do trabalho</li>
+                <li>Analisar as características das lesões registradas</li>
+                <li>Analisar os registros com indicação de óbito</li>
+                <li>Explorar as atividades econômicas relacionadas aos empregadores</li>
+                <li>Identificar outros padrões relevantes a partir das informações disponíveis na base</li>
             </ul>
         </section>
 
         <section>
-            <h2>02 Fonte de Dados</h2>
+            <h2>4 Fonte de Dados</h2>
 
-            <h3>2.1 Infraestrutura Técnica</h3>
+            <ul class="custom-list recuo 4.1">
+                        <li><b>Origem:</b> Portal de Dados Abertos do INSS</li>
+                        <li><b>Conjunto de dados:</b> Ministério do Trabalho e Emprego</li>
+                        <li><b>Formato dos arquivos:</b> Arquivo CSV (.csv)</li>
+                        <li><b>Periodicidade de disponibilização:</b> mensal.</li>
+                        <li><b>Link da fonte:</b> [https://dados.gov.br/dados/conjuntos-dados/comunicacoes-de-acidente-de-trabalho-cat-plano-de-dados-abertos-jun-2023-a-jun-2025]</li>
+            </ul>
 
-            <ul class="custom-list 2.1 Infraestrutura Técnica">
-                <li>Arquivo CSV: Excel</li>
-                <li>ETL: Power Query</li>
-                <li>Ferramenta de visualização: Power BI</li>
+            <ul class="custom-list recuo 4.2">
+                        <li><b>Origem:</b> Portal de Dados Abertos do INSS</li>
+                        <li><b>Conjunto de dados:</b> Ocupação CBO oficial</li>
+                        <li><b>Formato dos arquivos:</b> Arquivo CSV (.csv)</li>
+                        <li><b>Periodicidade de disponibilização:</b> Mensal.</li>
+                        <li><b>Link da fonte:</b> [https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo/servicos/downloads]</li>
             </ul>
         </section>
 
         <section>
-            <h2>03 Transformação dos Dados</h2>
+            <h2>6 Escopo e critérios da análise</h2>
 
-            <h3>3.1 Processo de ETL</h3>
+            <h3>6.1 Escopo temporal</h3>
 
-            <p>O processo de transformação utiliza Power Query estruturando os dados em três etapas principais.</p>
+            <p>O projeto analisará os registros de Comunicação de Acidente de Trabalho (CAT) emitidos entre janeiro de 2024 e julho de 2026, utilizando a coluna Data Emissão CAT como referência para definir o período de análise.</p>
+
+            <p>A coluna Data Acidente será mantida para permitir a análise da data em que o acidente efetivamente ocorreu, reconhecendo que a emissão da CAT pode acontecer em data diferente da ocorrência do acidente.</p>
+
+            <h3>6.2 Escopo geográfico</h3>
+
+            <p>A análise terá abrangência nacional, considerando os registros disponíveis para o Brasil. Serão utilizadas as informações de Unidade da Federação (UF) do município de ocorrência do acidente e de localização do empregador, permitindo observar a distribuição territorial dos registros sob diferentes perspectivas.</p>
+
+            <h3>6.3	Escopo dos dados</h3>
+
+            <p>A fonte de dados utilizada será o Portal de Dados Abertos do Instituto Nacional do Seguro Social (INSS), por meio dos arquivos mensais de Comunicação de Acidente de Trabalho (CAT).</p>
+
+            <p>O projeto utilizará informações disponíveis na fonte sobre datas, características do acidente, perfil do segurado, localização, atividade econômica do empregador, natureza da lesão e indicação de óbito, entre outros campos relevantes para as análises propostas.</p>
+
+            <h3>6.4	Critérios de inclusão e tratamento</h3>
+
+            <p>Serão considerados para a análise os registros cuja Data Emissão CAT esteja dentro do período definido para o projeto, de janeiro de 2024 a julho de 2026.</p>
+
+            <p>Os dados passarão por etapas de preparação e validação, incluindo padronização de tipos de dados, tratamento de valores ausentes ou inválidos, verificação de duplicidades e avaliação da consistência dos campos utilizados. Os critérios específicos de tratamento serão documentados na seção de ETL e transformações.</p>
+
+            <h3>6.5	Dimensões de análise</h3>
+
+            <p>O dashboard buscará explorar os registros de CAT segundo as seguintes perspectivas:</p>
+
+            <ul class="custom-list">
+                <li>Evolução temporal dos registros</li>
+                <li>Distribuição geográfica por UF do acidente e do empregador</li>
+                <li>Perfil dos segurados, conforme as informações disponíveis na fonte</li>
+                <li>Tipo de acidente</li>
+                <li>Natureza da lesão e parte do corpo atingida</li>
+                <li>Agente causador do acidente</li>
+                <li>Ocorrência de afastamento do trabalho</li>
+                <li>Indicação de óbito</li>
+                <li>Atividade econômica e tipo de empregador</li>
+            </ul>
+
+            <h3>6.6	Limitações e ressalvas</h3>
+
+            <p>Os resultados representarão os registros de CAT disponibilizados pela fonte para o período e os critérios definidos neste projeto. Portanto, não deverão ser interpretados automaticamente como o total de todos os acidentes de trabalho efetivamente ocorridos no Brasil.</p>
+
+            <p>A disponibilidade, o preenchimento e a consistência dos campos poderão limitar determinadas análises. Essas limitações serão registradas à medida que forem identificadas durante a preparação e validação dos dados.</p>
+
+            <h3>6.7	Dicionário da fonte de dados</h3>
+
+            <p>Aqui não mudamos o significado original dos campos, continuamos documentando as 27 colunas conforme a fonte.</p>
+
+            <table>
+            <tr>
+                <td>Campo</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Exemplo</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>Agente  Causador  Acidente</td>
+                <td>O que causou o acidente (queda, esforço, carro, motocicleta etc.)</td>
+                <td>Texto</td>
+                <td>Maquina Agricola</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Data Acidente (1)</td>
+                <td>Data em que ocorreu o acidente.</td>
+                <td>Data</td>
+                <td>07/07/2026</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Essa coluna duplicada.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CBO (código)</td>
+                <td>Código Brasileiro de Ocupação.</td>
+                <td>Texto</td>
+                <td>862150</td>
+                <td>O CSV possui uma coluna de código e uma de descrição.</td>
+            </tr>
+            <tr>
+                <td>CBO (descrição)</td>
+                <td>Descrição do Código Brasileiro de Ocupação ( ex: pedreiro, enfermeiro, soldador etc.)</td>
+                <td>Texto</td>
+                <td>862150 - Oper. Máquina</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>CID-10 (código)</td>
+                <td>Código Internacional de Doenças (CID) do titular do benefício.</td>
+                <td>Texto</td>
+                <td>M25.5</td>
+                <td>O CSV possui uma coluna de código e uma de descrição.</td>
+            </tr>
+            <tr>
+                <td>CID-10 (descrição)</td>
+                <td>Descrição do código Internacional de Doenças (CID) do titular do benefício.</td>
+                <td>Texto</td>
+                <td>M25.5 - Dor Articular</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>CNAE2.0 Empregador (código)</td>
+                <td>Código Nacional de Atividades Econômicas - Define a produção de bens e serviços do empregador.</td>
+                <td>Texto</td>
+                <td>724</td>
+                <td>O CSV possui uma coluna de código e uma de descrição.</td>
+            </tr>
+            <tr>
+                <td>CNAE2.0 Empregador (descrição)</td>
+                <td>Descrição do Código Nacional de Atividades Econômicas - Define a produção de bens e serviços do empregador.</td>
+                <td>Texto</td>
+                <td>724 - Extração de Minério</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>Emitente CAT</td>
+                <td>Agente que emite a CAT (empregador, segurado, sindicato etc.)</td>
+                <td>Texto</td>
+                <td>Empregador</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>Espécie do benefício</td>
+                <td>Espécie do benefício concedido ao segurado que sofreu o acidente.</td>
+                <td>Texto</td>
+                <td>Pa</td>
+                <td>A codificação precisa ser compreendida.</td>
+            </tr>
+            <tr>
+                <td>Filiação Segurado</td>
+                <td>Forma de filiação à Previdência Social atribuída ao titular do benefício.</td>
+                <td>Texto</td>
+                <td>Empregado</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>Indica Óbito Acidente</td>
+                <td>Informa se houve óbito.</td>
+                <td>Texto</td>
+                <td>Sim</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Munic Empr</td>
+                <td>Município da Sede da Empresa</td>
+                <td>Texto</td>
+                <td>330240 - Macaé</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>Natureza da Lesão</td>
+                <td>Descrição da lesão sofrida no acidente (doença, lesões, fratura, escoriações etc.)</td>
+                <td>Texto</td>
+                <td>Fratura</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Origem de Cadastramento CAT</td>
+                <td>Indica a forma utilizada para cadastro da CAT.</td>
+                <td>Texto</td>
+                <td>Internet</td>
+                <td>A base possui registros que não estão classificados.</td>
+            </tr>
+            <tr>
+                <td>Parte Corpo Atingida</td>
+                <td>Indica a parte do corpo atingida pelo acidente (cabeça, tórax, dedo etc.)</td>
+                <td>Texto</td>
+                <td>Dedo</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Sexo</td>
+                <td>Sexo do titular do benefício.</td>
+                <td>Texto</td>
+                <td>Feminino</td>
+                <td>A base possui registros indeterminados e não informados.</td>
+            </tr>
+            <tr>
+                <td>Tipo do Acidente</td>
+                <td>Trajeto, típico e doença.</td>
+                <td>Texto</td>
+                <td>Típico</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>UF  Munic.  Acidente</td>
+                <td>UF do Município onde ocorreu o acidente do trabalho</td>
+                <td>Texto</td>
+                <td>Tocantins</td>
+                <td>A base possui registros zerados e não classificados.</td>
+            </tr>
+            <tr>
+                <td>UF Munic. Empregador</td>
+                <td>Unidade da Federação do Município Sede do empregador</td>
+                <td>Texto</td>
+                <td>São Paulo</td>
+                <td>A base possui registros que estão zerados.</td>
+            </tr>
+            <tr>
+                <td>Data  Afastamento</td>
+                <td>Data que o segurado se afastou do trabalho em decorrência do acidente do trabalho.</td>
+                <td>Data</td>
+                <td>10/07/2026</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Data Despacho Benefício</td>
+                <td>Data que o benefício foi concedido.</td>
+                <td>Data</td>
+                <td>22/06/2026</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Data Acidente (2)</td>
+                <td>Data em que ocorreu o acidente.</td>
+                <td>Data</td>
+                <td>06/07/2026</td>
+                <td>Coluna duplicada.</td>
+            </tr>
+            <tr>
+                <td>Data Nascimento</td>
+                <td>Data de nascimento do titular do benefício</td>
+                <td>Data</td>
+                <td>16/08/1994</td>
+                <td>-----------------------</td>
+            </tr>
+            <tr>
+                <td>Data Emissão CAT</td>
+                <td>Data em que a Comunicação de Acidente do Trabalho foi emitida</td>
+                <td>Data</td>
+                <td>13/07/2026</td>
+                <td>A data de emissão da CAT pode ser diferente da data do acidente.</td>
+            </tr>
+            <tr>
+                <td>Tipo de Empregador</td>
+                <td>CNPJ ou CGC</td>
+                <td>Texto</td>
+                <td>Cnpj/Cgc</td>
+                <td>A base possui registros que não estão classificados. (Codificação/valores a confirmar)</td>
+            </tr>
+            <tr>
+                <td>CNPJ/CEI Empregador</td>
+                <td>Cadastro Nacional de Pessoa Juriica do Empregador ou</td>
+                <td>Texto</td>
+                <td>9,45942E+13</td>
+                <td>A descrição termina de forma incompleta.</td>
+            </tr>
+            </table>
+        </section>
             
-            <section>
-                <h3>Camada Bronze</h3>
+        <section>
+                <h3>7 Tratamento e organização dos dados</h3>
 
-                <ul class="custom-list Objetivo">
-                    <li><b>Objetivo:</b> Armazenar os dados brutos, preservando a integridade do arquivo original sem aplicar transformações, mantendo assim a fidelidade da fonte.
-                    </li>
+                <h3>7.1	Camada bronze - CAT_Bronze</h3>
+
+                <p>A camada Bronze corresponde à consolidação dos arquivos mensais de Comunicação de Acidente de Trabalho (CAT) utilizados no projeto, abrangendo o período de janeiro de 2024 a julho de 2026.</p>
+
+                <p>Nessa etapa, os arquivos foram combinados por meio do conector de pasta do Power BI/Power Query, mantendo-se os dados o mais próximo possível da estrutura disponibilizada pela fonte.</p>
+
+                <p>As principais etapas realizadas foram a consolidação dos arquivos e a organização inicial das colunas. Não são aplicadas nessa camada regras de negócio ou tratamentos destinados à análise.</p>
+
+                <h3>7.2	Camada prata - CAT_Prata</h3>
+
+                <p>A camada Prata é derivada da camada Bronze por meio de uma consulta referenciada e tem como objetivo preparar, padronizar e validar os dados para utilização no modelo dimensional.</p>
+
+                <p>Durante a análise dos arquivos originais, foi identificada a ocorrência do valor {ñ class} em diferentes campos categóricos, incluindo Agente Causador Acidente; CBO descrição, CID10 descrição; CNAE2.0 Empregador; Emitente CAT; Filiação Segurado; Município do Empregador; Origem de Cadastramento CAT; UF do Município do Acidente e Tipo de Empregador.</p>
+
+                <p>O valor foi identificado em todos os arquivos analisados. Esses registros representam informações sem classificação disponível na base e serão tratados na camada Prata de forma a preservar essa condição, sem convertê-los automaticamente em valores nulos.
+
+                Entre os tratamentos realizados estão:
+                <ul class="custom-list">
+                <li>Definição e revisão dos tipos de dados</li>
+                <li>Conversão dos campos de data para o tipo Data</li>
+                <li>Tratamento de caracteres especiais e espaços</li>
+                <li>Aplicar funções de corte de espaços (Limpar e Aparar)</li>
+                <li>Padronizar maiúsculas/minúsculas (ex: ProperCase)</li>
+                <li>Substituição de valores inválidos de data, como 00/00/0000, por valores nulos (null)</li>
+                <li>Padronização do valor {ñ class} para “Não Classificado” nos campos categóricos em que essa ocorrência foi identificada</li>
+                <li>Manutenção dos códigos e valores especiais disponibilizados pela fonte quando não houver regra de transformação definida</li>
+                <li>Remover linhas totalmente vazias ou com erros técnicos</li>
+                <li>Alterar nomes técnicos da origem das colunas para nomes claros e consistentes</li>
+                <li>A coluna CID-10 com linhas sem informação do código CID-10 são mantidos na base, com o campo sem valor. A ausência do código não é utilizada como critério para exclusão do registro, uma vez que as demais informações do acidente permanecem disponíveis para análise</li>
                 </ul>
+                </p>
+
+                <h3>7.3 Padronização dos nomes das colunas</h3>
+
+                <p>Os nomes dos campos foram ajustados na camada Prata para estabelecer uma nomenclatura padronizada e facilitar a identificação e utilização das informações nas etapas posteriores de modelagem e análise.</p>
+
+                <table>
+                <tr>
+                    <td>Nome original</td>
+                    <td>Nome padronizado</td>
+                    <td>Tratamento</td>
+                </tr>
+                <tr>
+                    <td>Agente Causador Acidente</td>
+                    <td>AgenteCausador</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data Acidente</td>
+                    <td>DataAcidente</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CBO</td>
+                    <td>CBOCodigo</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CBO_1</td>
+                    <td>CBODescricao</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CID-10</td>
+                    <td>CID10Codigo</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CID-10_2</td>
+                    <td>CID10Descricao</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CNAE2.0 Empregador</td>
+                    <td>CNAEEmpregadorCodigo</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CNAE2.0 Empregador_3</td>
+                    <td>CNAE2EmpregadorDescricao</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Emitente CAT</td>
+                    <td>EmitenteCAT</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Espécie do benefício</td>
+                    <td>EspecieBeneficio</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Filiação Segurado</td>
+                    <td>FiliacaoSegurado</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Indica Óbito Acidente</td>
+                    <td>IndicaObitoAcidente</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Munic Empr</td>
+                    <td>MunicipioEmpregador</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Natureza da Lesão</td>
+                    <td>NaturezaLesao</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Origem de Cadastramento CAT</td>
+                    <td>OrigemCadastramentoCAT</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Parte Corpo Atingida</td>
+                    <td>ParteCorpoAtingida</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Sexo</td>
+                    <td>Sexo</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Tipo do Acidente</td>
+                    <td>TipoAcidente</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>UF  Munic.  Acidente</td>
+                    <td>UFMunicipioAcidente</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>UF Munic. Empregador</td>
+                    <td>UFMunicipioEmpregador</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data  Afastamento</td>
+                    <td>DataAfastamento</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data Despacho Benefício</td>
+                    <td>DataDespachoBeneficio</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data Acidente_4</td>
+                    <td>DataAcidente2</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data Nascimento</td>
+                    <td>DataNascimento</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Data Emissão CAT</td>
+                    <td>DataEmissaoCAT</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>Tipo de Empregador</td>
+                    <td>TipoEmpregador</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                <tr>
+                    <td>CNPJ/CEI Empregador</td>
+                    <td>CNPJ/CEIEmpregador</td>
+                    <td>Padronização PascalCase</td>
+                </tr>
+                </table>
+                
+                <h3>7.4 Inventário das tabelas do modelo</h3>
+
+                <h2>Tabelas Dimensão</h2>
+
+                <table>
+                <tr>
+                    <td>Tabela</td>
+                    <td>Tipo</td>
+                    <td>Finalidade</td>
+                    <td>Origem</td>
+                </tr>
+                <tr>
+                    <td>CAT_Bronze</td>
+                    <td>Staging / Bronze</td>
+                    <td>Consolidar os arquivos mensais da fonte.</td>
+                    <td>Arquivos CSV do INSS.</td>
+                </tr>
+                <tr>
+                    <td>CAT_Prata</td>
+                    <td>Staging / Prata</td>
+                    <td>Padronizar, tipar e tratar os dados.</td>
+                    <td>Referência de CAT_Bronze.</td>
+                </tr>
+                <tr>
+                    <td>CAT_Ouro</td>
+                    <td>Preparação para o modelo</td>
+                    <td>Disponibilizar dados tratados para a modelagem.</td>
+                    <td>Referência de CAT_Prata.</td>
+                </tr>
+                <tr>
+                    <td>dimAgenteCausador</td>
+                    <td>Dimensão</td>
+                    <td>Organizar os agentes causadores dos acidentes de trabalho, permitindo analisar a frequência e a distribuição dos acidentes conforme o agente envolvido.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimCalendarioAcidente</td>
+                    <td>Dimensão</td>
+                    <td>Permitir análises temporais pela data do acidente.</td>
+                    <td>Calendário criado no Power Query.</td>
+                </tr>
+                <tr>
+                    <td>dimCalendarioEmissaoCAT</td>
+                    <td>Dimensão</td>
+                    <td>Permitir análises temporais pela data de emissão da CAT.</td>
+                    <td>Calendário criado no Power Query.</td>
+                </tr>
+                <tr>
+                    <td>dimCBO</td>
+                    <td>Dimensão</td>
+                    <td>Organizar os códigos e as descrições das ocupações.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimCID10</td>
+                    <td>Dimensão</td>
+                    <td>Códigos e as descrições da Classificação Internacional de Doenças (CID-10), permitindo analisar os registros por classificação diagnóstica, quando essa informação estiver disponível.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimCNAEEmpregador</td>
+                    <td>Dimensão</td>
+                    <td>Códigos e as descrições da Classificação Nacional de Atividades Econômicas (CNAE) do empregador, permitindo analisar a distribuição dos acidentes conforme a atividade econômica da empresa.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimLocalidadeEmpregador</td>
+                    <td>Dimensão</td>
+                    <td>Informações de localização do empregador, com base nos campos geográficos disponíveis na fonte, permitindo analisar os acidentes conforme a localização do estabelecimento empregador.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimNaturezaLesao</td>
+                    <td>Dimensão</td>
+                    <td>Classificação da natureza da lesão, permitindo analisar os tipos de lesão associados aos acidentes de trabalho.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimParteCorpoAtingida</td>
+                    <td>Dimensão</td>
+                    <td>Classificação das partes do corpo atingidas, permitindo identificar quais regiões corporais são mais afetadas nos acidentes de trabalho.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimSexo</td>
+                    <td>Dimensão</td>
+                    <td>Categorias de sexo registradas na fonte de dados, permitindo analisar a distribuição dos acidentes de trabalho por sexo.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimTipoAcidente</td>
+                    <td>Dimensão</td>
+                    <td>Tipos de acidente registrados, permitindo comparar a ocorrências conforme sua classificação.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimTipoEmpregador</td>
+                    <td>Dimensão</td>
+                    <td>Tipos de empregador registrados na fonte, permitindo comparar os acidentes de trabalho conforme a classificação do empregador.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                <tr>
+                    <td>dimUFAcidente</td>
+                    <td>Dimensão</td>
+                    <td>Unidades federativas onde ocorreram os acidentes, permitindo analisar e comparar sua distribuição geográfica por estado.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                </table>
+
+                <h2>Tabela Fato</h2>
+                
+                <table>
+                <tr>
+                    <td>Tabela</td>
+                    <td>Tipo</td>
+                    <td>Finalidade</td>
+                    <td>Origem</td>
+                </tr>
+                <tr>
+                    <td>ftAcidente</td>
+                    <td>Fato</td>
+                    <td>A tabela fato será a tabela central do modelo e armazenará os registros de acidentes e as informações necessárias para cruzar esses registros com as dimensões.</td>
+                    <td>Referência da CAT_Ouro.</td>
+                </tr>
+                </table>
+
 
                 <ul class="custom-list Fonte dos dados">
                     <li><b>Fonte dos dados</b></li>
