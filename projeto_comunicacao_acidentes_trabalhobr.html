@@ -804,33 +804,9 @@
                     <td>Coluna</td>
                     <td>Significado</td>
                     <td>Tipo de dado</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td>Papel no modelo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td>Origem ou regra</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td>Observação</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>IDAgenteCausador</td>
@@ -857,33 +833,9 @@
                 <td>Coluna</td>
                 <td>Significado</td>
                 <td>Tipo de dado</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Papel no modelo</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Origem ou regra</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Observação</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
             </tr>
             <tr>
                 <td>IDCalendarioAcidente</td>
@@ -1006,33 +958,9 @@
                 <td>Coluna</td>
                 <td>Significado</td>
                 <td>Tipo de dado</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Papel no modelo</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Origem ou regra</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>Observação</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
             </tr>
             <tr>
                 <td>IDCalendarioEmissaoCAT</td>
@@ -1148,10 +1076,576 @@
             </tr>
             </table>
 
+            <h3>dimCBO</h3>
+
+            <p>Durante a preparação do modelo de dados, foi identificada a necessidade de complementar as descrições dos códigos da Classificação Brasileira de Ocupações (CBO) presentes na base de acidentes de trabalho.</p>
+
+            <p>Para isso, foi utilizada uma tabela complementar contendo os códigos e respectivos títulos das ocupações. Esse arquivo foi importado separadamente no Power Query, por meio de uma consulta denominada CBO_Oficial, e mantido em uma pasta independente dos arquivos mensais de CAT, evitando sua inclusão indevida no processo de consolidação da base principal.</p>
+
+            <p>O enriquecimento foi realizado por meio da combinação (Mesclar Consultas) entre a dimensão dimCBO e a tabela complementar CBO_Oficial, utilizando o código CBO como chave de correspondência:
+
+            dimCBO[CBOCodigo];
+            CBO_Oficial[CODIGO].
+            </p>
+
+            <p>Após a combinação, a coluna TITULO foi expandida para complementar as descrições das ocupações. Os títulos da tabela complementar foram utilizados para preencher descrições ausentes ou classificadas como "Não Classificado", preservando as descrições já existentes e identificadas na base original.</p>
+
+            <p>Por fim, a coluna auxiliar foi removida e a descrição enriquecida foi utilizada para reconstruir a coluna de identificação da ocupação, combinando o código CBO e sua respectiva descrição.</p>
+
+            <p>A consulta CBO_Oficial foi mantida com o carregamento desabilitado no modelo, pois sua finalidade é servir como fonte auxiliar para o enriquecimento da dimensão dimCBO, sem necessidade de constituir uma tabela adicional no modelo analítico.</p>
+
+            <p>Resultado: a dimensão dimCBO passou a apresentar descrições mais completas e padronizadas das ocupações, melhorando a identificação e a interpretação dos registros nos gráficos e análises relacionados à Classificação Brasileira de Ocupações.</p>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDCBO</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CBOCodigo</td>
+                <td>Código da Classificação Brasileira de Ocupações.</td>
+                <td>Texto</td>
+                <td>Identificador do agente causador do acidente.</td>
+                <td>Campo correspondente da CAT_Ouro, com remoção de duplicatas.</td>
+                <td>Valores {ñ class} foram padronizados para Não Classificado na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>CBODescricao</td>
+                <td>Descrição da ocupação correspondente ao código.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo de descrição do CBO em CAT_Ouro.</td>
+                <td>A descrição {ñ class} foi padronizada na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>CBOCodigoDescricao</td>
+                <td>Apresentação conjunta do código e da descrição da ocupação.</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Concatenação de código e descrição.</td>
+                <td>Não substitui necessariamente o código usado no relacionamento.</td>
+            </tr>
+            </table>
+
+            <h3>dimCID10</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDCID10</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CID10Codigo</td>
+                <td>Código da Classificação Internacional de Doenças (CID-10).</td>
+                <td>Texto</td>
+                <td>Identificador da classificação internacional de doenças.</td>
+                <td>Campo correspondente da CAT_Ouro, com remoção de duplicatas.</td>
+                <td>Códigos devem ser tratados como texto para preservar letras e zeros.</td>
+            </tr>
+            <tr>
+                <td>CID10Descricao</td>
+                <td>Descrição correspondente ao código CID-10.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo de descrição CID-10 em CAT_Ouro.</td>
+                <td>A descrição {ñ class} foi padronizada na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>CID10CodigoDescricao</td>
+                <td>Apresentação conjunta do código e da descrição do CID10.</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Concatenação de código e descrição.</td>
+                <td>Não substitui necessariamente o código usado no relacionamento.</td>
+            </tr>
+            </table>
+
+            <h3>dimCNAEEmpregador</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDCNAEEmpregador</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CNAEEmpregadorCodigo</td>
+                <td>Código da Classificação Nacional de Atividades Econômicas do empregador.</td>
+                <td>Texto</td>
+                <td>Identificador da classificação e possível chave de relacionamento.</td>
+                <td>Campo de código CNAE em CAT_Ouro.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CNAEEmpregadorCodigoDescricao</td>
+                <td>Descrição da atividade econômica do empregador.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo de descrição CNAE em CAT_Ouro;</td>
+                <td>A descrição {ñ class} foi padronizada na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>CNAEEmpregadorDescricao</td>
+                <td>Apresentação conjunta do código e da descrição do CNAE.</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Concatenação de código e descrição.</td>
+                <td>Não substitui necessariamente o código usado no relacionamento.</td>
+            </tr>
+            </table>
+
+            <h3>dimLocalidadeEmpregador</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDLocalidadeEmpregador</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MunicipioEmpregador</td>
+                <td>Município associado ao empregador.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Munic Empr em CAT_Ouro.</td>
+                <td>O valor 000000-Ignorado foi preservado na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>UFMunicipioEmpregador</td>
+                <td>UF associada ao município do empregador</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo UF Munic. Empregador em CAT_Ouro.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MunicipioUFEmpregador</td>
+                <td>Município e UF concatenados.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo MunicipioEmpregador e UFMunicipioEmpregador</td>
+                <td></td>
+            </tr>
+            </table>
+
+            <h3>dimNaturezaLesao</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDNaturezaLesao</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>NaturezaLesao</td>
+                <td>Classificação da natureza da lesão registrada na CAT.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Natureza da Lesão em CAT_Ouro.</td>
+                <td>Manter os valores padronizados conforme as regras da camada Prata.</td>
+            </tr>
+            </table>
+
+            <h3>dimParteCorpoAtingida</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDParteCorpoAtingida</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ParteCorpoAtingida</td>
+                <td>Classificação da parte do corpo atingida no acidente.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Parte Corpo Atingida em CAT_Ouro.</td>
+                <td>Manter os valores padronizados conforme as regras da camada Prata.</td>
+            </tr>
+            </table>
+
+            <h3>dimSexo</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDSexo</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sexo</td>
+                <td>Categoria de sexo informada no registro da CAT.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Sexo em CAT_Ouro.</td>
+                <td>Registrar os valores efetivamente presentes na dimensão.</td>
+            </tr>
+            </table>
+
+            <h3>dimTipoAcidente</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDTipoAcidente</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TipoAcidente</td>
+                <td>Classificação do tipo de acidente informado na CAT.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Tipo do Acidente em CAT_Ouro.</td>
+                <td></td>
+            </tr>
+            </table>
+
+            <h3>dimTipoEmpregador</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDTipoEmpregador</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TipoEmpregador</td>
+                <td>Classificação do tipo de empregador informado na fonte.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Campo Tipo de Empregador em CAT_Ouro.</td>
+                <td>A descrição {ñ class} foi padronizada na camada Prata.</td>
+            </tr>
+            </table>
+
+            <h3>dimUFAcidente</h3>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDUFAcidente</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da dimensão.</td>
+                <td>Índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>UFAcidente</td>
+                <td>Unidade federativa onde ocorreu o acidente.</td>
+                <td>Texto</td>
+                <td>Atributo geográfico.</td>
+                <td>Campo UF Munic. Acidente em CAT_Ouro.</td>
+                <td>O valor literal zerado foi preservado na camada Prata.</td>
+            </tr>
+            </table>
+
+            <h3>ftAcidente</h3>
+
+            <p>A tabela FtAcidente é a tabela fato central do modelo dimensional, composta pelos registros consolidados de Comunicação de Acidente de Trabalho (CAT) do período analisado. Contém as datas relevantes, as chaves de relacionamento com as dimensões e os atributos necessários para analisar os acidentes, as lesões, os óbitos, os afastamentos e as características dos empregadores.</p>
+
+            <p>A tabela possui 22 colunas, incluindo o identificador técnico IDAcidente, criado por meio de um índice sequencial iniciado em 1, as chaves de relacionamento, os atributos descritivos e as datas utilizadas nas análises temporais e demográficas.</p>
+
+            <p>A granularidade adotada corresponde a uma linha por registro recebido da fonte. O índice sequencial identifica tecnicamente cada linha da tabela, mas não comprova que cada linha represente uma CAT única ou um evento de acidente distinto.</p>
+
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td>Papel no modelo</td>
+                <td>Origem ou regra</td>
+                <td>Observação</td>
+            </tr>
+            <tr>
+                <td>IDAcidente</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave da fato.</td>
+                <td>Criado no Power Query por meio de índice iniciado em 1.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AgenteCausador</td>
+                <td>Agente associado causa do acidente de trabalho.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimAgenteCausador</td>
+                <td>Obtido da coluna correspondente na fonte e padronizado na camada Prata.</td>
+                <td>Deve apresentar o mesmo padrão de valores utilizado na dimensão.</td>
+            </tr>
+            <tr>
+                <td>DataAcidente</td>
+                <td>Data em que ocorreu o acidente de trabalho.</td>
+                <td>Data</td>
+                <td>Chave de relacionamento com dimCalendarioAcidente e atributo temporal.</td>
+                <td>Obtida da fonte de dados e convertida para o tipo Data.</td>
+                <td>Utilizada como referência principal para análises temporais dos acidentes.</td>
+            </tr>
+            <tr>
+                <td>CBOCodigo</td>
+                <td>Código da Classificação Brasileira de Ocupações associado ao registro.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimCBO.</td>
+                <td>Obtido da fonte e tratado na camada Prata.</td>
+                <td>O tipo deve ser igual ao da coluna correspondente na dimensão.</td>
+            </tr>
+            <tr>
+                <td>CID10Codigo</td>
+                <td>Código da Classificação Internacional de Doenças — CID-10 associado ao registro.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimCID10.</td>
+                <td>Obtido da fonte e padronizado para manter consistência entre os códigos.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CNAEEmpregadorCodigo</td>
+                <td>Classificação Nacional de Atividades Econômicas do empregador.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimCNAEEmpregador.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>Preservar a representação do código, inclusive zeros à esquerda.</td>
+            </tr>
+            <tr>
+                <td>EmitenteCAT</td>
+                <td>Identifica o emitente da Comunicação de Acidente de Trabalho.</td>
+                <td>Texto</td>
+                <td>Atributo de análise.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>Permite analisar a distribuição dos registros por emitente.</td>
+            </tr>
+            <tr>
+                <td>EspecieBeneficio</td>
+                <td>Classificação da espécie do benefício relacionado ao registro.</td>
+                <td>Texto</td>
+                <td>Atributo de análise.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>A interpretação dos valores deve seguir o glossário da fonte.</td>
+            </tr>
+            <tr>
+                <td>FiliacaoSegurado</td>
+                <td>Categoria de filiação do segurado.</td>
+                <td>Texto</td>
+                <td>Atributo de análise.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>Permite segmentar os registros conforme a categoria informada.</td>
+            </tr>
+            <tr>
+                <td>IndicaObitoAcidente</td>
+                <td>Indicador que informa se o acidente está associado a óbito.</td>
+                <td>Texto</td>
+                <td>Atributo de análise.</td>
+                <td>Obtido da fonte e mantido conforme os valores padronizados.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>NaturezaLesao</td>
+                <td>Natureza da lesão registrada no acidente.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimNaturezaLesao.</td>
+                <td>Obtida da fonte e padronizada na camada Prata.</td>
+                <td>Utilizada para analisar a distribuição dos registros por natureza da lesão.</td>
+            </tr>
+            <tr>
+                <td>OrigemCadastramentoCAT</td>
+                <td>Origem do cadastramento da Comunicação de Acidente de Trabalho.</td>
+                <td>Texto</td>
+                <td>Atributo de análise.</td>
+                <td>Obtida da fonte de dados.</td>
+                <td>Os valores devem seguir a padronização adotada na camada Prata.</td>
+            </tr>
+            <tr>
+                <td>ParteCorpoAtingida</td>
+                <td>Parte do corpo atingida no acidente.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimParteCorpoAtingida.</td>
+                <td>Obtida da fonte e padronizada na camada Prata.</td>
+                <td>Permite analisar a distribuição dos registros por parte do corpo atingida.</td>
+            </tr>
+            <tr>
+                <td>Sexo</td>
+                <td>Sexo informado no registro.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimSexo.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>Utilizado para segmentação e comparação dos registros.</td>
+            </tr>
+            <tr>
+                <td>TipoAcidente</td>
+                <td>Classificação do tipo de acidente de trabalho.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimTipoAcidente.</td>
+                <td>Obtido da fonte de dados.</td>
+                <td>A análise deve considerar as categorias existentes na fonte.</td>
+            </tr>
+            <tr>
+                <td>UFMunicipioAcidente</td>
+                <td>Unidade da Federação do município onde ocorreu o acidente.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimUFAcidente.</td>
+                <td>Obtida da fonte de dados e padronizada na camada Prata.</td>
+                <td>Representa a UF da ocorrência, não a UF do empregador.</td>
+            </tr>
+            <tr>
+                <td>DataAfastamento</td>
+                <td>Data de afastamento associada ao registro, quando informada.</td>
+                <td>Data</td>
+                <td>Atributo temporal.</td>
+                <td>Obtida da fonte; valores inválidos, como 00/00/0000, foram substituídos por nulos antes da conversão.</td>
+                <td>Pode apresentar valores nulos.</td>
+            </tr>
+            <tr>
+                <td>DataDespachoBeneficio</td>
+                <td>Data do despacho do benefício, quando informada.</td>
+                <td>Data</td>
+                <td>Atributo temporal.</td>
+                <td>Obtida da fonte e convertida para o tipo Data, com tratamento dos valores inválidos.</td>
+                <td>Pode apresentar valores nulos.</td>
+            </tr>
+            <tr>
+                <td>DataNascimento</td>
+                <td>Data de nascimento da pessoa relacionada ao registro.</td>
+                <td>Data</td>
+                <td>Atributo para análise demográfica.</td>
+                <td>Obtida da fonte de dados e convertida para o tipo Data.</td>
+                <td>Mantida para permitir o cálculo da idade na data do acidente e a criação de faixas etárias.</td>
+            </tr>
+            <tr>
+                <td>DataEmissaoCAT</td>
+                <td>Data de emissão da Comunicação de Acidente de Trabalho.</td>
+                <td>Data</td>
+                <td>Chave de relacionamento com dimCalendarioEmissaoCAT e atributo temporal.</td>
+                <td>Obtida da fonte e convertida para o tipo Data.</td>
+                <td>Permite analisar a emissão das CATs e comparar a data de emissão com a data do acidente.</td>
+            </tr>
+            <tr>
+                <td>TipoEmpregador</td>
+                <td>Classificação do tipo de empregador.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimTipoEmpregador.</td>
+                <td>Obtido da fonte e padronizado na camada Prata.</td>
+                <td>Permite segmentar os registros por tipo de empregador.</td>
+            </tr>
+            <tr>
+                <td>MunicipioUFEmpregador</td>
+                <td>Chave composta que identifica a combinação entre UF e município do empregador.</td>
+                <td>Texto</td>
+                <td>Chave de relacionamento com dimLocalidadeEmpregador.</td>
+                <td>Criada no Power Query a partir de UFMunicipioEmpregador e MunicipioEmpregador, concatenados no padrão Municipio - UF.</td>
+                <td>Os atributos de UF e município do empregador são consultados na dimensão de localidade.</td>
+            </tr>
+        </table>
         </section>
 
-            <section>
-                <h3>Camada Prata</h3>
+        <section>
+                <h3>8 Diagrama Conceitual do modelo</h3>
 
                 <ul class="custom-list Objetivo">
                     <li><b>Objetivo:</b> A Camada Prata contém os dados tratados e padronizados da tabela de ordens de manutenção, mantendo a rastreabilidade das informações originais, incluindo colunas auxiliares e flags de qualidade. Essa camada serve como base confiável para a criação da Camada Ouro (modelo estrela) no Power BI.
