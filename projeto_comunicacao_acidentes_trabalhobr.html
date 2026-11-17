@@ -1647,42 +1647,25 @@
         <section>
                 <h3>8 Diagrama Conceitual do modelo</h3>
 
-                <ul class="custom-list Objetivo">
-                    <li><b>Objetivo:</b> A Camada Prata contém os dados tratados e padronizados da tabela de ordens de manutenção, mantendo a rastreabilidade das informações originais, incluindo colunas auxiliares e flags de qualidade. Essa camada serve como base confiável para a criação da Camada Ouro (modelo estrela) no Power BI.
-                    </li>
-                </ul>
+                <section>
+                <img src="Imagens/imgDiagramaConceitualCATBR_1.png" alt="Diagrama_Conceitual" class="imagem-projeto">
+                </section>
+        </section>
 
-                <ul class="custom-list Processos">
-                    <li><b>Processos</b></li>
+        <section>
+                <h3>9 Apresentação e Navegação do Dashboard</h3>
+
+                <h3>Capa do Dashboard</h3>
+
+                <section>
+                <img src="Imagens/Dashboard_Capa.png" alt="Dashboard_Capa" class="imagem-projeto">
+                </section>
+
+                <h3>Página 1 — Visão Geral</h3>
+
+                <p>A página Visão Geral apresenta um panorama dos registros de Comunicação de Acidente de Trabalho (CAT) no Brasil, permitindo acompanhar a evolução mensal das ocorrências e identificar sua distribuição por Unidade da Federação e tipo de acidente.</p>
+
                 
-                    <ul class="custom-list recuo">
-                        <li>Corrigir tipos de dados (datas, horas, valores).</li>
-                        <li>Criar colunas auxiliares.</li>
-                        <li>Padronizar texto (equipamento, centro de custo).</li>
-                        <li>Remover inconsistências (linhas vazias, duplicadas).</li>
-                        <li>Nomear como Consulta Prata.</li>
-                    </ul>
-                </ul>
-
-                <h3>Tratamentos Aplicados</h3>
-
-                <ul class="custom-list Padronização de colunas de texto">
-                    <li><b>Padronização de colunas de texto</b></li>
-
-                    <ul class="custom-list recuo">
-                        <li>Todos os registros de texto das tabelas Dimensão foram convertidos para primeira letra maiúscula.</li>
-                        <li>Objetivo: Evitar inconsistências e variações de escrita.</li>
-                    </ul>
-                </ul>
-
-                <ul class="custom-list Substituição de valores nulos">
-                    <li><b>Substituição de valores nulos</b></li>
-                                
-                    <ul class="custom-list recuo">
-                        <li>Valores vazios na coluna NumeroOrdem foram substituídos por Sem_Ordem.</li>
-                        <li>Valores vazios na coluna Rank, foram substituídos por Sem_Rank.</li>
-                    </ul>
-                </ul>
 
                 <ul class="custom-list Criação de coluna derivada do Status da Ocorrencia">
                     <li><b>Criação de coluna derivada do Status da Ocorrencia</b></li>
