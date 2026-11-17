@@ -795,39 +795,360 @@
                 </tr>
                 </table>
 
+                <h3>7.5	Dicionário de dados das tabelas</h3>
 
-                <ul class="custom-list Fonte dos dados">
-                    <li><b>Fonte dos dados</b></li>
+                <h3>dimAgenteCausador</h3>
 
-                    <ul class="custom-list recuo">
-                        <li><b>Arquivo:</b> “Manutenção_Industria_Pneus.csv”.</li>
-                        <li><b>Formato:</b> CSV (valores separados por vírgula).</li>
-                        <li><b>Origem:</b> Dataset público do Kaggle (ordens de manutenção de uma fabricante multinacional de pneus).</li>
-                        <li><b>Período:</b> Janeiro/2015 até Agosto/2022.</li>
-                    </ul>
-                </ul>
+                <table>
+                <tr>
+                    <td>Coluna</td>
+                    <td>Significado</td>
+                    <td>Tipo de dado</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Papel no modelo</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Origem ou regra</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Observação</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>IDAgenteCausador</td>
+                    <td>Identificador sequencial dos registros.</td>
+                    <td>Inteiro</td>
+                    <td>Chave da dimensão.</td>
+                    <td>Índice iniciado em 1.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>AgenteCausador</td>
+                    <td>Identificador técnico do agente causador</td>
+                    <td>Texto</td>
+                    <td>Identificador do agente causador do acidente.</td>
+                    <td>Campo correspondente da CAT_Ouro, com remoção de duplicatas</td>
+                    <td>Valores {ñ class} foram padronizados para Não Classificado na camada Prata.</td>
+                </tr>
+            </table>
 
-                <ul class="custom-list Método de ingestão">
-                    <li><b>Método de ingestão</b></li>
+            <h3>dimCalendarioAcidente</h3>
 
-                    <ul class="custom-list recuo">
-                        <li><b>Ferramenta:</b> Power BI Desktop</li>
-                        <li><b>Conector Utilizado:</b> Texto/CSV</li>
-                        <li><b>Justificativa da Escolha:</b> O dataset é único e estático, não haverá substituições nem cargas incrementais.</li>
-                    </ul>
-                </ul>
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Papel no modelo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Origem ou regra</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Observação</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>IDCalendarioAcidente</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave técnica.</td>
+                <td>Índice iniciado em 1.</td>
+                <td>Não é necessariamente a chave usada no relacionamento com a fato.</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data do calendário.</td>
+                <td>Data</td>
+                <td>Atributo de data e chave de relacionamento planejada.</td>
+                <td>Lista diária de 01/01/2024 a 31/12/2026.</td>
+                <td>Relacionamento previsto com FtAcidente[DataAcidente].</td>
+            </tr>
+            <tr>
+                <td>Ano</td>
+                <td>Ano correspondente à data.</td>
+                <td>Inteiro</td>
+                <td>Atributo temporal.</td>
+                <td>Extraído de Data.</td>
+                <td>Usado para agrupamentos e filtros anuais.</td>
+            </tr>
+            <tr>
+                <td>SemestreNum</td>
+                <td>Número do semestre.</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Calculado a partir do mês da data</td>
+                <td>Valores esperados: 1 e 2.</td>
+            </tr>
+            <tr>
+                <td>SemestreTexto</td>
+                <td>Identificação do semestre</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Derivado de Data.</td>
+                <td>Confirmar o formato criado, por exemplo, 1º Semestre.</td>
+            </tr>
+            <tr>
+                <td>TrimestreNum</td>
+                <td>Número do trimestre</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Calculado a partir do mês da data.</td>
+                <td>Valores de 1 a 4.</td>
+            </tr>
+            <tr>
+                <td>TrimestreTexto</td>
+                <td>Identificação do trimestre.</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Derivado de Data.</td>
+                <td>Confirmar o formato criado, por exemplo, 1º Trimestre.</td>
+            </tr>
+            <tr>
+                <td>Mes</td>
+                <td>Número do mês.</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Extraído de Data.</td>
+                <td>Valores de 1 a 12.</td>
+            </tr>
+            <tr>
+                <td>NomeMes</td>
+                <td>Nome do mês.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Extraído de Data.</td>
+                <td>Configurar para classificar por Mes.</td>
+            </tr>
+            <tr>
+                <td>AnoMesNum</td>
+                <td>Representação numérica de ano e mês, como 202401</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Ano × 100 + número do mês.</td>
+                <td>Usado para ordenar AnoMesTexto.</td>
+            </tr>
+            <tr>
+                <td>AnoMesTexto</td>
+                <td>Rótulo de ano e mês, como 2024 – janeiro</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Ano concatenado ao nome do mês.</td>
+                <td>Configurar para classificar por AnoMesNum.</td>
+            </tr>
+            <tr>
+                <td>Dia</td>
+                <td>Dia do mês</td>
+                <td>Inteiro</td>
+                <td>Atributo temporal.</td>
+                <td>Extraído de Data.</td>
+                <td>Valores de 1 a 31, conforme o mês.</td>
+            </tr>
+            <tr>
+                <td>NomeDia</td>
+                <td>Nome do dia da semana.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Extraído de Data.</td>
+                <td>Se for utilizado em ordem semanal, criar ou manter uma coluna numérica de ordenação.</td>
+            </tr>
+            <tr>
+                <td>FimDeSemana</td>
+                <td>Indica se a data pertence ao fim de semana.</td>
+                <td>Texto</td>
+                <td>Atributo de classificação.</td>
+                <td>Regra baseada no dia da semana</td>
+                <td>Registrar o tipo real e os valores usados, como Sim/Não.</td>
+            </tr>
+            </table>
 
-                <ul class="custom-list Passos de Ingestão">
-                    <li><b>Passos de Ingestão</b></li>
+            <h3>dimCalendarioEmissaoCAT</h3>
+            
+            <table>
+            <tr>
+                <td>Coluna</td>
+                <td>Significado</td>
+                <td>Tipo de dado</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Papel no modelo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Origem ou regra</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Observação</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>IDCalendarioEmissaoCAT</td>
+                <td>Identificador sequencial dos registros.</td>
+                <td>Inteiro</td>
+                <td>Chave técnica.</td>
+                <td>Índice iniciado em 1.</td>
+                <td>Não é necessariamente a chave usada no relacionamento com a fato.</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data do calendário.</td>
+                <td>Data</td>
+                <td>Atributo de data e chave de relacionamento planejada.</td>
+                <td>Lista diária de 01/01/2024 a 31/12/2026.</td>
+                <td>Relacionamento previsto com FtAcidente[DataAcidente].</td>
+            </tr>
+            <tr>
+                <td>Ano</td>
+                <td>Ano correspondente à data.</td>
+                <td>Inteiro</td>
+                <td>Atributo temporal.</td>
+                <td>Extraído de Data.</td>
+                <td>Usado para agrupamentos e filtros anuais.</td>
+            </tr>
+            <tr>
+                <td>SemestreNum</td>
+                <td>Número do semestre.</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Calculado a partir do mês da data</td>
+                <td>Valores esperados: 1 e 2.</td>
+            </tr>
+            <tr>
+                <td>SemestreTexto</td>
+                <td>Identificação do semestre</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Derivado de Data.</td>
+                <td>Confirmar o formato criado, por exemplo, 1º Semestre.</td>
+            </tr>
+            <tr>
+                <td>TrimestreNum</td>
+                <td>Número do trimestre</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Calculado a partir do mês da data.</td>
+                <td>Valores de 1 a 4.</td>
+            </tr>
+            <tr>
+                <td>TrimestreTexto</td>
+                <td>Identificação do trimestre.</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Derivado de Data.</td>
+                <td>Confirmar o formato criado, por exemplo, 1º Trimestre.</td>
+            </tr>
+            <tr>
+                <td>Mes</td>
+                <td>Número do mês.</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Extraído de Data.</td>
+                <td>Valores de 1 a 12.</td>
+            </tr>
+            <tr>
+                <td>NomeMes</td>
+                <td>Nome do mês.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Extraído de Data.</td>
+                <td>Configurar para classificar por Mes.</td>
+            </tr>
+            <tr>
+                <td>AnoMesNum</td>
+                <td>Representação numérica de ano e mês, como 202401</td>
+                <td>Inteiro</td>
+                <td>Atributo de ordenação.</td>
+                <td>Ano × 100 + número do mês.</td>
+                <td>Usado para ordenar AnoMesTexto.</td>
+            </tr>
+            <tr>
+                <td>AnoMesTexto</td>
+                <td>Rótulo de ano e mês, como 2024 – janeiro</td>
+                <td>Texto</td>
+                <td>Atributo para exibição.</td>
+                <td>Ano concatenado ao nome do mês.</td>
+                <td>Configurar para classificar por AnoMesNum.</td>
+            </tr>
+            <tr>
+                <td>Dia</td>
+                <td>Dia do mês</td>
+                <td>Inteiro</td>
+                <td>Atributo temporal.</td>
+                <td>Extraído de Data.</td>
+                <td>Valores de 1 a 31, conforme o mês.</td>
+            </tr>
+            <tr>
+                <td>NomeDia</td>
+                <td>Nome do dia da semana.</td>
+                <td>Texto</td>
+                <td>Atributo descritivo.</td>
+                <td>Extraído de Data.</td>
+                <td>Se for utilizado em ordem semanal, criar ou manter uma coluna numérica de ordenação.</td>
+            </tr>
+            <tr>
+                <td>FimDeSemana</td>
+                <td>Indica se a data pertence ao fim de semana.</td>
+                <td>Texto</td>
+                <td>Atributo de classificação.</td>
+                <td>Regra baseada no dia da semana</td>
+                <td>Registrar o tipo real e os valores usados, como Sim/Não.</td>
+            </tr>
+            </table>
 
-                    <ul class="custom-list recuo">
-                        <li>No Power BI Desktop, acessar Página Inicial → Obter Dados → Texto/CSV.</li>
-                        <li>Selecionar o arquivo “Manutenção_Industria_Pneus.csv” no diretório local.</li>
-                        <li>Confirmar a importação mantendo o encoding padrão (UTF-8) e delimitador vírgula ( , ).</li>
-                        <li>Nomear a consulta como “Camada Bronze” que será a base para criação da camada prata.</li>
-                    </ul>
-                </ul>
-            </section>
+        </section>
 
             <section>
                 <h3>Camada Prata</h3>
