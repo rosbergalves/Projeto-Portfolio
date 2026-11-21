@@ -80,7 +80,7 @@
         .container {
             text-align: left;
             width: 80%;
-            max-width: 900px;
+            max-width: 1000px;
             background: white;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -289,11 +289,11 @@
 
             <table>
             <tr>
-                <td>Campo</td>
-                <td>Significado</td>
-                <td>Tipo de dado</td>
-                <td>Exemplo</td>
-                <td>Observação</td>
+                <td><b>Campo</b></td>
+                <td><b>Significado</b></td>
+                <td><b>Tipo de dado</b></td>
+                <td><b>Exemplo</b></td>
+                <td><b>Observação</b></td>
             </tr>
             <tr>
                 <td>Agente  Causador  Acidente</td>
@@ -528,9 +528,9 @@
 
                 <table>
                 <tr>
-                    <td>Nome original</td>
-                    <td>Nome padronizado</td>
-                    <td>Tratamento</td>
+                    <td><b>Nome original</b></td>
+                    <td><b>Nome padronizado</b></td>
+                    <td><b>Tratamento</b></td>
                 </tr>
                 <tr>
                     <td>Agente Causador Acidente</td>
@@ -675,10 +675,10 @@
 
                 <table>
                 <tr>
-                    <td>Tabela</td>
-                    <td>Tipo</td>
-                    <td>Finalidade</td>
-                    <td>Origem</td>
+                    <td><b>Tabela</b></td>
+                    <td><b>Tipo</b></td>
+                    <td><b>Finalidade</b></td>
+                    <td><b>Origem</b></td>
                 </tr>
                 <tr>
                     <td>CAT_Bronze</td>
@@ -782,10 +782,10 @@
                 
                 <table>
                 <tr>
-                    <td>Tabela</td>
-                    <td>Tipo</td>
-                    <td>Finalidade</td>
-                    <td>Origem</td>
+                    <td><b>Tabela</b></td>
+                    <td><b>Tipo</b></td>
+                    <td><b>Finalidade</b></td>
+                    <td><b>Origem</b></td>
                 </tr>
                 <tr>
                     <td>ftAcidente</td>
@@ -1749,460 +1749,389 @@
                 </tr>
                 </table>
 
-                <ul class="custom-list Criação de coluna derivada do Status da Ocorrencia">
-                    <li><b>Criação de coluna derivada do Status da Ocorrencia</b></li>
-                                
-                    <ul class="custom-list recuo">
-                        <li>Coluna StatusOcorrencia criada a partir da coluna Ocorrencia.</li>
-                        <li>1 = Máquina Parada</li>
-                        <li>2 = Máquina Parada Parcialmente</li>
-                        <li>3 = Máquina Funcionando</li>
-                        <li>4 = Não Informado</li>
-                        <li>5 = Não Informado</li>
-                        <li>6 = Não Informado</li>
-                        <li>7 = Não Informado</li>
-                        <li>8 = Não Informado</li>
-                        <li>Objetivo: Facilitar a interpretação e análise operacional.</li>
-                    </ul>
-                </ul>
+                <h3>Página 2 — Perfil do Trabalhador</h3>
 
-                <ul class="custom-list Criação de coluna derivada da descrição do Rank">
-                    <li><b>Criação de coluna derivada da descrição do Rank</b></li>
-                                
-                    <ul class="custom-list recuo">
-                        <li>Coluna DescricaoRank criada a partir da coluna Rank.</li>
-                        <li>A = Manutenções com duração maiores ou iguais à 240 minutos</li>
-                        <li>B = Manutenções com duração entre 20 e 240 minutos</li>
-                        <li>C = Manutenções com duração entre 0 e 20 minutos</li>
-                        <li>D = Manutenção de máquinas específicas independente do tempo</li>
-                        <li>Sem_Rank = Sem classificação</li>
-                    </ul>
-                </ul>
+                <p>A página Perfil do Trabalhador tem como objetivo analisar as características demográficas e profissionais dos trabalhadores presentes nos registros de Comunicação de Acidente de Trabalho (CAT). Permite identificar a distribuição dos registros por faixa etária, sexo, ocupação e filiação do segurado, possibilitando observar quais grupos apresentam maior quantidade de registros no período analisado.</p>
 
-                <ul class="custom-list Criação de colunas auxiliares de data e hora">
-                    <li><b>Criação de colunas auxiliares de data e hora</b></li>
-                                
-                    <ul class="custom-list recuo">
-                        <li>DataHoraInicio = DataInicio + HoraInicio</li>
-                        <li>DataHoraOrdem = DataInicio + HoraOrdem</li>
-                        <li>DataHoraFim = DataFim + HoraFim</li>
-                        <li>Tratamento condicional: se hora for nula → valor null</li>
-                        <li>Objetivo: Possibilitar cálculo de métricas temporais como tempo de execução, tempo total.</li>
-                    </ul>
-                </ul>
+                <section>
+                <img src="Imagens/Capturapagina2.png" alt="Página 2" class="imagem-projeto">
+                </section>
 
-                <ul class="custom-list Flags de qualidade">
-                    <li><b>Flags de qualidade</b></li>
-                
-                    <ul class="custom-list recuo">
-                        <li>SemOrdem = True se NumeroOrdem for nulo.</li>
-                        <li>SemRank = True se Rank for nulo.</li>
-                        <li>SemHoraInicio, SemHoraOrdem, SemHoraFim = True se respectivas colunas de hora forem nulas.</li>
-                        <li>SemDataFim = True se DataFim for nula.</li>
-                        <li>Objetivo: Analisar ordens concluídas e ordens abertas.</li>
-                    </ul>
-                </ul>
+                <h3>Cartões</h3>
 
-                <ul class="custom-list Tratamento de métricas numéricas">
-                    <li><b>Tratamento de métricas numéricas</b></li>
-                
-                    <ul class="custom-list recuo">
-                        <li>Coluna CustoPecas verificada, sem valores negativos.</li>
-                        <li>Colunas TempoReal e TempoManutencao corrigidas para número decimal, separador correto ( , ).</li>
-                        <li>Objetivo: Garantir consistência para cálculos e visualizações.</li>
-                    </ul>
-                </ul>
+                <table>
+                <tr>
+                    <td>Cartão</td>
+                    <td>Descrição</td>
+                    <td>Medida DAX</td>
+                </tr>
+                <tr>
+                    <td>Total de registros de CAT</td>
+                    <td>Quantidade total de linhas da tabela fato no contexto dos filtros aplicados.</td>
+                    <td>Total Registros CAT</td>
+                </tr>
+                <tr>
+                    <td>Registros – Sexo Masculino</td>
+                    <td>Apresenta a quantidade de registros classificados como sexo masculino.</td>
+                    <td>Registros Sexo Masculino</td>
+                </tr>
+                <tr>
+                    <td>Registros – Sexo Feminino</td>
+                    <td>Apresenta a quantidade de registros classificados como sexo feminino.</td>
+                    <td>Registros Sexo Feminino</td>
+                </tr>
+                <tr>
+                    <td>Idade Média</td>
+                    <td>Apresenta a média de idade dos trabalhadores na data do acidente, considerando os registros com datas válidas de nascimento e acidente.</td>
+                    <td>Idade Média</td>
+                </tr>
+                </table>
 
-                <ul class="custom-list Verificação de duplicatas">
-                    <li><b>Verificação de duplicatas</b></li>
-                
-                    <ul class="custom-list recuo">
-                        <li>NumeroNota e NumeroOrdem conferidos e não apresentaram duplicatas.</li>
-                        <li>Mantidos como chaves naturais de referência.</li>
-                    </ul>
-                </ul>
+                <h3>Gráficos</h3>
 
-                <ul class="custom-list Linhas com dados incompletos">
-                    <li><b>Linhas com dados incompletos</b></li>
-                
-                    <ul class="custom-list recuo">
-                        <li>Mantidas na consulta para permitir análise de ordens abertas e backlog operacional.</li>
-                    </ul>
-                </ul>
+                <table>
+                <tr>
+                    <td>Gráfico</td>
+                    <td>Tipo de visual</td>
+                    <td>Objetivo</td>
+                </tr>
+                <tr>
+                    <td>Registros por Faixa Etária</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta a quantidade de registros distribuídos por faixas etárias.</td>
+                </tr>
+                <tr>
+                    <td>Registros por Sexo</td>
+                    <td>Gráfico de rosca</td>
+                    <td>Demonstra a distribuição dos registros entre as categorias de sexo disponíveis na base de dados.</td>
+                </tr>
+                <tr>
+                    <td>Registros por CBO – Ocupações</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta as dez ocupações com maior quantidade de registros, conforme a Classificação Brasileira de Ocupações (CBO).</td>
+                </tr>
+                <tr>
+                    <td>Registros por Filiação do Segurado</td>
+                    <td>Gráfico de colunas</td>
+                    <td>Demonstra a distribuição dos registros conforme as categorias de filiação do segurado informadas na fonte de dados.</td>
+                </tr>
+                </table>
 
-                <h3>Observações Gerais</h3>
+                <h3>Filtros</h3>
 
-                <ul class="custom-list Observações Gerais">
-                    <li>A Camada Prata não possui ID’s nem dimensões, sua função é fornecer dados limpos e confiáveis para modelagem analítica na Camada Ouro.</li>
-                    <li>Mantém a rastreabilidade dos dados originais e registros incompletos, permitindo análises operacionais e históricas.</li>
-                    <li>Facilita criação de tabelas fato e dimensões, incluindo calendário, equipamentos, centros de custo, ranks e status da ocorrência.</li>
-                </ul>
+                <table>
+                <tr>
+                    <td>Filtro</td>
+                    <td>Finalidade</td>
+                </tr>
+                <tr>
+                    <td>Ano</td>
+                    <td>Permite selecionar o ano de ocorrência do acidente.</td>
+                </tr>
+                <tr>
+                    <td>UF do acidente</td>
+                    <td>Permite filtrar os registros conforme a Unidade da Federação onde ocorreu o acidente.</td>
+                </tr>
+                <tr>
+                    <td>Sexo</td>
+                    <td>Permite selecionar a categoria de sexo do trabalhador.</td>
+                </tr>
+                <tr>
+                    <td>Faixa Etária</td>
+                    <td>Permite selecionar uma ou mais faixas etárias para análise.</td>
+                </tr>
+                </table>
+
+                <h3>Página 3 — Características do Acidente</h3>
+
+                <p>A página Características do Acidente tem como objetivo analisar os registros de Comunicação de Acidente de Trabalho (CAT) conforme as características e circunstâncias das ocorrências. Permite identificar os principais agentes causadores, os tipos de acidente, as naturezas das lesões e as partes do corpo atingidas, proporcionando uma visão mais detalhada dos fatores associados aos acidentes de trabalho registrados no período analisado.</p>
+
+                <section>
+                <img src="Imagens/Capturapagina3.png" alt="Página 3" class="imagem-projeto">
+                </section>
+
+                <h3>Cartões</h3>
+
+                <table>
+                <tr>
+                    <td>Cartão</td>
+                    <td>Descrição</td>
+                    <td>Medida DAX</td>
+                </tr>
+                <tr>
+                    <td>Total de registros de CAT</td>
+                    <td>Quantidade total de linhas da tabela fato no contexto dos filtros aplicados.</td>
+                    <td>Total Registros CAT</td>
+                </tr>
+                <tr>
+                    <td>Acidentes Típicos</td>
+                    <td>Apresenta a quantidade de registros classificados como acidentes típicos.</td>
+                    <td>Registros Acidentes Típicos</td>
+                </tr>
+                <tr>
+                    <td>Acidentes de Trajeto</td>
+                    <td>Apresenta a quantidade de registros classificados como acidentes de trajeto.</td>
+                    <td>Registros Acidentes de Trajeto</td>
+                </tr>
+                <tr>
+                    <td>Doenças do Trabalho</td>
+                    <td>Apresenta a quantidade de registros classificados como doenças do trabalho.</td>
+                    <td>Registros Doenças do Trabalho</td>
+                </tr>
+                </table>
+
+                <h3>Gráficos</h3>
+
+                <table>
+                <tr>
+                    <td>Gráfico</td>
+                    <td>Tipo de visual</td>
+                    <td>Objetivo</td>
+                </tr>
+                <tr>
+                    <td>Registros por Agente Causador</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta os dez agentes causadores com maior quantidade de registros, permitindo identificar os agentes mais frequentemente associados aos acidentes.</td>
+                </tr>
+                <tr>
+                    <td>Registros por Tipo de Acidente</td>
+                    <td>Gráfico de rosca</td>
+                    <td>Demonstra a distribuição dos registros conforme as classificações de tipo de acidente disponíveis na base de dados.</td>
+                </tr>
+                <tr>
+                    <td>Registros por Natureza da Lesão</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta a distribuição dos registros conforme a natureza das lesões, destacando as categorias com maior frequência.</td>
+                </tr>
+                <tr>
+                    <td>Registros por Parte do Corpo Atingida</td>
+                    <td>Barras horizontais</td>
+                    <td>Demonstra quais partes do corpo aparecem com maior frequência nos registros de acidentes de trabalho.</td>
+                </tr>
+                </table>
+
+                <h3>Filtros</h3>
+
+                <table>
+                <tr>
+                    <td>Filtro</td>
+                    <td>Finalidade</td>
+                </tr>
+                <tr>
+                    <td>Ano</td>
+                    <td>Permite selecionar o ano de ocorrência do acidente.</td>
+                </tr>
+                <tr>
+                    <td>UF do Acidente</td>
+                    <td>Permite filtrar os registros conforme a Unidade da Federação onde ocorreu o acidente.</td>
+                </tr>
+                <tr>
+                    <td>Tipo de Acidente</td>
+                    <td>Permite selecionar uma ou mais classificações de acidentes para análise.</td>
+                </tr>
+                <tr>
+                    <td>Agente Causador</td>
+                    <td>Permite selecionar os agentes causadores para investigar sua frequência nos registros.</td>
+                </tr>
+                </table>
+
+                <h3>Página 4 — Gravidade do Acidente</h3>
+
+                <p>Esta página apresenta indicadores relacionados à gravidade dos acidentes de trabalho registrados, considerando a ocorrência de afastamentos e óbitos. O objetivo é analisar a participação dos registros com essas características e observar sua distribuição por natureza da lesão, espécie do benefício, tipo de acidente e Unidade Federativa.</p>
+
+                <section>
+                <img src="Imagens/Capturapagina4.png" alt="Página 4" class="imagem-projeto">
+                </section>
+
+                <h3>Cartões</h3>
+
+                <table>
+                <tr>
+                    <td>Cartão</td>
+                    <td>Descrição</td>
+                    <td>Medida DAX</td>
+                </tr>
+                <tr>
+                    <td>Total de registros de CAT</td>
+                    <td>Quantidade total de linhas da tabela fato no contexto dos filtros aplicados.</td>
+                    <td>Total Registros CAT</td>
+                </tr>
+                <tr>
+                    <td>Percentual de registros sem afastamento</td>
+                    <td>Apresenta o percentual de registros que não possuem data de afastamento informada.</td>
+                    <td>% Registros sem Afastamento</td>
+                </tr>
+                <tr>
+                    <td>Percentual de registros com afastamento</td>
+                    <td>Apresenta o percentual de registros que possuem data de afastamento informada.</td>
+                    <td>% Registros com Afastamento</td>
+                </tr>
+                <tr>
+                    <td>Percentual de registros com óbito</td>
+                    <td>Apresenta o percentual de registros com indicação de óbito em relação ao total de registros CAT.</td>
+                    <td>% Registros com Óbito</td>
+                </tr>
+                </table>
+
+                <h3>Gráficos</h3>
+
+                <table>
+                <tr>
+                    <td>Gráfico</td>
+                    <td>Tipo de visual</td>
+                    <td>Objetivo</td>
+                </tr>
+                <tr>
+                    <td>Registros com afastamento por natureza da lesão</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta a quantidade de registros com afastamento distribuídos por natureza da lesão.</td>
+                </tr>
+                <tr>
+                    <td>Registros por espécie do benefício</td>
+                    <td>Gráfico de rosca</td>
+                    <td>apresenta a distribuição dos registros CAT de acordo com a espécie do benefício informada.</td>
+                </tr>
+                <tr>
+                    <td>Registros com óbito por tipo de acidente</td>
+                    <td>Gráfico de colunas</td>
+                    <td>Apresenta a distribuição dos registros conforme a natureza das lesões, destacando as categorias com maior frequência.</td>
+                </tr>
+                <tr>
+                    <td>Registros com óbito por UF</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta a distribuição dos registros com indicação de óbito entre as Unidades Federativas.</td>
+                </tr>
+                </table>
+
+                <h3>Filtros</h3>
+
+                <table>
+                <tr>
+                    <td>Filtro</td>
+                    <td>Finalidade</td>
+                </tr>
+                <tr>
+                    <td>Ano</td>
+                    <td>Permite selecionar o ano de ocorrência do acidente.</td>
+                </tr>
+                <tr>
+                    <td>UF do Acidente</td>
+                    <td>Permite filtrar os registros conforme a Unidade da Federação onde ocorreu o acidente.</td>
+                </tr>
+                <tr>
+                    <td>Tipo de Acidente</td>
+                    <td>Permite selecionar a classificação do acidente, como típico, trajeto ou doença do trabalho.</td>
+                </tr>
+                <tr>
+                    <td>Espécie do Benefício</td>
+                    <td>Permite filtrar os registros conforme a espécie do benefício informada.</td>
+                </tr>
+                </table>
+
+                <h3>Página 5 — Empresas e atividade econômica</h3>
+
+                <p>Esta página apresenta a distribuição dos registros de acidentes de trabalho de acordo com as características dos empregadores e suas atividades econômicas. O objetivo é identificar quais atividades econômicas, tipos de empregador e localidades concentram a maior quantidade de registros CAT, permitindo analisar a distribuição dos acidentes sob a perspectiva das organizações e dos estabelecimentos empregadores.</p>
+
+                <section>
+                <img src="Imagens/Capturapagina5.png" alt="Página 5" class="imagem-projeto">
+                </section>
+
+                <h3>Cartões</h3>
+
+                <table>
+                <tr>
+                    <td>Cartão</td>
+                    <td>Descrição</td>
+                    <td>Medida DAX</td>
+                </tr>
+                <tr>
+                    <td>Total de registros de CAT</td>
+                    <td>Quantidade total de linhas da tabela fato no contexto dos filtros aplicados.</td>
+                    <td>Total Registros CAT</td>
+                </tr>
+                <tr>
+                    <td>Registros com CNAE Identificado</td>
+                    <td>Apresenta a quantidade de registros que possuem código de atividade econômica identificado.</td>
+                    <td>Registros com CNAE Identificado</td>
+                </tr>
+                <tr>
+                    <td>Percentual de registros com CNAE Identificado</td>
+                    <td>Apresenta o percentual de registros com código CNAE identificado em relação ao total de registros.</td>
+                    <td>% de Registros com CNAE Identificado</td>
+                </tr>
+                <tr>
+                    <td>Atividades econômicas identificadas</td>
+                    <td>Apresenta a quantidade de códigos CNAE distintos identificados nos registros.</td>
+                    <td>Atividades Econômicas Identificadas</td>
+                </tr>
+                </table>
+
+                <h3>Gráficos</h3>
+
+                <table>
+                <tr>
+                    <td>Gráfico</td>
+                    <td>Tipo de visual</td>
+                    <td>Objetivo</td>
+                </tr>
+                <tr>
+                    <td>Registros por Atividade Econômica (CNAE)</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta as dez atividades econômicas com maior quantidade de registros CAT, de acordo com a descrição do CNAE do empregador.</td>
+                </tr>
+                <tr>
+                    <td>Registros por tipo de empregador</td>
+                    <td>Gráfico de rosca</td>
+                    <td>Apresenta a distribuição dos registros CAT conforme as categorias de empregador informadas na base de dados.</td>
+                </tr>
+                <tr>
+                    <td>Registros por UF do empregador</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta a quantidade de registros CAT distribuídos pelas Unidades Federativas dos municípios dos empregadores.</td>
+                </tr>
+                <tr>
+                    <td>Registros por município do empregador</td>
+                    <td>Barras horizontais</td>
+                    <td>Apresenta os municípios de empregadores com maior quantidade de registros CAT.</td>
+                </tr>
+                </table>
+
+                <h3>Filtros</h3>
+
+                <table>
+                <tr>
+                    <td>Filtro</td>
+                    <td>Finalidade</td>
+                </tr>
+                <tr>
+                    <td>Ano</td>
+                    <td>Permite selecionar o ano de ocorrência do acidente.</td>
+                </tr>
+                <tr>
+                    <td>UF do Empregador</td>
+                    <td>Permite filtrar os registros conforme a Unidade Federativa do empregador.</td>
+                </tr>
+                <tr>
+                    <td>Tipo de Empregador</td>
+                    <td>Permite selecionar a categoria do empregador informada na base de dados.</td>
+                </tr>
+                <tr>
+                    <td>Atividade Econômica</td>
+                    <td>Permite filtrar os registros conforme a atividade econômica identificada pelo código CNAE do empregador.</td>
+                </tr>
+                </table>
+
+
             </section>
-
-            <section>
-                <h3>Camada Ouro</h3>
-
-                <ul class="custom-list Estrutura do Modelo">
-                    <li><b>Estrutura do Modelo</b></li>
-                
-                    <ul class="custom-list recuo">
-                        <li><b>Tabela Fato (FtManutencao):</b> Centraliza os registros das ordens de manutenção, contendo métricas quantitativas (ex.: TempoReal, CustoPecas) e as chaves de ligação com as dimensões.
-                        </li>
-                        <li><b>Tabelas Dimensão:</b> Fornecem contexto descritivo para análise como tempo, equipamentos, centro de custo, ocorrência, rank, hora, documento etc.
-                        </li>
-                    </ul>
-                </ul>
-
-                <ul class="custom-list Relacionamentos">
-                    <li><b>Relacionamentos</b></li>
-                </ul>
-
-                <p>Cada Dimensão possui um relacionamento 1:N com a tabela fato FtManutencao, a direção do filtro é do tipo single da dimensão para a fato, preservando a integridade do modelo estrela sendo:</p>
-                
-                <ul class="custom-list recuo">
-                    <li><b>DimCalendario:</b> Permite análise temporal em diferentes granularidades (ano, mês, dia).</li>
-                    <li><b>DimEquipamento:</b> Identifica de forma única os equipamentos e máquinas da fábrica.</li>
-                    <li><b>DimCentroCusto:</b> Possibilita segmentação financeira e administrativa.</li>
-                    <li><b>DimOcorrencia:</b> Categoriza o status das ocorrências (parada, funcionando, não informado).</li>
-                    <li><b>DimRank:</b> Classifica as manutenções em grupos (A, B, C, D, Sem Rank).</li>
-                    <li><b>DimHora:</b> Auxilia análises de ocorrências por horário e turno.</li>
-                    <li><b>DimDocumento:</b> Garante integridade e rastreabilidade de ordens e notas.</li>
-                </ul>
-
-                <ul class="custom-list Processo">
-                    <li><b>Tabelas de dimensão criadas</b></li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimCalendario:</b> Dimensão temporal que fornece granularidade de análise ao modelo, permitindo relacionar os eventos da Fato com informações de tempo em diferentes níveis (ano, trimestre, mês, semana, dia etc.). Foi criada de forma dinâmica, baseada nos limites de datas existentes na Camada Prata (colunas DataInicio e DataFim), garantindo escalabilidade e atualização automática do período de análise.
-                    <p><b>Origem:</b> Consulta nula criada no Power Query.</p>
-                                       <ul class="custom-list recuo"></ul>
-                                       <p><b>Lógica aplicada:</b>
-                                          <li>DataMinima = menor valor encontrado em DataInicio (camada Prata).</li>
-                                          <li>DataMaxima = maior valor encontrado em DataFim (Camada Prata).</li>
-                                          <li>DataInicial = 1º de janeiro do ano correspondente à data mínima.</li>
-                                          <li>DataFim = 31 de dezembro do ano correspondente à data máxima.</li>
-                                          <li>Duracao = intervalo de dias entre DataInicial e DataFinal.</li>
-                                          <li>List.Dates utilizado para gerar a sequência de datas contínuas.</li></p>
-                                       </ul>
-                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Calendario, ID_DataInicio e ID_DataFim.</p>
-                    <p><b>Colunas principais:</b>
-                                               <ul class="custom-list recuo">
-                                               <li>Data: Data no formato completo (DD-MM-YYYY).</li>
-                                               <li>Ano: Ano da data.</li>
-                                               <li>Mes: Número do mês.</li>
-                                               <li>NomeMes: Nome do mês por extenso.</li>
-                                               <li>Trimestre: Identificação do trimestre (1, 2, 3, 4).</li>
-                                               <li>NomeDia: Nome do dia da semana.</li>
-                                               <li>DiaUtil: Flag indicando se o dia é útil ("Sim" ou "Não").</li></p>
-                                               </ul>
-
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimEquipamento:</b> Dimensão de apoio ao modelo, responsável por armazenar a lista de equipamentos existentes nas ordens de manutenção. Permite análises relacionadas ao desempenho, falhas e impactos específicos por equipamento.
-                    <p><b>Origem:</b> Camada Prata (coluna Equipamento).</p>
-                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
-                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                               Inclusão de chave substituta (ID_Equipamento).</p>
-                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Equipamento.</p>
-                    <p><b>Coluna Principal:</b> Equipamento: Indica o máquina que necessita de manutenção.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimCentroCusto:</b> Dimensão responsável por armazenar a lista única de centros de custo da fábrica. Permite análises por setor ou área de operação, e facilita a segmentação das métricas de manutenção por localização administrativa.
-                    <p><b>Origem:</b> Camada Prata (coluna CentroCusto).</p>
-                    <p><b>Lógica aplicada:</b> Seleção distinta dos valores únicos.
-                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                               Inclusão de chave substituta (ID_CentroCusto).</p>
-                    <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_CentroCusto.</p>
-                    <p><b>Coluna Principal:</b> CentroCusto: Centro de custo de onde a solicitação de manutenção está sendo emitida.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>Dimocorrencia:</b> Armazena os diferentes tipos de ocorrências associadas às ordens de manutenção. Essa dimensão é fundamental para categorizar os impactos e facilitar a análise de criticidade das ocorrências registradas.
-                    <p><b>Origem:</b> Camada Prata (coluna Consequencia).</p>
-                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
-                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                               Inclusão de chave substituta (ID_Ocorrencia).</p>
-                    <p><b>Relacionamento:</b>  Conectada à tabela FtManutencao via chave ID_Ocorrencia.</p>
-                    <p><b>Colunas Principais:</b> Ocorrencia: Ao gerar uma nota, o colaborador tem que colocar uma ocorrência.
-                                               StatusOcorrencia: Descrição da situação do equipamento no ato da ocorrência.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimRank:</b> Armazena a categorização de manutenções realizadas manualmente pela equipe de manutenção, com base no tempo de execução ou em características específicas das máquinas.
-                    <p><b>Origem:</b> Camada Prata (coluna Rank).</p>
-                    <p><b>Lógica aplicada:</b> Seleção de valores distintos.
-                                               Padronização textual (primeira letra maiúscula, remoção de espaços).
-                                               Inclusão de chave substituta (ID_Rank).</p>
-                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Rank.</p>
-                    <p><b>Colunas Principais:</b> Rank: Input manual que a equipe de manutenção faz para categorizar o tempo necessário para e execução.
-                                                  DescricaoRank: Critério de classificação dos tipos de ocorrencias dividido em A, B, C e D.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimHora:</b> Fornece a dimensão de tempo por hora do dia, permitindo a análise das manutenções por hora exata, período do dia (manhã, tarde, noite, madrugada). É usada para vincular os horários de início, ordem e fim das manutenções à dimensão de tempo.
-                    <p><b>Origem:</b> Criada via Consulta Nula no Power Query (tabela sintética).</p>
-                    <p><b>Lógica aplicada:</b> Valores inteiros de 0 a 23, convertidos para hora do dia e categorizados por turno e inclusão da linha especial 25 = Sem_Hora para permitir relacionamento mesmo em casos de valores nulos na fato.</p>
-                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Hora, ID_HoraInicio, ID_HoraOrdem e ID_HoraFim.</p>
-                    <p><b>Colunas Principais:</b> Hora: Horas do dia de 00:00 a 23:00.
-                                                  HoraDoDia: Definição de manhã, tarde, noite e madrugada com base na hora.
-                                                  Turno: Definição do turno baseado na hora.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>DimDocumento:</b> Contém informações únicas sobre cada documento ou ordem de manutenção, permitindo relacionar a fato FtManutencao de forma otimizada.
-                    <p><b>Origem:</b> Camada Prata (coluna NumeroNota, NumeroOrdem).</p>
-                    <p><b>Lógica aplicada:</b> Remoção de duplicidades.
-                                               Inclusão de chave substituta (ID_Documentp).</p>
-                    <p><b>Relacionamento:</b> Conectada à tabela FtManutencao via chave ID_Documento.</p>
-                    <p><b>Colunas Principais:</b> NumeroNota: Número da nota gerada ao solicitar uma manutenção.
-                                                  NumeroOrdem: Número de ordem gerada pela equipe de manutenção, ao atender uma solicitação.</p>
-                    </li>
-                </ul>
-
-                <ul class="custom-list Processo">
-                    <li><b>Tabela de fatos criada</b></li>
-                </ul>
-
-                <ul class="custom-list recuo">
-                    <li><b>FtManutencao:</b> Consolida os registros de ordens de manutenção, com granularidade 1 linha por manutenção. Contém as chaves de relacionamento com as dimensões Calendario, Equipamento, CentroCusto, Ocorrencia, Rank, Hora e Documento.
-                    <p><b>Origem:</b> Consulta Prata (Manutenção_Industria_Pneus_Prata), proveniente da base operacional da manutenção.</p>
-                    <p><b>Lógica aplicada:</b> Dados tratados da camada Prata.
-                                               Substituição de atributos textuais por FKs das dimensões.</p>
-                    </li>
-                </ul>
-                    <li><b>Colunas principais:</b> <ul class="custom-list recuo">
-                        <li>ID_Manutencao: Identificador único da manutenção na tabela fato.</li>
-                        <li>ID_Calendario: Chave estrangeira para DimCalendario, representando a data de abertura/ocorrência.</li>
-                        <li>ID_Equipamento: Chave estrangeira para DimEquipamento.</li>
-                        <li>ID_CentroCusto: Chave estrangeira para DimCentroCusto.</li>
-                        <li>ID_Ocorrencia: Chave estrangeira para DimOcorrencia.</li>
-                        <li>ID_Rank: Chave estrangeira para DimRank, utilizada para análises de priorização ou classificação.</li>
-                        <li>ID_Hora: Chave estrangeira para DimHora.</li>
-                        <li>ID_Documento: Chave estrangeira para DimDocumento.</ul>
-                    </li>
-                
-                    <li><b>Colunas de tempo e desempenho:</b> <ul class="custom-list recuo">
-                        <li>ID_HoraInicio: Horário em que a manutenção começou (extraído do sistema de ordens).</li>
-                        <li>ID_HoraOrdem: Horário em que a ordem foi registrada/aberta.</li>
-                        <li>ID_HoraFim: Horário de término da manutenção.</li>
-                        <li>ID_DataInicio: A data em que foi aberta a solicitação de manutenção.</li>
-                        <li>ID_DataFim: Data do fim da manutenção.</li>
-                        <li>TempoManutencao: Tempo líquido da atividade de manutenção (em minutos), desconsiderando intervalos ou atrasos de registro.</li>
-                        <li>TempoReal: O tempo que levou desde a solicitação até o fim da manutenção.</li>
-                        <li>CustoPecas: Valor total de peças utilizadas na manutenção.</ul>
-                    </li>
-                
-                <h3>Observações Gerais</h3>
-
-                <ul class="custom-list Observações Gerais">
-                    <li>As colunas de tempo (TempoReal, TempoManutencao) foram padronizadas para minutos, mas todas as medidas DAX convertem para horas quando necessário.
-                    </li>
-                    <li>O campo ID_Ocorrencia é central para os cálculos de disponibilidade, pois diferencia se a manutenção implicou em parada total, funcionamento normal ou parada parcial.
-                    </li>
-                </ul>    
-            </section>
-
-            <section>
-                <h3>3.2 Modelo Dimensional</h3>
-
-                <p><b>Modelo Conceitual:</b> Criado no software brModelo antes do desenvolvimento no Power BI, serviu como guia para definição das entidades, atributos e relacionamentos.</p>
-
-                <figure>
-                <img src="Imagens/Diagrama_Conceitual.png" alt="Modelo Conceitual" class="imagem-projeto">
-                <figcaption>Modelo Conceitual</figcaption>
-                </figure>
-
-                <p><b>Modelo Estrela (Star Schema):</b> O modelo foi desenvolvido no formato estrela (Star Schema) para facilitar consultas analíticas, manter simplicidade de relacionamento, tipos de cardinalidade e ajustes de integridade referencial garantindo boa performance em cálculos DAX.</p>
-
-                <figure>
-                <img src="Imagens/Modelo_Dimensional.png" alt="Modelo Estrela (Star Schema)" class="imagem-projeto">
-                <figcaption>Modelo Estrela (Star Schema)</figcaption>
-                </figure>
-            </section>
-
-            <section>
-                <h3>3.3 Medidas</h3>
-
-                <p><b>Disponibilidade:</b> Calcula a disponibilidade operacional dos equipamentos, dividindo as horas em funcionamento pelas horas disponíveis.</p> 
-
-                <pre><code class="language-dax">
-                Disponibilidade =
-                DIVIDE([Horas_Funcionando], [Horas_Disponiveis], 0)
-                </code></pre>
-
-                <p><b>Horas_Disponiveis:</b> Horas totais disponíveis considerando dias úteis, quantidade de equipamentos, turnos e horas por turno.</p>
-
-                <pre><code class="language-dax">
-                Horas_Disponiveis =
-                VAR TurnosPorDia = 3  -- total de turnos por dia
-                VAR HorasPorTurno = 7 -- horas planejadas por turno
-                VAR QtdEquipamentos =
-                    DISTINCTCOUNT(DimEquipamento[ID_Equipamento])
-                VAR DiasUteis =
-                    CALCULATE(
-                        COUNTROWS(DimCalendario),
-                        KEEPFILTERS(DimCalendario[DiaUtil] = "Sim")
-                    )
-                RETURN
-                    QtdEquipamentos * DiasUteis * TurnosPorDia * HorasPorTurno
-                </code></pre>
-
-                <p><b>Horas_Funcionando:</b> Descrição: Soma do tempo real de funcionamento, considerando ocorrências de tipo 3 (funcionamento normal).</p>
-
-                <pre><code class="language-dax">
-                Horas_Funcionando =
-                CALCULATE(
-                    SUM(FtManutencao[TempoReal]),
-                    FILTER(
-                        DimOcorrencia,
-                        DimOcorrencia[Ocorrencia] = 3
-                    )
-                )
-                </code></pre>
-
-                <p><b>Horas_Paradas:</b> Soma do tempo de paradas, considerando ocorrências de tipo 1.</p> 
-
-                <pre><code class="language-dax">
-                Horas_Paradas =
-                CALCULATE(
-                    SUM(FtManutencao[TempoReal]),
-                    KEEPFILTERS(
-                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1})
-                    )
-                )
-                </code></pre>
-
-                <p><b>Horas_Operacionais:</b> Horas disponíveis menos horas paradas, garantindo que não fique negativo.</p> 
-
-                <pre><code class="language-dax">
-                Horas_Operacionais =
-                VAR hDisp = [Horas_Disponiveis]
-                VAR hPar  = [Horas_Paradas]
-                RETURN
-                    MAX(0, hDisp - hPar)
-                </code></pre>
-
-                <p><b>Custo_CentroCusto:</b> Soma dos custos de peças, analisado por centro de custo.</p> 
-
-                <pre><code class="language-dax">
-                Custo_CentroCusto =
-                SUM(FtManutencao[CustoPecas])
-                </code></pre>
-
-                <p><b>Custo_Equipamento:</b> Soma dos custos de peças, analisado por equipamento.</p> 
-
-                <pre><code class="language-dax">
-                Custo_Equipamento =
-                SUM(FtManutencao[CustoPecas])
-                </code></pre>
-
-                <p><b>CustoTotal_Manutencao:</b> Soma total histórica dos custos de peças em manutenções.</p> 
-
-                <pre><code class="language-dax">
-                CustoTotal_Manutencao =
-                SUM(FtManutencao[CustoPecas])
-                </code></pre>
-
-                <p><b>MTBF (Mean Time Between Failures):</b> Tempo médio entre falhas: divide horas operacionais pela quantidade de falhas.</p> 
-
-                <pre><code class="language-dax">
-                MTBF =
-                VAR falhas = [Qtd_Falhas]
-                VAR horasOp = [Horas_Operacionais]
-                RETURN
-                    IF(falhas = 0, BLANK(), DIVIDE(horasOp, falhas))
-                </code></pre>
-
-                <p><b>MTTR (Mean Time To Repair):</b> Tempo médio para reparo: divide o tempo total de manutenção pela quantidade de falhas.</p> 
-
-                <pre><code class="language-dax">
-                MTTR =
-                VAR falhas = [Qtd_Falhas]
-                VAR sumRep =
-                    CALCULATE(
-                        SUM(FtManutencao[TempoManutencao]),
-                        KEEPFILTERS(
-                            FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
-                        )
-                    )
-                RETURN
-                    IF(falhas = 0, BLANK(), DIVIDE(sumRep, falhas))
-                </code></pre>
-
-                <p><b>Qtd_Falhas:</b> Número total de falhas (ocorrências do tipo 1 e 2).</p> 
-
-                <pre><code class="language-dax">
-                Qtd_Falhas =
-                CALCULATE(
-                    COUNTROWS(FtManutencao),
-                    KEEPFILTERS(
-                        FILTER(DimOcorrencia, DimOcorrencia[Ocorrencia] IN {1, 2})
-                    )
-                )
-                </code></pre>
-
-                <p><b>Qtd_EquipamentosFalha:</b> Número de equipamentos distintos que apresentaram falha (Ocorrencia = 2).</p> 
-
-                <pre><code class="language-dax">
-                Qtd_EquipamentosFalha =
-                CALCULATE(
-                    DISTINCTCOUNT(FtManutencao[ID_Equipamento]),
-                    FILTER(
-                        DimOcorrencia,
-                        DimOcorrencia[Ocorrencia] = 2
-                    )
-                )
-                </code></pre>
-
-                <p><b>Qtd_Ocorrencias:</b> Contagem de todas as ocorrências registradas.</p> 
-
-                <pre><code class="language-dax">
-                Qtd_Ocorrencias =
-                COUNTROWS(FtManutencao)
-                </code></pre>
-
-                <p><b>Qtd_OcorrenciasEmAberto:</b> Quantidade de ocorrências que não possuem data de fim ou que ultrapassam a data de análise.</p> 
-
-                <pre><code class="language-dax">
-                Qtd_OcorrenciasEmAberto =
-                VAR vDataFinal = MAX(DimCalendario[Data])
-                VAR vOcorrenciasAbertas =
-                    FILTER(
-                        ALL(FtManutencao),
-                        FtManutencao[ID_DataInicio] <= vDataFinal &&
-                        (FtManutencao[ID_DataFim] > vDataFinal || ISBLANK(FtManutencao[ID_DataFim]))
-                    )
-                RETURN
-                    COUNTROWS(vOcorrenciasAbertas) + 0
-                </code></pre>
-
-                <p><b>TempoMedio_Manutencao:</b> Tempo médio das manutenções com base na coluna TempoReal na tabela FtManutencao.</p> 
-
-                <pre><code class="language-dax">
-                TempoMedio_Manutencao =
-                AVERAGE(FtManutencao[TempoReal])
-                </code></pre>
-            </section>
-            
-        </section>
 
     </section>
 
     <section>
             <h2>Links</h2>
 
-                <p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDFkZTAxNWItOGQ2Yy00MDgwLWJkMmEtZTZjYTc1ZmFiNmI3IiwidCI6IjIxYjFmMTkyLTUyM2MtNGQ5Ny1iYzc2LWYzZDgwYTYxYjNmNCJ9" target="_blank">Dashboard em produção<a></p>
+                <p><a href="https://app.powerbi.com/view?r=eyJrIjoiOTI1MDZlMWUtMWQ2YS00NTkzLTkxMWEtMDIwMzBhM2QwNjI0IiwidCI6IjIxYjFmMTkyLTUyM2MtNGQ5Ny1iYzc2LWYzZDgwYTYxYjNmNCJ9" target="_blank">Dashboard em produção<a></p>
 
-                <p><a href="https://github.com/rosbergalves/gestaomanutencao_dashboard" target="_blank">Repositório no GitHub</a></p>
+                <p><a href="https://github.com/rosbergalves/ComunicacaoAcidentesTrabalho_BR" target="_blank">Repositório no GitHub</a></p>
     </section>
 
     <section>
